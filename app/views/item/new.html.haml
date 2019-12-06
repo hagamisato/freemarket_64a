@@ -62,8 +62,8 @@
       %form
         %select{:name => "配送の方法"}
           %option{:value => "1"} らくらくメルカリ便
-          %option{:selected => "selected", :value => "2"}  
-          %option{:value => "3"}
+          %option{:selected => "selected", :value => "2"} ゆうメール
+          %option{:value => "3"} レターパック
     .content
       .contents__up
         .p_up　発送元の地域 
@@ -81,7 +81,31 @@
         %select{:name => "配送の方法"}
           %option{:value => "1"} 4~7日で発送
           %option{:selected => "selected", :value => "2"}  
-          %option{:value => "3"}          
+          %option{:value => "3"}
+.exhibit5
+  .exhibit5__title
+    .h1 販売価格(300~9,999,999)
+  .content
+    .contents__up
+      .p_up　価格   
+      .p_down 必須 
+      ¥ 
+      %input{:type => "number",:min => "300",:max => "9999999"}/
+    .contents__up
+    300以上9,999,999以下で入力してください
+    .fee
+    販売手数料(10%) 
+    .profit 
+    販売利益  　
+      
+
+        
+
+                
+      
+
+    
+      
              
 
 
