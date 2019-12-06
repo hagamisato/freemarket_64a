@@ -2,12 +2,27 @@
 .title {
   text-align: center;
 }
-.exhibit1__title {
-  display: flex;
-  .p {
-    background-color: red;
-    color: white;
+.exhibit1 {
+  margin-left: 30px;
+  .exhibit1__title {
+    display: flex;
+    .p {
+      background-color: red;
+      color: white;
+    }
   }
+}
+.exhibit2 {
+  margin-left: 30px;
+}
+.exhibit3 {
+  margin-left: 30px;
+}
+.exhibit4 {
+  margin-left: 30px;
+}
+.exhibit5 {
+  margin-left: 30px;
 }
 .upload-space {
   background-color: #EEEEEE;
@@ -16,6 +31,7 @@
   vertical-align: middle;
   display: table-cell;
   width: 900px;
+  border: 1px dashed;
 }
 .exhibit2__title {
   display: flex;
@@ -32,7 +48,7 @@
 .exhibit4__title {
   display: flex;
 }
-.exhibit5__title {
+.exhibit5 {
   display: flex;
 }
 .contents__up {
