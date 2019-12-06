@@ -1,10 +1,54 @@
-.h1 商品の情報を入力
-  .img 
-  .img
-  .img
-  .img
-.p商品名と説明 
-.p商品名
+.title
+  .h1 商品の情報を入力
+.exhibit1
+  .exhibit1__title
+    .h1 出品画像
+    .p　必須
+  .p 最大4枚までアップロードできます。
+  .upload-space
+    ドラックアンドドロップ<br>
+    またはクリックしてファイルをアップロード
+.exhibit2
+  .exhibit2__title
+    .h1 商品名
+    .p　必須
+  <input type="text" name="name" id="name" placeholder="商品名 (必須40文字まで)">
+.exhibit3
+  .exhibit3__title
+    .h1 商品の説明
+    .p　必須
+  %textarea#name{:name => "name", :placeholder => "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", :type => "text", :class => "explain"}
+.exhibit4
+  .exhibit4__title
+    .h1 商品の詳細
+    .contents
+      .contents__up
+        .p_up　カテゴリー 
+        .p_down 必須
+      %form
+        %select{:name => "都道府県"}
+          %option{:value => "1"} 
+          %option{:selected => "selected", :value => "2"} 
+          %option{:value => "3"} 
+      .contents__down  
+        .p_up 商品の状態 
+        .p_down 必須
+      %form
+        %select{:name => "都道府県"}
+          %option{:value => "1"} 
+          %option{:selected => "selected", :value => "2"} 
+          %option{:value => "3"} 
+
+
+    
+    
+
+
+
+
+
+
+
   
 
 

@@ -1,0 +1,45 @@
+
+.title {
+  text-align: center;
+}
+.exhibit1__title {
+  display: flex;
+  .p {
+    background-color: red;
+    color: white;
+  }
+}
+.upload-space {
+  background-color: #EEEEEE;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 900px;
+}
+.exhibit2__title {
+  display: flex;
+}
+.exhibit3__title {
+  display: flex;
+  
+}
+.exhibit4__title {
+  display: flex;
+
+}
+.contents__up {
+  display: flex;
+  .p_down {
+    background-color: red;
+    color: white;
+  }
+}
+.contents__down {
+  display: flex;
+  .p_down {
+    background-color: red;
+    color: white;
+  }
+}
+
