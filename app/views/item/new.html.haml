@@ -3,7 +3,7 @@
 .exhibit1
   .exhibit1__title
     .h1 出品画像
-    .p　必須
+    .exhibit1__title__p必須
   .p 最大4枚までアップロードできます。
   .upload-space
     ドラックアンドドロップ<br>
@@ -31,7 +31,6 @@
           %option{:selected => "selected", :value => "2"} メンズ
           %option{:value => "3"} ベビー・キッズ
           %option{:value => "4"} インテリア・住まい・小物
-
       .contents__down  
         .p_up 商品の状態 
         .p_down 必須
@@ -91,12 +90,18 @@
       .p_down 必須 
       ¥ 
       %input{:type => "number",:min => "300",:max => "9999999"}/
-    .contents__up
-    300以上9,999,999以下で入力してください
+    .contents__up-range
+      300以上9,999,999以下で入力してください
     .fee
-    販売手数料(10%) 
-    .profit 
-    販売利益  　
+      .fee__title
+        販売手数料(10%)
+      .fee__amount
+        ¥1,200
+    .profit
+      .profit__title
+        販売利益    
+      .profit__amount
+        ¥10,800
       
 
         

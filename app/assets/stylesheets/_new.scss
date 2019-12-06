@@ -6,9 +6,10 @@
   margin-left: 30px;
   .exhibit1__title {
     display: flex;
-    .p {
+    &__p {
       background-color: red;
       color: white;
+      border-radius: 2px;
     }
   }
 }
@@ -51,22 +52,50 @@
 .exhibit5 {
   display: flex;
 }
+
 .contents__up {
   display: flex;
   .p_down {
     background-color: red;
     color: white;
+    border-radius: 2px;
   }
+}
+.contents__up-range {
+  color: red;
+  border-bottom: 1px solid gray;
+  border-radius: 2px;
+  padding-bottom: 10px;
+}
+.fee {
+  &__title {
+    float: left;
+  }
+  &__amount {
+    float: right;
+  }
+}
+.profit {
+  font-weight: bold;
+  clear: both;
+  border-bottom: 1px solid gray;
+  &__title {
+    float: left;
+  }
+  &__amount {
+    font-size: 20px;
+    float: right;  
+  }
+  margin-bottom: 100px;
 }
 .contents__down {
   display: flex;
   .p_down {
     background-color: red;
     color: white;
+    border-radius: 2px;
   }
 }
 
-.exhibit5 {
 
-}
 
