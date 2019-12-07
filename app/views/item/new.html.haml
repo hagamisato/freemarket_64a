@@ -1,132 +1,138 @@
-.title
-  .h1 商品の情報を入力
-.exhibit1
-  .exhibit1__title
-    .h1 出品画像
-    .exhibit1__title__p必須
-  .p 最大4枚までアップロードできます。
-  .upload-space
-    ドラックアンドドロップ<br>
-    またはクリックしてファイルをアップロード
-.exhibit2
-  .exhibit2__title
-    .h1 商品名
-    .p　必須
-  <input type="text" name="name" id="name" placeholder="商品名 (必須40文字まで)">
-.exhibit3
-  .exhibit3__title
-    .h1 商品の説明
-    .p　必須
-  %textarea#name{name: "name", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", type: "text", class:  "explain"}
-.exhibit4
-  .exhibit4__title
-    .h1 商品の詳細
-    .contents
-      .contents__up
-        .p_up　カテゴリー 
-        .p_down 必須
-      %form
-        %select{name: "カテゴリー"}
-          %option{value: "1"} レディース
-          %option{selected: "selected", value: "2"} メンズ
-          %option{value: "3"} ベビー・キッズ
-          %option{value: "4"} インテリア・住まい・小物
-      .contents__down  
-        .p_up 商品の状態 
-        .p_down 必須
-      %form
-        %select{name: "商品の状態"}
-          %option{value: "1"} 新品、未使用
-          %option{selected: "selected", value: "2"} 未使用に近い
-          %option{value: "3"} 目立った傷や汚れなし
-          %option{value: "4"} やや傷や汚れあり
-          %option{value: "5"} 傷や汚れあり
-.exhibit5
-  .exhibit5__title
-    .h1 配送について
-  .contents
-    .content
-      .contents__up
-        .p_up　配送料の負担 
-        .p_down 必須
-      %form
-        %select{name: "配送料の負担"}
-          %option{value: "1"} 送料込み(出品者負担)
-          %option{selected: "selected", value: "2"} 送料込み(購入者負担) 
-          %option{value: "3"}
-    .content
-      .contents__up
-        .p_up　配送の方法 
-        .p_down 必須
-      %form
-        %select{name: "配送の方法"}
-          %option{value: "1"} らくらくメルカリ便
-          %option{selected: "selected", value: "2"} ゆうメール
-          %option{value: "3"} レターパック
-    .content
-      .contents__up
-        .p_up　発送元の地域 
-        .p_down 必須
-      %form
-        %select{name: "配送の方法"}
-          %option{value: "1"} 東京都
-          %option{selected: "selected", :value => "2"}  
-          %option{value: "3"}      
-    .content
-      .contents__up
-        .p_up　発送までの日数 
-        .p_down 必須
-      %form
-        %select{name: "配送の方法"}
-          %option{value: "1"} 4~7日で発送
-          %option{selected: "selected", value: "2"}  
-          %option{value: "3"}
-.exhibit5
-  .exhibit5__title
-    .h1 販売価格(300~9,999,999)
-  .exhibit5__content
-    .contents__up
-      .p_up　価格   
-      .p_down 必須 
-      ¥ 
-      %input{:type => "number",:min => "300",:max => "9999999"}/
-    .contents__up-range
-      300以上9,999,999以下で入力してください
-    .fee
-      .fee__title
-        販売手数料(10%)
-      .fee__amount
-        ¥1,200
-    .profit
-      .profit__title
-        販売利益    
-      .profit__amount
-        ¥10,800
-.exhibit6
-  禁止されている出品、行為を必ずご確認ください。
-  またブランド    
+.header
+  .header__exhibit
+    %a{href:  ""}
+      %img{alt: "［写真］", src: "/assets/fmarket_logo_red.svg"}/
+.main
+  .main__exhibit
+    .title
+      .h1 商品の情報を入力
+    .exhibit1
+      .exhibit1__title
+        .h1 出品画像
+        .exhibit1__title__p必須
+      .p 最大4枚までアップロードできます。
+      .upload-space
+        ドラックアンドドロップ<br>
+        またはクリックしてファイルをアップロード
+    .exhibit2
+      .exhibit2__title
+        .h1 商品名
+        .p 必須
+      <input type="text" name="name" id="name" placeholder="商品名 (必須40文字まで)">
+    .exhibit3
+      .exhibit3__title
+        .h1 商品の説明
+        .p  必須
+      %textarea#name{name: "name", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", type: "text", class:  "explain"}
+    .exhibit4
+      .exhibit4__title
+        .h1 商品の詳細
+        .contents
+          .contents__up
+            .p_up カテゴリー 
+            .p_down 必須
+          %form
+            %select{name: "カテゴリー"}
+              %option{value: "1"} レディース
+              %option{selected: "selected", value: "2"} メンズ
+              %option{value: "3"} ベビー・キッズ
+              %option{value: "4"} インテリア・住まい・小物
+          .contents__down  
+            .p_up 商品の状態 
+            .p_down 必須
+          %form
+            %select{name: "商品の状態"}
+              %option{value: "1"} 新品、未使用
+              %option{selected: "selected", value: "2"} 未使用に近い
+              %option{value: "3"} 目立った傷や汚れなし
+              %option{value: "4"} やや傷や汚れあり
+              %option{value: "5"} 傷や汚れあり
+    .exhibit5
+      .exhibit5__title
+        .h1 配送について
+      .contents
+        .content
+          .contents__up
+            .p_up 配送料の負担 
+            .p_down 必須
+          %form
+            %select{name: "配送料の負担"}
+              %option{value: "1"} 送料込み(出品者負担)
+              %option{selected: "selected", value: "2"} 送料込み(購入者負担) 
+              %option{value: "3"}
+        .content
+          .contents__up
+            .p_up 配送の方法 
+            .p_down 必須
+          %form
+            %select{name: "配送の方法"}
+              %option{value: "1"} らくらくメルカリ便
+              %option{selected: "selected", value: "2"} ゆうメール
+              %option{value: "3"} レターパック
+        .content
+          .contents__up
+            .p_up 発送元の地域 
+            .p_down 必須
+          %form
+            %select{name: "配送の方法"}
+              %option{value: "1"} 東京都
+              %option{selected: "selected", :value => "2"}  
+              %option{value: "3"}      
+        .content
+          .contents__up
+            .p_up 発送までの日数 
+            .p_down 必須
+          %form
+            %select{name: "配送の方法"}
+              %option{value: "1"} 4~7日で発送
+              %option{selected: "selected", value: "2"}  
+              %option{value: "3"}
+    .exhibit5
+      .exhibit5__title
+        .h1 販売価格(300~9,999,999)
+      .exhibit5__content
+        .contents__up
+          .p_up 価格   
+          .p_down 必須 
+          ¥ 
+          %input{:type => "number",:min => "300",:max => "9999999"}/
+        .contents__up-range
+          300以上9,999,999以下で入力してください
+        .fee
+          .fee__title
+            販売手数料(10%)
+          .fee__amount
+            ¥1,200
+        .profit
+          .profit__title
+            販売利益    
+          .profit__amount
+            ¥10,800
+    .exhibit6
+      禁止されている出品、行為を必ずご確認ください。
+      またブランド    
+  .footer
+    ここはフッターです。        
 
-テスト        
+                  
+        
 
-                
+      
+        
+              
+
+
+        
+
+      
       
 
+
+
+
+
+
+
     
-      
-             
-
-
-      
-
-    
-    
-
-
-
-
-
-
-
-  
 
 
