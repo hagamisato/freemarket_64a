@@ -17,7 +17,7 @@
   .exhibit3__title
     .h1 商品の説明
     .p　必須
-  %textarea#name{:name => "name", :placeholder => "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", :type => "text", :class => "explain"}
+  %textarea#name{name: "name", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", type: "text", class:  "explain"}
 .exhibit4
   .exhibit4__title
     .h1 商品の詳細
@@ -26,21 +26,21 @@
         .p_up　カテゴリー 
         .p_down 必須
       %form
-        %select{:name => "カテゴリー"}
-          %option{:value => "1"} レディース
-          %option{:selected => "selected", :value => "2"} メンズ
-          %option{:value => "3"} ベビー・キッズ
-          %option{:value => "4"} インテリア・住まい・小物
+        %select{name: "カテゴリー"}
+          %option{value: "1"} レディース
+          %option{selected: "selected", value: "2"} メンズ
+          %option{value: "3"} ベビー・キッズ
+          %option{value: "4"} インテリア・住まい・小物
       .contents__down  
         .p_up 商品の状態 
         .p_down 必須
       %form
-        %select{:name => "商品の状態"}
-          %option{:value => "1"} 新品、未使用
-          %option{:selected => "selected", :value => "2"} 未使用に近い
-          %option{:value => "3"} 目立った傷や汚れなし
-          %option{:value => "4"} やや傷や汚れあり
-          %option{:value => "5"} 傷や汚れあり
+        %select{name: "商品の状態"}
+          %option{value: "1"} 新品、未使用
+          %option{selected: "selected", value: "2"} 未使用に近い
+          %option{value: "3"} 目立った傷や汚れなし
+          %option{value: "4"} やや傷や汚れあり
+          %option{value: "5"} 傷や汚れあり
 .exhibit5
   .exhibit5__title
     .h1 配送について
@@ -50,41 +50,41 @@
         .p_up　配送料の負担 
         .p_down 必須
       %form
-        %select{:name => "配送料の負担"}
-          %option{:value => "1"} 送料込み(出品者負担)
-          %option{:selected => "selected", :value => "2"} 送料込み(購入者負担) 
-          %option{:value => "3"}
+        %select{name: "配送料の負担"}
+          %option{value: "1"} 送料込み(出品者負担)
+          %option{selected: "selected", value: "2"} 送料込み(購入者負担) 
+          %option{value: "3"}
     .content
       .contents__up
         .p_up　配送の方法 
         .p_down 必須
       %form
-        %select{:name => "配送の方法"}
-          %option{:value => "1"} らくらくメルカリ便
-          %option{:selected => "selected", :value => "2"} ゆうメール
-          %option{:value => "3"} レターパック
+        %select{name: "配送の方法"}
+          %option{value: "1"} らくらくメルカリ便
+          %option{selected: "selected", value: "2"} ゆうメール
+          %option{value: "3"} レターパック
     .content
       .contents__up
         .p_up　発送元の地域 
         .p_down 必須
       %form
-        %select{:name => "配送の方法"}
-          %option{:value => "1"} 東京都
-          %option{:selected => "selected", :value => "2"}  
-          %option{:value => "3"}      
+        %select{name: "配送の方法"}
+          %option{value: "1"} 東京都
+          %option{selected: "selected", :value => "2"}  
+          %option{value: "3"}      
     .content
       .contents__up
         .p_up　発送までの日数 
         .p_down 必須
       %form
-        %select{:name => "配送の方法"}
-          %option{:value => "1"} 4~7日で発送
-          %option{:selected => "selected", :value => "2"}  
-          %option{:value => "3"}
+        %select{name: "配送の方法"}
+          %option{value: "1"} 4~7日で発送
+          %option{selected: "selected", value: "2"}  
+          %option{value: "3"}
 .exhibit5
   .exhibit5__title
     .h1 販売価格(300~9,999,999)
-  .content
+  .exhibit5__content
     .contents__up
       .p_up　価格   
       .p_down 必須 
@@ -102,7 +102,9 @@
         販売利益    
       .profit__amount
         ¥10,800
-      
+.exhibit6
+  禁止されている出品、行為を必ずご確認ください。
+  またブランド    
 
         
 
