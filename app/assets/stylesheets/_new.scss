@@ -51,6 +51,9 @@
 }
 .exhibit5 {
   display: flex;
+  .exhibit5__content {
+    border-bottom: 1px solid gray; 
+  }
 }
 
 .contents__up {
