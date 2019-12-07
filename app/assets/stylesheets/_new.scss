@@ -1,4 +1,25 @@
-
+body {
+  background-color: #f5f5f5;
+}
+.header__exhibit {
+  height: 120px;
+  img {
+    height: 48px;
+    position: relative;
+    top: 30px;
+    left: 600px;
+  }
+}
+.main__exhibit {
+  width:700px;
+  margin-right: 400px;
+  margin-left : 300px;
+}
+.footer {
+  width:700px;
+  margin-right: 400px;
+  margin-left : 250px;
+}
 .title {
   text-align: center;
 }
@@ -42,8 +63,8 @@
     display: flex;
   }
   textarea {
-    width: 1000px;
-    height: 500px;
+    width: 675px;
+    height: 250px;
   }
 }
 .exhibit4__title {
