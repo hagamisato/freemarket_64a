@@ -1,19 +1,23 @@
 body {
   background-color: #f5f5f5;
 }
-.header__exhibit {
-  height: 120px;
-  img {
-    height: 48px;
-    position: relative;
-    top: 30px;
-    left: 600px;
+.header {
+  .header__exhibit {
+    height: 120px;
+    img {
+      height: 48px;
+      position: relative;
+      top: 30px;
+      left: 600px;
+    }
   }
 }
-.main__exhibit {
-  width:700px;
-  margin-right: 400px;
-  margin-left : 300px;
+.main {
+  &__upload-box {
+    width:700px;
+    margin-left : 300px;
+    margin-right: 400px;
+  }
 }
 .footer {
   width:700px;
@@ -40,8 +44,41 @@ body {
 .exhibit3 {
   margin-left: 30px;
 }
-.exhibit4 {
+.exhibit__select {
   margin-left: 30px;
+  width: 100%;
+  h1 {
+    float: left;
+  }
+  &__contents {
+    float: right;
+    &__name {
+      display: flex;
+      .p-red {
+        background-color: red;
+        color: white;
+        border-radius: 2px;
+      }
+    }
+    &__contents__select-wrap {
+      position: relative;
+      float: right;
+      .fa-chevron-down {
+        color: #888;
+        position: absolute;
+        top: 50%;
+        right: 100px;
+      }
+      .category {
+        
+      }
+    }
+  }
+}
+.clearfix::after {  
+  content: "";
+  clear: both;
+  display: block;
 }
 .exhibit5 {
   margin-left: 30px;
@@ -67,9 +104,6 @@ body {
     height: 250px;
   }
 }
-.exhibit4__title {
-  display: flex;
-}
 .exhibit5 {
   display: flex;
   .exhibit5__content {
@@ -84,6 +118,11 @@ body {
     color: white;
     border-radius: 2px;
   }
+}
+.category {
+  border: 1px solid #ccc;
+  height: 48px;
+  cursor: pointer;
 }
 .contents__up-range {
   color: red;
