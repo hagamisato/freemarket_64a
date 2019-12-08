@@ -2,123 +2,140 @@
   %a{href:  "/"}
     %img{alt: "［写真］", src: "/assets/fmarket_logo_red.svg"}/
 %main.exhibit
-  .exhibit__head
-    %h2 商品の情報を入力
-  %form.exhibit__form
-    .exhibit__upload-box
-      .exhibit__upload-box__title
-        %h3 出品画像
-        %span.red 必須
-        %p 最大10枚までアップロードできます。
-        .upload-space
-          ドラックアンドドロップ<br>
-          またはクリックしてファイルをアップロード  
-    .exhibit__sell-content
-      .exhibit__sell-content__title
-        %h1 商品名
-        %p 必須
-      %input#name{:name => "name", :placeholder => "商品名 (必須40文字まで)", :type => "text"}/
-      .exhibit3
-        .exhibit3__title
-          .h1 商品の説明
-          .p  必須
-        %textarea#name{name: "name", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など)", type: "text", class:  "explain"}
-    .exhibit__sell-content.clearfix
-      .h1 商品の詳細
-      .exhibit4__contents
-        .exhibit4__contents__name
-          .p カテゴリー 
-          .p-red  必須
-        .exhibit4__contents__select-wrap
-          %i.fas.fa-chevron-down
-          %select.category{name: "カテゴリー"}
-            %option{value: "1"} レディース
-            %option{value: "2"} メンズ
-            %option{value: "3"} ベビー・キッズ
-            %option{value: "4"} インテリア・住まい・小物
-        .exhibit4__contents__name
-          .p 商品の状態 
-          .p-red 必須
-        .exhibit4__contents__select-wrap
-          %i.fas.fa-chevron-down
-          %select{name: "商品の状態"}
-            %option{value: "1"} 新品、未使用
-            %option{value: "2"} 未使用に近い
-            %option{value: "3"} 目立った傷や汚れなし
-            %option{value: "4"} やや傷や汚れあり
-            %option{value: "5"} 傷や汚れあり
-    .exhibit__sell-content.clearfix
-      %h1 配送について
-      .contents
-        .content
-          .contents__up
-            .p_up 配送料の負担 
-            .p_down 必須
-          %form
-            %select{name: "配送料の負担"}
-              %option{value: "1"} 送料込み(出品者負担)
-              %option{selected: "selected", value: "2"} 送料込み(購入者負担) 
-              %option{value: "3"}
-        .content
-          .contents__up
-            .p_up 配送の方法 
-            .p_down 必須
-          %form
+  .exhibit-wrapper
+    .exhibit-wrapper__head
+      %h2 商品の情報を入力
+    %form.exhibit-wrapper__form
+      .exhibit-wrapper__form__upload-box
+        .exhibit-wrapper__form__upload-box__title
+          %h3 
+            出品画像  
+            %span.form-require 必須
+          %p 最大10枚までアップロードできます。
+        .exhibit-wrapper__form__upload-box__upload-space
+          %input{ type: "file", style: "display: none;"}/
+          %p
+            ドラックアンドドロップ<br>
+            またはクリックしてファイルをアップロード  
+      .exhibit-wrapper__sell-content
+        .exhibit-wrapper__sell-content__name
+          %h1 
+            商品名
+            %span.form-require 必須
+        %input#name{name: "name", placeholder: "商品名 (必須40文字まで)", type: "text"}/
+        .exhibit-wrapper__sell-content__description
+          .exhibit-wrapper__sell-content__description__title
+            %h1 
+              商品の説明
+              %span.form-require 必須
+            %textarea#description{name: "name", type: "text", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 商品の詳細
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name
+            %p 
+              カテゴリー 
+              %span.form-require  必須
+          .exhibit-wrapper__sell-content__select-wrap
+            %i.fas.fa-chevron-down
+            %select.category{name: "カテゴリー"}
+              %option{value: "1"} レディース
+              %option{value: "2"} メンズ
+              %option{value: "3"} ベビー・キッズ
+              %option{value: "4"} インテリア・住まい・小物
+          .exhibit__contents__name
+            %p 
+              商品の状態 
+              %span.form-require 必須
+          .exhibit__contents__select-wrap
+            %i.fas.fa-chevron-down
+            %select{name: "商品の状態"}
+              %option{value: "1"} 新品、未使用
+              %option{value: "2"} 未使用に近い
+              %option{value: "3"} 目立った傷や汚れなし
+              %option{value: "4"} やや傷や汚れあり
+              %option{value: "5"} 傷や汚れあり
+
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 配送について
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name
+            %p 
+              配送料の負担 
+              %span.form-require 必須
+            %form
+              %select{name: "配送料の負担"}
+                %option{value: "1"} 送料込み(出品者負担)
+                %option{selected: "selected", value: "2"} 送料込み(購入者負担) 
+                %option{value: "3"}
+          .exhibit__contents__name
+            %p 
+              発送元の地域 
+              %span.form-require 必須
+            %form
             %select{name: "配送の方法"}
-              %option{value: "1"} らくらくメルカリ便
-              %option{selected: "selected", value: "2"} ゆうメール
-              %option{value: "3"} レターパック
-        .content
-          .contents__up
-            .p_up 発送元の地域 
-            .p_down 必須
-          %form
-          %select{name: "配送の方法"}
-            %option{value: "1"} 東京都
-            %option{selected: "selected", :value => "2"}  
-            %option{value: "3"}      
-        .content
-          .contents__up
-          .p_up 発送までの日数 
-          .p_down 必須
-          %form
-          %select{name: "配送の方法"}
-            %option{value: "1"} 4~7日で発送
-            %option{selected: "selected", value: "2"}  
-            %option{value: "3"}
-    .exhibit__sell-content.clearfix
-      .exhibit6__title
-        .h1 販売価格(300~9,999,999)
-      .exhibit6__content
-        .contents__up
-          .p_up 価格   
-          .p_down 必須 
-          ¥ 
-          %input{:type => "number",:min => "300",:max => "9999999"}/
-        .contents__up-range
-          300以上9,999,999以下で入力してください
-        .fee
-          .fee__title
-            販売手数料(10%)
-          .fee__amount
-            ¥1,200
-        .profit
-          .profit__title
-            販売利益    
-          .profit__amount
-            ¥10,800
-    .exhibit__sell-content.clearfix
-      %p 禁止されている出品、行為を必ずご確認ください。
-      %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの転売は犯罪であり処罰される可能性があります。
-      %p また、出品をもちまして加盟店規約に同意したことになります。      
-      %button.btn-red{type: "submit"}出品する
-      %a{href:  "/"}もどる
+              %option{value: "1"} 東京都
+              %option{:value => "2"}  
+              %option{value: "3"}
+          .exhibit__contents__days    
+            %p 
+              発送までの日数 
+              %span.form-require 必須
+            %form
+            %select{name: "配送の方法"}
+              %option{value: "1"} 4~7日で発送
+              %option{value: "2"}  
+              %option{value: "3"}
+
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 販売価格(300~9,999,999)
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name
+            %p 
+              価格   
+              %span.form-require 必須 
+            ¥ 
+            %input{placeholder: "例) 300"}/
+          .exhibit__contents__name
+            .fee
+            .fee__title
+              販売手数料(10%)
+            .fee__amount
+              -
+          .profit
+            .profit__title
+              販売利益    
+            .profit__amount
+              -          
+      .exhibit-wrapper__sell-content.clearfix
+        %p 
+        %a{href:""}禁止されている出品
+        、
+        %a{href:""}行為
+        を必ずご確認ください。
+        %p 
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %a{href:""}偽ブランドの転売
+          は犯罪であり処罰される可能性があります。
+        %p 
+          また、出品をもちまして
+          %a{href:""}加盟店規約
+          に同意したことになります。
+        .exhibit-wrapper__sell-content
+          %button.btn-red{type: "submit"}出品する
+          %a.return{href:  "/"}もどる
 %footer
-  .nav
-  %a{href:  "/"}
-    %img{alt: "［写真］", src: ""}/
-  %p
-    %small  ©︎Freemarket,64a.
+  .footer__nav
+    %ul
+      %li プライバシーポリシー
+      %li エフマーケット利用規約
+      %li 特定商取引に関する表記
+  .footer__logo
+    %a{href:  "/"}
+      %img.gray-logo{alt: "［写真］", src: "/assets/logo_gray.svg"}/
+    %p
+      %small  
+        ©︎Freemarket,64a.
 
 
 
