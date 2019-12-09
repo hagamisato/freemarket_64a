@@ -1,0 +1,149 @@
+body {
+    background-color: #f5f5f5;
+    header.exhibit {
+      height: 128px;
+      img {
+          height: 49px;
+          width: 185px;
+          position: absolute;
+          top: 30px;
+          left: 600px;
+        }
+      }
+    .exhibit-wrapper {
+      .clearfix::after {  
+        content: "";
+        clear: both;
+        display: block;
+      }
+      background-color: #fff;
+      width: 700px;
+      margin: 0 auto;
+      .form-require {
+        background-color: #ea352d;
+        color: #fff;
+        margin-left: 8px;
+        padding: 2px 4px;
+        font-size: 12px;
+        border-radius: 2px;
+        vertical-align: top;
+      }
+      &__head {
+        font-size: 22px;
+        padding: 32px 16px;
+        text-align: center; 
+      }
+      &__form {
+        border-top: 1px solid #eee;
+        &__upload-box {
+          width:700px;
+          height: 300px;
+          margin-left : 0px;
+          margin-right: 400px;
+          padding: 40px;
+          &__title {
+            margin-bottom: 16px;
+            p {
+              font-size: 12px;
+              margin-top: 8px;
+            }
+          }
+          &__upload-space {
+              background-color: #EEEEEE;
+              height: 150px;
+              text-align: center;
+              vertical-align: middle;
+              display: table-cell;
+              width: 620px;
+              border: 1px dashed;
+              cursor: pointer;
+              position: absolute;
+              margin-top: 20px;
+              &__p {
+                position: relative;
+                top: 70px;
+                left: 20px;
+                pointer-events: none;
+                text-align: center;
+                z-index: 10;
+              }
+            }
+          }
+      }
+      &__sell-content {
+        padding:40px;
+        border-top: 1px solid #eee;
+        &__select-wrap {
+          position: relative;
+          appearance: none; /* 標準のスタイルを無効にする */
+          text-decoration: none;
+          .fa-chevron-down {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-size: 20px;
+          }
+        }
+        &__name {
+          display: flex;
+        }
+        #name {
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          width: 100%;  
+        }
+        &__description__title {
+          margin-top: 40px;
+          #description {
+            min-height: 104px;
+            width: 100%;
+            padding: 10px;
+            max-width: 100%;
+            line-height: 1.5;
+          }
+        }
+        h3 {
+          float: left;
+        }
+        &__pulldown {
+          float: right;
+        }
+        .btn-red {
+          margin-top: 40px;
+          width: 100%;
+          background-color: #ea352d;
+          color: #fff;
+          line-height: 48px;
+        }
+        .return {
+          width: 45%;
+          margin: 24px auto 0;
+          display: block;
+          background-color: #aaa;
+          color: #fff;
+          text-align: center;
+          line-height: 48px;
+          text-decoration: none;
+        }
+      }
+  }
+  .footer {
+    &__nav {
+      height: 50px;
+      line-height:  60px;
+      font-size: 10px;
+      margin-left: 550px;
+      li {
+        float: left;
+        margin: 0 auto;
+        padding-left: 10px;
+      }
+    }
+    &__logo {
+      width: 100px;
+      margin: 0 auto;
+    }
+  }
+}
