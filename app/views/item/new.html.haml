@@ -12,11 +12,11 @@
             出品画像  
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
-        .exhibit-wrapper__form__upload-box__upload-space
-          %input{ type: "file", style: "display: none;"}/
-          %p
-            ドラックアンドドロップ<br>
-            またはクリックしてファイルをアップロード  
+          %input.exhibit-wrapper__form__upload-box__upload-space{name: "s_file", type: "file" }
+            .exhibit-wrapper__form__upload-box__upload-space__p
+              %p 
+                ドラックアンドドロップ<br>
+                またはクリックしてファイルをアップロード  
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -87,13 +87,14 @@
               %span.form-require 必須
             %form
             %i.fas.fa-chevron-down
+            -# = collection_select :prefecture_id, Prefecture.all, :id, :name
             -# %select{name: "配送の方法"}
             -#   %option{value: ""} ---
             -#   %option{value: "1"} 東京都
             -#   %option{:value => "2"}  
             -#   %option{value: "3"}
-            form_for @data do |f|
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+            
+
           .exhibit__contents__days    
             %p 
               発送までの日数 

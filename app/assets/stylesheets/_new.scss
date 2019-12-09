@@ -37,6 +37,7 @@ body {
         border-top: 1px solid #eee;
         &__upload-box {
           width:700px;
+          height: 300px;
           margin-left : 0px;
           margin-right: 400px;
           padding: 40px;
@@ -49,13 +50,23 @@ body {
           }
           &__upload-space {
               background-color: #EEEEEE;
-              height: 200px;
+              height: 150px;
               text-align: center;
               vertical-align: middle;
               display: table-cell;
-              width: 900px;
+              width: 620px;
               border: 1px dashed;
               cursor: pointer;
+              position: absolute;
+              margin-top: 20px;
+              &__p {
+                position: relative;
+                top: 70px;
+                left: 20px;
+                pointer-events: none;
+                text-align: center;
+                z-index: 10;
+              }
             }
           }
       }
