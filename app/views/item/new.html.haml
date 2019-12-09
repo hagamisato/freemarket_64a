@@ -12,11 +12,14 @@
             出品画像  
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
+                    
           %input.exhibit-wrapper__form__upload-box__upload-space{name: "s_file", type: "file" }
             .exhibit-wrapper__form__upload-box__upload-space__p
+              <label for="filename" >
               %p 
                 ドラックアンドドロップ<br>
                 またはクリックしてファイルをアップロード  
+              </label>
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -53,6 +56,14 @@
               %option{value: "11"} チケット
               %option{value: "12"} 自動車・オートバイ
               %option{value: "13"} その他
+
+          .exhibit-wrapper__sell-content__select-wrap
+            %i.fas.fa-chevron-down
+            %select.category{name: "カテゴリー"}
+              %option{value: "11"} トップス
+              %option{value: "11"} トップス
+              %option{value: "11"} トップス
+
           .exhibit__contents__name
             %p 
               商品の状態 
@@ -127,7 +138,7 @@
               販売利益    
             .profit__amount
               -          
-      .exhibit-wrapper__sell-content.clearfix
+      .exhibit-wrapper__sell-content#small.clearfix
         %p 
         %a{href:""}禁止されている出品
         、
@@ -141,9 +152,9 @@
           また、出品をもちまして
           %a{href:""}加盟店規約
           に同意したことになります。
-        .exhibit-wrapper__sell-content
-          %button.btn-red{type: "submit"}出品する
-          %a.return{href:  "/"}もどる
+      .exhibit-wrapper__sell-content
+        %button.btn-red{type: "submit"}出品する 
+        %a.return{href:  "/"}もどる
 %footer
   .footer__nav
     %ul
