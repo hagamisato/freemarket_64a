@@ -72,6 +72,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'active_hash'
 gem 'fog-aws'
 
 group :production do
