@@ -2,40 +2,39 @@
   .header__box
     .header__box__upper
       .header__box__upper__rogo
-        = image_tag "fmarket_logo_red.svg", alt:"mercari_lodo"
-        =link_to "mercuri", "/", class:"header__box__upper__rogo__name" 
-      .header__box__upper__search
-        -# = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
-        何かお探しですか？
-        %i.fas.fa-search-o{"aria-hidden": "true"}
+        = image_tag src="fmarket_logo_red.svg", alt:"mercari_lodo", class:"header__box__upper__rogo__image"
+        =link_to "", "/", class:"header__box__upper__rogo__name" 
+      .header__box__upper__search      
+        = form_with(url: "/", local: true, method: :get) do |form|
+          = form.text_field :keyword, placeholder: "何かお探しですか？", class: "header__box__upper__search__input"
+          %button.button{type:"submit", "aria-hidden": "true"}
+            %i.fas.fa-search.icon
     .header__box__lower
       .header__box__lower__left
         .header__box__lower__left__category
-        -# %i class="fas fa-list-ul"
-        カテゴリーから探す
+          %i.fas.fa-list-ul.header__box__lower__left__category__icon     
+          カテゴリーから探す
         .header__box__lower__left__brand  
-          -# %i class="fas fa-tag"
-          ブランドから探す
-
-      .header__box__lower__user
-        .header__box__lower__user__registration
-          =link_to "新規会員登録", "#", class:"header__box__lower__user__registration__red"
-        .header__box__lower__user__rogin
-          =link_to "ログイン", "", class:"header__box__lower__user__rogin__blue"
-
-
-      -# -if user_signed_in?
-      -#   .header__box__lower__menue  
-      -#     .header__box__lower__menue__like    
-      -#       -# %i class="far fa-heart"
-      -#       いいね一覧
-      -#     .header__box__lower__menue__notice   
-      -#       -# %i class="fas fa-check"
-      -#       お知らせ
-      -#     .header__box__lower__menue__list    
-      -#       -# %i class="fas fa-check"
-      -#       やることリスト
-      -#     .header__box__lower__menue__mypage
-      -#       -# %i class="fas fa-user-circle"
-      -#       マイページ
-      -# -else 
+          %i.fas.fa-tag.header__box__lower__left__brand__icon
+          ブランドから探す     
+      -if user_signed_in?
+        .header__box__lower__menue  
+          .header__box__lower__menue__like    
+            %i.far.fa-heart.icon
+            いいね一覧
+          .header__box__lower__menue__notice   
+            %i.far.fa-bell.icon
+            お知らせ
+          .header__box__lower__menue__list    
+            %i.fas.fa-check.icon
+            やることリスト
+          .header__box__lower__menue__mypage
+          = link_to method: :get do
+            %i.fas.fa-user-circle.icon{"aria-hidden": "true"}
+            = link_to 'マイページ', "/"
+      -else 
+        .header__box__lower__user
+          .header__box__lower__user__registration
+            =link_to "新規会員登録", "item_index_path", class:"header__box__lower__user__registration__red"
+          .header__box__lower__user__rogin
+            =link_to "ログイン", "/", class:"header__box__lower__user__rogin__blue"

@@ -1,0 +1,57 @@
+.footer
+  .footer__upper
+    .footer__upper__box
+      .footer__upper__box__left
+        .footer__upper__box__left__first スマホでかんたんフリマアプリ
+        .footer__upper__box__left__second 今すぐ無料ダウンロード!
+        .footer__upper__box__left__third 
+          .footer__upper__box__left__third__mercari
+            = image_tag src="logo_red.svg", alt: 'mercari', class:"footer__upper__box__left__third__mercari"
+          .footer__upper__box__left__third__app
+            = image_tag src="appstore.svg", alt: 'AppStore', class:"footer__upper__box__left__third__app"
+          .footer__upper__box__left__third__app
+            = image_tag src="googleplay.svg", alt: 'GooglePlay', class:"footer__upper__box__left__third__app"
+      .footer__upper__box__right
+        = image_tag src="footer__phone.png", alt:"", class:"footer__image"
+  .footer__lower 
+    .footer__lower__detail 
+      .footer__lower__detail__first 
+        .footer__lower__detail__first__title メルカリについて
+        .footer__lower__detail__first__message 会社概要（運営会社）
+        .footer__lower__detail__first__message 採用情報
+        .footer__lower__detail__first__message プレスリリース
+        .footer__lower__detail__first__message 公式ブログ
+        .footer__lower__detail__first__message メルカリロゴ利用ガイドライン
+        .footer__lower__detail__first__icon
+          = link_to root_path ,method: :delete do
+            %i.fab.fa-twitter.icon{"aria-hidden": "true"}
+          = link_to root_path ,method: :delete do
+            %i.fab.fa-facebook-square{"aria-hidden": "true"}
+      .footer__lower__detail__second 
+        .footer__lower__detail__second__title ヘルプ＆ガイド
+        .footer__lower__detail__second__message メルカリガイド
+        .footer__lower__detail__second__message らくらくメルカリ便
+        .footer__lower__detail__second__message ゆうゆうメルカリ便
+        .footer__lower__detail__second__message 大型メルカリ便
+        .footer__lower__detail__second__message 車体取引ガイド
+        .footer__lower__detail__second__message メルカリあんしん・あんぜん宣言！
+        .footer__lower__detail__second__message 偽ブランド品撲滅への取り組み
+        .footer__lower__detail__second__message メルカリボックス
+      .footer__lower__detail__third 
+        .footer__lower__detail__third__title プライバシーと利用規約
+        .footer__lower__detail__third__message プライバシーポリシー
+        .footer__lower__detail__third__message メルカリ利用規約
+        .footer__lower__detail__third__message あんしんスマサポート制度に関する利用特約
+        .footer__lower__detail__third__message コンプ対アンスポリシー
+      .footer__lower__detail__fourth 
+        .footer__lower__detail__fourth__message 個人データの安全管理に係る基本方針
+        .footer__lower__detail__fourth__message 特定商取引に関する表記
+        .footer__lower__detail__fourth__message 資金決済に基づく表示
+        .footer__lower__detail__fourth__message 法令順守と犯罪抑止のために
+      .footer__lower__detail__fifth
+        .footer__lower__detail__fifth__title 国
+        .footer__lower__detail__fifth__message 日本     United States
+    .footer__lower__copyright © Mercari, Inc.
+    .footer__lower__circle    
+      =link_to "出品", new_item_path, class:"footer__lower__circle"
+      %i.fas.fa-camera.camera

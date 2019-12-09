@@ -1,0 +1,98 @@
+
+
+.body{
+  width: 100vw;
+  background-color:#eeeeee;
+  .item{
+    width: 700px;
+    background-color: white;
+    margin: 50px 300px 0px;
+    padding: 25px 40px 30px;
+    &__title{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__introduce{
+      margin-top: 10px;
+    }
+    &__content{
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__image{
+        width: 280px;
+        height: 300px;
+        background-color: #fdfbfb;
+      }
+      &__table{
+        border: solid 1px #eeeeee ;
+        &__title{
+          width: 120px;
+          height: 60px;
+          background-color: #fdfbfb;
+          border: solid 1px #eeeeee ;
+          padding: 16px;
+        }
+        &__content{
+          width: 180px;
+          height: 60px;
+          padding-left: 5px;
+          border: solid 1px #eeeeee ;        
+        }     
+        &__titles{
+          width: 120px;
+          height: 40px;
+          background-color: #fdfbfb;
+          border: solid 1px #eeeeee ;
+          padding: 10px;
+        }
+        &__contents{
+          width: 120px;
+          height: 40px;
+          border: solid 1px #eeeeee ;
+        } 
+      }    
+    }
+    &__buy{
+      &__box{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        &__price{
+          font-size: 50px;
+          font-weight: bold;
+        }
+        &__tax{
+
+        }
+        &__shippingfee{
+
+        }
+      }
+      &__btn{
+
+      }
+    }
+    &__discription{
+      &__content{
+
+      }
+      &__footer{
+        display: flex;
+        &__like{
+          font-size: 14px;
+          background-color: #eeeeee;
+          padding: 5px 10px;
+          border-radius: 15px;
+        }
+        &__report{
+          font-size: 14px;
+          background-color: #eeeeee;
+          padding: 5px 10px;
+          margin-left: 15px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

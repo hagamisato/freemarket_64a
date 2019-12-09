@@ -1,0 +1,52 @@
+
+.body
+  = render "layouts/header" 
+  .item
+    .item__title 出品商品名
+    .item__introduce {item.name}ついての説明文
+    .item__content
+      .item__content__image
+      .item__content__table
+        %table
+          %tr 
+            %td.item__content__table__title 出品者
+            %td.item__content__table__content name
+          %tr 
+            %td.item__content__table__title カテゴリー
+            %td.item__content__table__content 
+          %tr 
+            %td.item__content__table__titles ブランド
+            %td.item__content__table__contents 
+          %tr 
+            %td.item__content__table__titles 商品のサイズ
+            %td.item__content__table__contents
+          %tr 
+            %td.item__content__table__titles 商品の状態
+            %td.item__content__table__contents 
+          %tr 
+            %td.item__content__table__titles 配送料の負担
+            %td.item__content__table__contents 
+          %tr 
+            %td.item__content__table__titles 配送の方法
+            %td.item__content__table__contents 
+          %tr 
+            %td.item__content__table__titles 配送元地域
+            %td.item__content__table__contents
+          %tr 
+            %td.item__content__table__titles 発送日の目安
+            %td.item__content__table__contents 
+    .item__buy
+      .item__buy__box
+        .item__buy__box__price ¥10000
+        .item__buy__box__tax （税込）
+        .item__buy__box__shippingfee 送料込み
+      =link_to "購入画面に進む", "/", class:"item__buy__btn"
+    .item__discription 
+      .item__discription__content 商品説明
+      .item__discription__footer
+        .item__discription__footer__like
+          %i.far.fa-heart
+          いいね!
+        .item__discription__footer__report
+          %i.far.fa-flag
+          不適切な商品の報告
