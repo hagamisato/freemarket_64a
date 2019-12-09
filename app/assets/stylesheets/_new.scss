@@ -73,6 +73,17 @@ body {
       &__sell-content {
         padding:40px;
         border-top: 1px solid #eee;
+        &__select-wrap {
+          position: relative;
+          appearance: none; /* 標準のスタイルを無効にする */
+          text-decoration: none;
+          .fa-chevron-down {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-size: 20px;
+          }
+        }
         &__name {
           display: flex;
         }
