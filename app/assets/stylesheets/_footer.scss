@@ -1,0 +1,159 @@
+.footer{
+  width: 100vw;
+  &__upper{
+    background-color: white;
+    &__box{
+      width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        color: black;
+        padding: 50px 15px;
+        &__first{
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        &__second{
+          font-size: 30px;
+          margin-bottom: 20px;
+        }
+        &__third{
+          display: flex; 
+          justify-content: space-between;
+          line-height: 50px;
+          &__mercari{
+            width: 50px;
+            height: 50px;
+          }
+          &__app{
+            width: 130px;
+          }
+        }
+      }
+      &__right{
+        .footer__image{
+          width: 300px;
+          height: 280px;
+        }
+        
+      }
+   }
+  }
+  &__lower{
+    background-color: #222222;
+    &__detail{
+      height: 350px;
+      color: white;
+      display: flex;
+      padding-top: 30px;   
+      &__first{ 
+        width: 200px;
+        margin: 10px  50px; 
+        &__title{
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &__message{
+          color: #CCCCCC;
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 100;
+        }
+        &__icon{
+
+          ::before{
+            font-size: 30px;
+            color: white;
+            margin-right: 20px;
+          }
+        }
+      }
+      &__second{
+        width: 200px;
+        margin: 10px 50px 0px 0px; 
+        &__title{
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &__message{
+          color: #CCCCCC;
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 100;
+        }
+      }
+      &__third{
+        width: 200px;
+        margin: 10px 50px 0px 0px; 
+        &__title{
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &__message{
+          color: #CCCCCC;
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 100;
+        }
+      }
+      &__fourth{ 
+        width: 180px;
+        margin: 30px 50px 0px 0px; 
+        &__message{
+          color: #CCCCCC;
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 100;
+        }
+      }
+      &__fifth{
+        &__title{
+          font-size: 15px;
+          font-weight: bold;
+          margin: 10px 0px;
+        }
+        &__message{
+          color: #CCCCCC;
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 100;
+        }
+      }
+      
+    }
+    &__copyright{
+      color: white;
+      text-align: center;
+      padding-bottom:30px;
+    }
+    
+    &__circle{
+      height: 160px;
+      width: 160px;
+      font-size: 25px;
+      line-height: 60px;
+      color: white;
+      background-color: #FF3300	;
+      border-radius: 160px 160px 160px 160px;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      text-align: center;
+      vertical-align: 0px;
+      text-decoration: none;
+      z-index: 1;
+    }
+    .camera{
+      font-size: 70px;
+      text-align: center;
+      color: white;
+      z-index: 3;
+      position: fixed;
+      right: 65px;
+      bottom: 60px;
+      pointer-events: none;
+    }
+  }
+}
