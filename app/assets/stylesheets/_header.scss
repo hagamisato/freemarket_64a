@@ -1,0 +1,160 @@
+
+
+.body{
+  width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  .header{
+    height: 100px;
+    background-color: #fff;
+    padding: 5px;
+    position: relative;
+    z-index:2;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    &__box{
+      margin: 0 auto;
+      &__upper{
+        height: 50px;
+        display: block;
+        display: flex;
+        justify-content: space-around;
+        &__rogo{
+          display: flex;
+          position: absolute;
+          left: 50px;
+          &__image{
+            width: 200px;
+            height: 40px;
+          }
+          &__name{
+            font-size: 30px;
+            color: black;
+            text-decoration: none;
+          }
+        }
+        &__search{
+          margin-bottom:20px;
+          line-height: 40px;
+          &__input{
+          width: 800px;
+          height: 30px;
+          background:#eee;	
+          font-size: 18px;  
+          border-radius: 2px;
+          position:absolute; 
+          top: 15px;
+          right:100px;
+          z-index: 1;       
+          }  
+          .button{
+            height: 30px;
+            width: 30px;
+            background-color: #fff;
+            background:none;
+            border: none;
+            position:absolute; 
+            top: 15px;
+            right:100px;;  
+            z-index: 2;
+            .icon{   
+              font-size: 15px;          
+              position: absolute;
+              top: 5px;
+              right:5px;
+              z-index: 3;
+            }
+          }         
+        }
+      }
+      &__lower{
+        margin-left: 15px;
+        width: 90vw;
+        height: 50px;
+        line-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        &__left{
+          width: 350px;
+          font-weight: bold;
+          display: flex;
+          justify-content: space-around;
+          margin-left: 50px;
+          &__category{
+            &__icon{
+              color: red;
+            }
+          }
+          &__brand{
+            &__icon{
+              color: red;
+            }
+          }
+        }
+        &__menue{
+          display: flex;
+          // margin-left: 10px;
+          &__like{
+          }
+          &__notice{
+            margin-left: 20px;
+          }
+          &__list{
+            margin-left: 20px;
+          }
+          &__mypage{
+            margin-left: 20px;
+          }
+          .icon{
+            color: grey;
+          }
+          a{
+            color: black;
+            text-decoration: none;
+          }
+        }
+        &__user{
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          &__registration{
+            height: 35px;
+            width: 100px;
+            background-color: red;
+            line-height: 35px;
+            border-radius: 5px;
+            text-align: center;
+            &__red{
+              text-decoration: none;
+              color: white;
+              font-size: 15px;
+            }
+          }
+          &__rogin{
+            width: 80px;
+            height: 35px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: solid 1px #005FFF;
+            text-align: center;
+            line-height: 34px;
+            &:hover{
+              background-color: #005FFF;
+              color: white;
+            }
+            &__blue{
+              padding: 7.5px;
+              color: #005FFF;
+              text-decoration: none;
+            &:hover{
+              background-color: #005FFF;
+              color: white;
+            }
+            }
+          }
+        }
+      }
+    }
+  }
+}
