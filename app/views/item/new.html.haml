@@ -12,11 +12,10 @@
             出品画像  
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
-          %input.exhibit-wrapper__form__upload-box__upload-space{name: "s_file", type: "file" }
-            .exhibit-wrapper__form__upload-box__upload-space__p
-              %p 
-                ドラックアンドドロップ<br>
-                またはクリックしてファイルをアップロード  
+          .exhibit-wrapper__form__upload-box__upload-space
+            %p 
+              ドラックアンドドロップ<br>
+              またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -32,12 +31,11 @@
       .exhibit-wrapper__sell-content.clearfix
         %h3 商品の詳細
         .exhibit-wrapper__sell-content__pulldown
-          .exhibit-wrapper__sell-content__pulldown__name
+          .exhibit-wrapper__sell-content__pulldown__name-category
             %p 
               カテゴリー 
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
-            %i.fas.fa-chevron-down
             %select.category{name: "カテゴリー"}
               %option{value: ""} ---
               %option{value: "1"} レディース
@@ -53,12 +51,11 @@
               %option{value: "11"} チケット
               %option{value: "12"} 自動車・オートバイ
               %option{value: "13"} その他
-          .exhibit__contents__name
+          .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
               %span.form-require 必須
-          .exhibit__contents__select-wrap
-            %i.fas.fa-chevron-down
+          .exhibit-wrapper__sell-content__select-wrap
             %select{name: "商品の状態"}
               %option{value: ""} ---
               %option{value: "1"} 新品、未使用
@@ -71,58 +68,53 @@
       .exhibit-wrapper__sell-content.clearfix
         %h3 配送について
         .exhibit-wrapper__sell-content__pulldown
-          .exhibit-wrapper__sell-content__pulldown__name
+          .exhibit-wrapper__sell-content__pulldown__name-delivery
             %p 
               配送料の負担 
               %span.form-require 必須
             %form
-              %i.fas.fa-chevron-down
+            .exhibit-wrapper__sell-content__select-wrap
               %select{name: "配送料の負担"}
                 %option{value: ""} ---
                 %option{value: "1"} 送料込み(出品者負担)
                 %option{value: "2"} 着払い(購入者負担) 
-          .exhibit__contents__name
+          .exhibit-wrapper__sell-content__pulldown__name-delivery
             %p 
               発送元の地域 
               %span.form-require 必須
             %form
-            %i.fas.fa-chevron-down
-            -# = collection_select :prefecture_id, Prefecture.all, :id, :name
-            -# %select{name: "配送の方法"}
-            -#   %option{value: ""} ---
-            -#   %option{value: "1"} 東京都
-            -#   %option{:value => "2"}  
-            -#   %option{value: "3"}
-            
+            .exhibit-wrapper__sell-content__select-wrap
+              %select{name: "発送元の地域"}
+                %option{value: ""} ---
 
-          .exhibit__contents__days    
+          .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 
               %span.form-require 必須
             %form
-            %i.fas.fa-chevron-down
-            %select{name: "配送の方法"}
-              %option{value: ""} ---
-              %option{value: "1"} 4~7日で発送
-              %option{value: "2"}  
-              %option{value: "3"}
+            .exhibit-wrapper__sell-content__select-wrap
+              %select{name: "配送の方法"}
+                %option{value: ""} ---
+                %option{value: "1"} 4~7日で発送
+                %option{value: "2"}  
+                %option{value: "3"}
 
       .exhibit-wrapper__sell-content.clearfix
         %h3 販売価格(300~9,999,999)
         .exhibit-wrapper__sell-content__pulldown
           .exhibit-wrapper__sell-content__pulldown__name
-            %p 
+            %p.name 
               価格   
               %span.form-require 必須 
-            ¥ 
-            %input{placeholder: "例) 300"}/
-          .exhibit__contents__name
-            .fee
+            %p.price
+              ¥ 
+              %input{placeholder: "例) 300"}/
+          .exhibit-wrapper__sell-content__pulldown__name
             .fee__title
               販売手数料(10%)
             .fee__amount
               -
-          .profit
+          .exhibit-wrapper__sell-content__pulldown__name-profit
             .profit__title
               販売利益    
             .profit__amount
@@ -153,9 +145,8 @@
   .footer__logo
     %a{href:  "/"}
       %img.gray-logo{alt: "［写真］", src: "/assets/logo_gray.svg"}/
-    %p
-      %small  
-        ©︎Freemarket,64a.
+    %p.small  
+      ©︎Freemarket,64a.
 
 
 
