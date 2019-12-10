@@ -1,6 +1,6 @@
 %header.exhibit
-  %img{alt: "［写真］", src: "fmarket_logo_red.svg"}/
-  = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
+  %a{href:  "/"}
+    = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
 %main.exhibit
   .exhibit-wrapper
     .exhibit-wrapper__head
@@ -143,7 +143,7 @@
       %li 特定商取引に関する表記
   .footer__logo
     %a{href:  "/"}
-      %img.gray-logo{alt: "［写真］", src: "logo_gray.svg"}/
+      = image_tag src="logo_gray.svg", alt:"［写真］", class:".gray-logo"
     %p.small  
       ©︎Freemarket,64a.
 
