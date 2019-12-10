@@ -50,5 +50,11 @@
         .footer__lower__detail__fourth__message 法令順守と犯罪抑止のために
       .footer__lower__detail__fifth
         .footer__lower__detail__fifth__title 国
-        .footer__lower__detail__fifth__message 日本      United States
-    .footer__lower__copyright © Mercari, Inc.
+        .footer__lower__detail__fifth__message 日本      
+        .footer__lower__detail__fifth__message United States
+    .footer__lower__copyright 
+      .footer__lower__copyright__icon 
+        %a{href:  "/"}
+          = image_tag src="logo_gray.svg", alt:"mercari", class:"gray__logo"
+          =link_to "mercari", "/", class:"footer__lower__copyright__icon__mercari"
+      .footer__lower__copyright__message © Mercari, Inc.

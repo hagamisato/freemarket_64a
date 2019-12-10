@@ -1,3 +1,7 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .footer{
   width: 100vw;
   &__upper{
@@ -124,9 +128,32 @@
       
     }
     &__copyright{
+      width: 53%;
       color: white;
-      text-align: center;
       padding-bottom:30px;
+      display: flex;
+      justify-content: space-between;
+      &__icon{
+        display: flex;
+        .gray__logo{
+          height: 100px;
+          width: 100px;
+          color: white;
+          margin-left: 40px;
+        }
+        &__mercari{
+          font-size: 20px;
+          color: white;
+          line-height: 100px;
+          text-decoration: none;
+        }
+      }
+      &__message{
+        height: 100px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 100px;
+      }
     }
   }
 }
