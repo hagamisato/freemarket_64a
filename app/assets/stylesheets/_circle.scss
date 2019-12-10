@@ -1,0 +1,26 @@
+.footer__lower__circle{
+  height: 160px;
+  width: 160px;
+  font-size: 25px;
+  line-height: 60px;
+  color: white;
+  background-color: #FF3300	;
+  border-radius: 160px 160px 160px 160px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-align: center;
+  vertical-align: 0px;
+  text-decoration: none;
+  z-index: 1;
+}
+.camera{
+  font-size: 70px;
+  text-align: center;
+  color: white;
+  z-index: 3;
+  position: fixed;
+  right: 65px;
+  bottom: 60px;
+  pointer-events: none;
+}
