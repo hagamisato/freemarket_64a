@@ -3,11 +3,14 @@
 .body{
   width: 100vw;
   background-color:#eeeeee;
+  padding-bottom: 30px;
   .item{
     width: 700px;
     background-color: white;
-    margin: 50px 300px 0px;
-    padding: 25px 40px 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 25px 40px;
     &__title{
       font-size: 20px;
       font-weight: bold;
@@ -37,7 +40,28 @@
           width: 180px;
           height: 60px;
           padding-left: 5px;
-          border: solid 1px #eeeeee ;        
+          border: solid 1px #eeeeee ;  
+          &__name{
+            font-size: 15px;
+            padding-bottom: 3px;
+          }      
+          &__box{
+            display: flex;
+            &__smile{
+              color: 	#FF5192;
+            }
+            &__normal{
+              color: #FFA500;
+            }
+            &__sad{
+              color: #00BFFF;
+            }
+            &__number{
+              font-size: 14px;
+              margin-right: 10px;
+            }
+
+          }
         }     
         &__titles{
           width: 120px;
@@ -54,8 +78,10 @@
       }    
     }
     &__buy{
+      margin: 0 auto;
+      text-align: center;
       &__box{
-        margin-top: 20px;
+        margin: 20px 0px;
         display: flex;
         justify-content: center;
         &__price{
@@ -63,21 +89,29 @@
           font-weight: bold;
         }
         &__tax{
-
+          line-height: 70px;
         }
         &__shippingfee{
-
+          line-height: 70px;
         }
       }
-      &__btn{
-
+      a{
+        height: 50px;
+        width: 300px;
+        font-size: 20px;
+        color: white;
+        background-color: red;
+        text-decoration: none;
+        padding: 15px 200px;
+        
       }
     }
     &__discription{
       &__content{
-
+        margin-top: 50px;
       }
       &__footer{
+        margin-top: 30px;
         display: flex;
         &__like{
           font-size: 14px;
@@ -91,6 +125,37 @@
           padding: 5px 10px;
           margin-left: 15px;
           border-radius: 15px;
+        }
+      }
+    }
+  }
+  .comment{
+   
+    &__container{    
+      width: 700px;
+      background-color: white;
+      margin: 0 auto;
+      padding: 20px 25px ;
+      &__box{
+
+        &__title{
+          background-color: #FAFAD2;
+        }   
+        &__form{
+          width: 100%;
+          &__content{
+            width: 650px;
+            border: solid 1px #bbbbbb; 
+            margin-top: 10px;
+          }
+          &__submit{
+            width: 650px;
+            height: 50px;
+            color: white;
+            background-color: #bbbbbb;
+            margin-top: 10px;
+
+          }
         }
       }
     }

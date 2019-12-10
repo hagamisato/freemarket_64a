@@ -3,14 +3,25 @@
   = render "layouts/header" 
   .item
     .item__title 出品商品名
-    .item__introduce {item.name}ついての説明文
+    .item__introduce itemついての説明文
     .item__content
       .item__content__image
       .item__content__table
         %table
           %tr 
             %td.item__content__table__title 出品者
-            %td.item__content__table__content name
+            %td.item__content__table__content 
+              .item__content__table__content__name 出品者の名前
+              .item__content__table__content__box
+                .item__content__table__content__box__smile
+                  %i.fas.fa-laugh-beam
+                .item__content__table__content__box__number 100
+                .item__content__table__content__box__normal
+                  %i.fas.fa-meh
+                .item__content__table__content__box__number 10
+                .item__content__table__content__box__sad
+                  %i.fas.fa-frown
+                .item__content__table__content__box__number 3
           %tr 
             %td.item__content__table__title カテゴリー
             %td.item__content__table__content 
@@ -46,7 +57,17 @@
       .item__discription__footer
         .item__discription__footer__like
           %i.far.fa-heart
-          いいね!
+          いいね! 0
         .item__discription__footer__report
           %i.far.fa-flag
           不適切な商品の報告
+  .comment
+    .comment__container
+      .comment__container__box
+        .comment__container__box__title 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .comment__container__box__form
+        -# =form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
+        =form_with(local: true) do |form|
+          =form.text_area :text, rows: "8", class: "comment__container__box__form__content" 
+          =form.submit "コメントする", class: "comment__container__box__form__submit"
+= render "layouts/footer"
