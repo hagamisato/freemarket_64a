@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_215422) do
+ActiveRecord::Schema.define(version: 2019_12_10_072208) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postage", null: false
+    t.string "shipping_area", null: false
+    t.string "shipping_date"
+    t.integer "price", null: false
+    t.string "name", null: false
+    t.text "explain", null: false
+    t.string "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
