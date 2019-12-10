@@ -7,7 +7,7 @@ body {
           width: 185px;
           position: absolute;
           top: 30px;
-          left: 600px;
+          left: 620px;
         }
       }
     .exhibit-wrapper {
@@ -75,7 +75,7 @@ body {
         border-top: 1px solid #eee;
         &__select-wrap {
           position: relative;
-          appearance: none; /* 標準のスタイルを無効にする */
+          appearance: none; 
           text-decoration: none;
           .fa-chevron-down {
             position: absolute;
@@ -142,8 +142,12 @@ body {
       }
     }
     &__logo {
-      width: 100px;
-      margin: 0 auto;
+        width: 100px;
+        margin: 0 auto;
+        position: relative;
+        .small {
+          font-size: 13px;
+        }
+      }
     }
   }
-}
