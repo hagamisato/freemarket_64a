@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "item#index"
   resources :item, only:[:index, :create, :new, :show]
+  resources :signup, only: [:index, :create] do
 
-  resources :signup, only:[:index, :create] do 
+ 
     collection do
       get :top
       get :reg
