@@ -4,10 +4,10 @@
 |nickname|string|null: false|
 |email|string|null: false, unique:true|
 |password|string|null: false|
-|family_name|string|null: false|
-|last_name|string|null: false|
-|j_family_name|string|null: false|
-|j_last_name|string|null: false|
+|f_name_kanji|string|null: false|
+|l_name_kanji|string|null: false|
+|j_name_kana|string|null: false|
+|l_name_kana|string|null: false|
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
@@ -15,6 +15,8 @@
 - has_many :commnets
 - has_many :items, through: :user_items
 - has_many :user_items
+- has_one :address
+- has_one :credit_card
 
 ## adressテーブル
 |Column|Type|Options|
@@ -26,7 +28,7 @@
 |building|string||
 |phone number|integer||
 ### Association
-
+- belongs_to :users
 
 ## credit_cardテーブル
 |Column|Type|Options|
@@ -37,6 +39,7 @@
 |month|integer|null: false|
 |security_number|integer|null: false|
 ### Association
+- belongs_to :users
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -45,7 +48,7 @@
 |item_id|references|null: false, foreign_key: true|
 |body|text|null: false|
 ### Association
-- belongs_to :user
+- belongs_to :users
 - belongs_to :item
 
 ## user_itemsテーブル
@@ -54,7 +57,7 @@
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
+- belongs_to :users
 - belongs_to :item
 
 ## itemsテーブル
@@ -93,7 +96,6 @@
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-<!-- |path|integer|null: false| -->
 |type|string||
 ### Association
 - has_many :items
@@ -102,7 +104,6 @@
 ## blandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-<!-- |path|integer|null: false| -->
 |type|string||
 ### Association
 - has_many :categorys
