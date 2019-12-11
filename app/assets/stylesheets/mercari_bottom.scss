@@ -1,0 +1,20 @@
+.bottom{
+  height: 200px;
+  margin: 0 auto;
+  &__box{
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0px;
+    &__rules{
+      font-size: 12px;
+      display: flex;
+      justify-content: space-around;
+    }
+    &__image{
+      height: 100px;
+      width: 110px;
+      margin-top: 10px;
+    }
+  }
+}

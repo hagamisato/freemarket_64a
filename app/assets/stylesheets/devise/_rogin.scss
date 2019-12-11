@@ -1,0 +1,115 @@
+.new{
+  &__box{
+    width: 500px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 10px 10px 30px;
+    &__title{
+      height: 150px;
+      font-size: 16px;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 40px;
+      border-bottom: solid 1px #f5f5f5 ;
+      &__comment{
+      }
+    }
+    &__form{
+      padding: 30px 0px;
+      &__btn{
+        &__facebook{
+          width: 350px;
+          height: 50px;
+          background-color:#385185;
+          color: white;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+          line-height: 50px;
+          margin-top: 15px;
+          display: flex;
+          margin: 0 auto;
+          margin-top: 10px;
+        }
+        .btn__facebook{
+          font-size: 20px;
+          line-height: 50px;
+          margin-left: 10px;
+        }
+        &__google{
+          width: 350px;
+          height: 50px;
+          color: #333333;
+          text-decoration: none;
+          display: block;
+          border: solid 1px #666666;
+          text-align: center;
+          line-height: 50px;
+          margin-top: 15px;
+          display: flex;
+          margin: 0 auto;
+          margin-top: 15px;
+        }
+        .btn__google{
+          color: blue;
+          line-height: 50px;
+          margin-left: 10px;
+        }
+        p2{
+          margin-left: 70px;
+        }
+        p3{
+          margin-left: 80px;
+        }
+      }
+
+    
+    }
+    .registration{
+      width: 350px;
+      height: 50px;
+      background-color:#0099E8;
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      line-height: 50px;
+    }
+    &__rogin{
+      text-align: center;
+      &__form{
+        &__robot{
+          width: 350px;
+          height: 80px;
+        }
+      }       
+      .field{
+        width: 350px;
+        height: 50px;
+        border-radius: 5px;
+        border: solid 0.5px #888888;
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+      .rogin__btn{
+        width: 350px;
+        height: 50px;
+        background-color:#ea352d;
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin: 0 auto;
+        line-height: 50px;
+        margin-top: 20px;
+      }
+    }
+    .forget__pass{
+      color: #0099e8;
+      font-size: 14px;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+  }
+}
