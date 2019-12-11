@@ -1,0 +1,11 @@
+.regheader{
+  display: flex;
+  justify-content: space-around;
+  .signup-header__image{
+    width: 150px;
+    height: 150px;
+  }
+  &__pan{
+    margin-left: 50px;
+  }
+}
