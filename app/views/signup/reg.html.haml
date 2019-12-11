@@ -1,0 +1,55 @@
+%header.signup
+  = render "signup/reg_header"
+%main.sigup
+  .signup-wrapper
+    .signup-wrapper__haed
+      %h2 会員情報入力
+    %form.signup-registration__form
+      .signup-content
+        .signup-content__nickname
+          ニックネーム
+          %span.form-require 必須
+          .signup-content__input-location
+          例)メルカリ太郎
+        .singup-content__email
+          メールアドレス
+          %span.form-require 必須
+          .signup-content__input-location
+          PC・携帯どちらでも可
+        .signup-content__password__check
+          .signup-content__password
+            パスワード
+            %span.form-require 必須
+            .signup-content__input-location
+            7文字以上の半角英数<br>
+            ※ 英字と数字の両方を含めて設定してください
+          .signup-content__check
+            =check_box_tag :check1
+            =label_tag :check1, "パスワードを表示する"
+        .sign-content__text
+          本人確認
+          .signup-content__input-location
+          安心・安全にご利用いただくために、お客さまの本人<br>
+          情報の登録にご協力ください。他のお客さまに公開さ<br>
+          れることは ありません。
+        .signup-content__name
+          お名前(全角)
+          %span.form-require 必須
+          .signup-content__input-location
+          = '例) 山田'
+          = '例) 彩'
+        .signup-content__name__kana
+          お名前カナ(全角)
+          %span.form-require 必須
+          .signup-content__input-location
+          = '例) ヤマダ'
+          = '例) アヤ'
+        .signup-content__birthday
+          生年月日
+          %span.form-require 必須
+          .signup-content__input-location
+          
+
+
+
+
