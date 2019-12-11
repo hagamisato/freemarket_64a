@@ -4,6 +4,7 @@ class SignupController < ApplicationController
   end
 
   def reg
+    @user = User.new
 
   end
 
