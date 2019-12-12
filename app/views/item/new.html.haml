@@ -6,7 +6,7 @@
     .exhibit-wrapper__head
       %h2 商品の情報を入力
     .exhibit-wrapper__form
-    = form_for(@item,url: item_index_path) do |f|
+    = form_for(@item,url: items_path) do |f|
       .exhibit-wrapper__form__upload-box
         .exhibit-wrapper__form__upload-box__title
           %h3 
@@ -55,7 +55,7 @@
             -#   %option{value: "11"} チケット
             -#   %option{value: "12"} 自動車・オートバイ
             -#   %option{value: "13"} その他
-            =f.select :name, ["---","レディース"]
+            =f.select :category_id, ["---","レディース"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
@@ -69,7 +69,7 @@
             -#   %option{value: "4"} やや傷や汚れあり
             -#   %option{value: "5"} 傷や汚れあり
             -#   %option{value: "6"} 全体的に状態が悪い
-            =f.select :name, ["---","新品、未使用"]
+            =f.select :state, ["---","新品、未使用"]
 
       .exhibit-wrapper__sell-content.clearfix
         %h3 配送について
@@ -78,22 +78,20 @@
             %p 
               配送料の負担 
               %span.form-require 必須
-            %form
             .exhibit-wrapper__sell-content__select-wrap
               -# %select{name: "配送料の負担"}
               -#   %option{value: ""} ---
               -#   %option{value: "1"} 送料込み(出品者負担)
               -#   %option{value: "2"} 着払い(購入者負担) 
-              =f.select :name, ["---","送料込み(出品者負担)"]
+              =f.select :postage, ["---","送料込み(出品者負担)"]
           .exhibit-wrapper__sell-content__pulldown__name-delivery
             %p 
               発送元の地域 
               %span.form-require 必須
-            %form
             .exhibit-wrapper__sell-content__select-wrap
               -# %select{name: "発送元の地域"}
               -#   %option{value: ""} ---
-              =f.select :name, ["---","北海道"]
+              =f.select :shipping_area, ["---","北海道"]
 
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
@@ -105,7 +103,7 @@
               -#   %option{value: "1"} 4~7日で発送
               -#   %option{value: "2"}  
               -#   %option{value: "3"}
-              =f.select :name, ["---","4~7日で発送"]
+              =f.select :shipping_date, ["---","4~7日で発送"]
 
       .exhibit-wrapper__sell-content.clearfix
         %h3 販売価格(300~9,999,999)
