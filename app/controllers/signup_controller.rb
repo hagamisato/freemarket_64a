@@ -17,7 +17,7 @@ class SignupController < ApplicationController
   end
 
   def pay
-
+    @user = User.new
   end
   
   def finish
