@@ -4,14 +4,15 @@
     .signup__wrapper__title 電話番号の確認
     .signup__wrapper__tell
       .signup__wrapper__tell__form
-        = form_for @user, url: root_path, method: :get, html: {class: 'first-main__box'} do |f|
+        = form_for @user, url: add_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+          -# 送信した先の画面はどうするか
           .signup__wrapper__tell__form__title 携帯電話の番号
           = f.text_field :email, placeholder: ' 携帯電話の番号を入力', class:"input__default"
           .signup__wrapper__tell__form__message
             本人確認のため、携帯電話のSMS(ショートメッセージ<br>
             サービス)を利用して認証を行います。
           .signup__wrapper__tell__form__submit
-          =f.submit "SMSを送信する", class:"submit__btn"
+          =f.submit "SMSを送信する", class:"submit__btn"       
           .signup__wrapper__tell__form__message
             ＊電話番号は本人確認や不正利用防止のために利用<br>
             します。他のユーザーに公開されることはありま<br>

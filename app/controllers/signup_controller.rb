@@ -13,7 +13,7 @@ class SignupController < ApplicationController
   end
 
   def add
-
+    @user = User.new
   end
 
   def pay

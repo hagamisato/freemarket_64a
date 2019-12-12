@@ -4,7 +4,7 @@
     .signup__wrapper__head 会員情報入力
     .signup__wrapper__registration
       .signup__wrapper__registration__form
-      = form_for @user, url: root_path, method: :get, html: {class: 'first-main__box'} do |f|
+      = form_for @user, url: tell_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         .signup__wrapper__registration__form__box
           ニックネーム
           %span.form-require 必須
