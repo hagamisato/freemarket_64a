@@ -28,10 +28,10 @@ class SignupController < ApplicationController
       password_confirmation: session[:password_confirmation],
       f_name_kanji: session[:f_name_kanji],
       l_name_kanji: session[:l_name_kanji],
-      f_nmae_kana: session[:f_name_kana],
+      f_name_kana: session[:f_name_kana],
       l_name_kana: session[:l_name_kana],
       birth_year: session[:birth_year],
-      birth_maonth: session[:birth_month],
+      birth_month: session[:birth_month],
       birth_day: session[:birth_day],
     )
   end
@@ -83,4 +83,42 @@ class SignupController < ApplicationController
     params.require(:credit_card).permit(:credit_number,:lmit_month,:limit_year,:security_number)
   end
 
+  def create
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      f_name_kanji: session[:f_name_kanji],
+      l_name_kanji: session[:l_name_kanji],
+      f_name_kana: session[:f_name_kana],
+      l_name_kana: session[:l_name_kana],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      birth_day: session[:birth_day],
+    )
+    @adress = Address.new(
+      user: @user,
+      phone_number: session[:phone_number],
+      prefectures: session[:prefectures],
+      municipalities: session[:municipalities],
+      address: session[:address],
+      building: session[:building],
+    )
+    @credit_card = Credit_card.new(
+      user: @user,
+      credit_number: session[:credit_number],
+      lmit_month: session[:lmit_month],
+      limit_year: session[:limit_year],
+      security_number: session[:security_number],
+    )
+  end
+
+  def finish
+    unless session[:id]
+      redirect_to signup_index_path 
+      return
+    end
+    sign_in User.find(session[:id])
+  end
 end
