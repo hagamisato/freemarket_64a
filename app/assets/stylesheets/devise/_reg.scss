@@ -82,7 +82,7 @@
             margin: 0 auto;
             line-height: 50px;
             border: none;
-            margin-top: 20px;
+            margin-top: 50px;
           }
         }
 
@@ -94,7 +94,26 @@
       background-color: #ea352d;
       padding: 2px 4px;
     }
+    &__finish{
+      text-align: center;
+      padding: 40px 0px;
+    }
+    &__btn{
+      width: 350px;
+      height: 50px;
+      background-color:#ea352d;
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      line-height: 50px;
+      border: none;
+      margin-top: 20px;
+    }
   }
 
+  }
+  &__bottom{
+    height: 100px;
   }
 }
