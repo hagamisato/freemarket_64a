@@ -4,7 +4,4 @@ Rails.application.routes.draw do
   root "item#index"
   resources :item, only:[:index, :create, :new, :show]
   
-  get 'item/try', to: 'item#try' 
-  # 何かを書いてみる為のページ用のルーティング
-  
 end
