@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :items, through: :user_items
   has_many :user_items
   has_one :address
+  has_one :credit_card
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

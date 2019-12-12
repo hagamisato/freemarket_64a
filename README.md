@@ -26,7 +26,7 @@
 |municipalities|string|null: false|
 |address|string|null: false|
 |building|string||
-|phone number|integer||
+|phone number|string||
 ### Association
 - belongs_to :users
 
