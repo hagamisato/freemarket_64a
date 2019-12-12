@@ -1,7 +1,4 @@
-class SignupController < ApplicationController
-  def top
-    
-  end
+
 
   def reg
     @user = User.new
