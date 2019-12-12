@@ -9,7 +9,7 @@ class SignupController < ApplicationController
   end
 
   def tell
-
+    @user = User.new
   end
 
   def add
