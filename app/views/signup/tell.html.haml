@@ -4,7 +4,7 @@
     .signup__wrapper__title 電話番号の確認
     .signup__wrapper__tell
       .signup__wrapper__tell__form
-        = form_for @user, url: add_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+        = fields_for @address, url: add_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
           .signup__wrapper__tell__form__title 携帯電話の番号
           = f.text_field :phone_number, placeholder: ' 携帯電話の番号を入力', class:"input__default"
           .signup__wrapper__tell__form__message

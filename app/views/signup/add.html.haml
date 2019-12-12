@@ -4,7 +4,7 @@
     .signup__wrapper__head 住所入力
     .signup__wrapper__registration
       .signup__wrapper__registration__form
-      = form_for @user, url: pay_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+      = fields_for @address, url: pay_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         .signup__wrapper__registration__form__box
           郵便番号
           %span.form-require 必須
