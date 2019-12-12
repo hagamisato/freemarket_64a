@@ -1,11 +1,24 @@
+.signup__wrapper__registration__form__code{
+  font-size: 14px;
+  color: #0099E8;
+  text-align: end;
+  margin-top: 5px;
+}
+
+#user_birth_year{
+  width: 70px;
+  height: 50px;
+  margin-top: 5px;
+}
+
 #user_birth_month{
   width: 70px;
   height: 50px;
   margin-top: 5px;
 }
-.signup__wrapper__registration__form__code{
-  font-size: 14px;
-  color: #0099E8;
-  text-align: end;
+
+#user_birth_day{
+  width: 70px;
+  height: 50px;
   margin-top: 5px;
 }
