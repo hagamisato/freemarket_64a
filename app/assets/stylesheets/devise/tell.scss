@@ -1,0 +1,57 @@
+.signup {
+  &__wrapper{
+    width: 700px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    &__title{
+      font-size: 25px;
+      text-align: center;
+      padding: 15px;
+      border-bottom:solid 1px #f5f5ff ;
+    }
+    &__tell{
+      width: 350px;
+      margin: 0 auto;
+      &__form{
+        width: 350px;
+        margin: 0 auto;
+        padding-top: 30px;  
+        &__title{
+          font-size: 14px;
+        }
+        .input__default{
+          width: 350px;
+          height: 50px;
+          border-radius: 5px;
+          border: solid 0.5px #888888;
+        }
+        &__message{
+          font-size: 13px;
+          color: #666666;
+          margin: 10px 0px;
+        }
+        &__submit{
+          margin-top: 50px;
+        }
+        .submit__btn{
+          width: 350px;
+          height: 50px;
+          background-color:#ea352d;
+          color: white;
+          text-decoration: none;
+          display: block;
+          margin: 0 auto;
+          line-height: 50px;
+          border: none;
+          margin-top: 20px;
+        }
+      }
+      &__reason{
+        font-size: 14px;
+        color: #0099E8;
+        text-align: end;
+      }
+    }
+  }
+}

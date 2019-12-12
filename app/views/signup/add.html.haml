@@ -1,0 +1,56 @@
+= render "reg_header"
+.sigup
+  .signup__wrapper
+    .signup__wrapper__head 住所入力
+    .signup__wrapper__registration
+      .signup__wrapper__registration__form
+      = form_for @user, url: pay_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+        .signup__wrapper__registration__form__box
+          郵便番号
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :email, placeholder: '  例) 123-456', class:"input__default"
+        .signup__wrapper__registration__form__box
+          都道府県
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :prefecture, placeholder: '  例) 北海道', class:"input__default"
+        .signup__wrapper__registration__form__box
+          市区町村
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :municipalities, placeholder: '  例) 横浜市緑区', class:"input__default"
+        .signup__wrapper__registration__form__box
+          番地
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :address, placeholder: '  例) 青山1−1−1', class:"input__default"
+        .signup__wrapper__registration__form__box
+          建物名
+          %span.form-optional 任意
+          .signup-content__input-location
+          = f.text_field :building, placeholder: '  例) 柳ビル103', class:"input__default"
+        .signup__wrapper__registration__form__box
+          電話
+          %span.form-optional 任意
+          .signup-content__input-location
+          = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
+        .add__submit
+        =f.submit "次へ進む", class:"add__submit__btn"
+= render "mercari_bottom"
+
+-# .signup__wrapper__registration__form__box
+-#           お名前
+-#           %span.form-require 必須
+-#           .signup-content__input-location
+-#           = f.text_field :f_name_kanji, placeholder: '  例) 山田', class:"input__default"
+-#           .signup-content__input-location
+-#           = f.text_field :l_name_kanji, placeholder: '  例) 綾', class:"input__default"
+  
+-#                .signup__wrapper__registration__form__box
+-#           お名前カナ
+-#           %span.form-require 必須
+-#           .signup-content__input-location
+-#           = f.text_field :f_name_kana, placeholder: '  例)  ヤマダ', class:"input__default"
+-#           .signup-content__input-location
+-#           = f.text_field :l_name_kana, placeholder: '  例) アヤ', class:"input__default"

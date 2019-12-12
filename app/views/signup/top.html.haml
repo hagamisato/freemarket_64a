@@ -1,9 +1,10 @@
+= render "mercari_top"
 .topmain
   .topmain__box
     .topmain__box__title 新規会員登録
     .topmain__box__form
       .topmain__box__form__btn
-        =link_to "/", class:"topmain__box__form__btn__mail" do
+        =link_to reg_signup_index_path, class:"topmain__box__form__btn__mail" do
           %i.far.fa-envelope.btn__mail{"aria-hidden": "true"} 
           %p1 メールアドレスで登録する
       .topmain__box__form__btn
@@ -14,3 +15,5 @@
         =link_to "/", class:"topmain__box__form__btn__google"  do
           %i.fab.fa-google.btn__google     
           %p3 Googleで登録する
+= render "mercari_bottom"
+-# リンク未実装ーー３箇所ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
