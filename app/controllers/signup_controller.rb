@@ -28,10 +28,10 @@ class SignupController < ApplicationController
       password_confirmation: session[:password_confirmation],
       f_name_kanji: session[:f_name_kanji],
       l_name_kanji: session[:l_name_kanji],
-      f_nmae_kana: session[:f_name_kana],
+      f_name_kana: session[:f_name_kana],
       l_name_kana: session[:l_name_kana],
       birth_year: session[:birth_year],
-      birth_maonth: session[:birth_month],
+      birth_month: session[:birth_month],
       birth_day: session[:birth_day],
     )
   end
