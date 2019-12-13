@@ -15,10 +15,10 @@
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
             -# =f.fields_for :images do |i|
-            =f.file_field :imageobject, class: "hidden" do
-              %p 
-                ドラックアンドドロップ<br>
-                またはクリックしてファイルをアップロード
+              =i.file_field :image, class: "hidden" do
+                %p 
+                  ドラックアンドドロップ<br>
+                  またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
