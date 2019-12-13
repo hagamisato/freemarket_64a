@@ -14,11 +14,11 @@
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
-            =f.fields_for :images do |i|
-              =i.file_field :image, class: "hidden" do
-                %p 
-                  ドラックアンドドロップ<br>
-                  またはクリックしてファイルをアップロード
+            -# =f.fields_for :images do |i|
+            =f.file_field :image, class: "hidden" do
+              %p 
+                ドラックアンドドロップ<br>
+                またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -56,8 +56,8 @@
             -#   %option{value: "11"} チケット
             -#   %option{value: "12"} 自動車・オートバイ
             -#   %option{value: "13"} その他
-            =f.fields_for :categories do |i|
-              =i.select :category_id, ["---","レディース"]
+            -# =f.fields_for :categories do |i|
+            -#   =i.select :category_id, ["---","レディース"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
