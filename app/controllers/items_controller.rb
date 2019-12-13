@@ -2,10 +2,10 @@ require 'Kconv'
 class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params) 
-    image = item_params[:imageobject]
-    image_name = image.original_filename
-    @item.image = image.original_filename
-    result = uploading(image, image_name)
+    # image = item_params[:imageobject]
+    # # image_name = image.original_filename
+    # @item.image = image.original_filename
+    # result = uploading(image, image_name)
     if @item.save
       redirect_to '/'
     else
@@ -15,12 +15,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # @item.build
+    # @item.build_categories
+    # @item.build_images
   end
 
   private
     def item_params
-      params.require(:item).permit(:imageobject, :name, :explain, :state, :postage, :shipping_area, :shipping_date, :price)
+      params.require(:item).permit(:imageobject, :name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes:[:id, :image, :item_id], categories_attributes:[:id, :name, :item_id])
     end
 
     def uploading(img_object,image_name)
