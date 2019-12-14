@@ -1,0 +1,119 @@
+.signup {
+  &__wrapper{
+    width: 700px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    &__head{
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        border-bottom:solid 1px #f5f5ff ;
+    }
+    &__registration{
+      width: 350px;
+      margin: 0 auto;
+      &__form{
+      margin: 0 auto;
+      width: 350px;      
+        &__box{
+          width: 350px;
+          margin-top: 20px;
+          .input__default{
+            width: 350px;
+            height: 50px;
+            border-radius: 5px;
+            border: solid 0.5px #888888;
+            margin-top: 5px;
+          }
+          .input__half{
+            height: 50px;
+            border-radius: 5px;
+            border: solid 0.5px #888888;
+            margin: 5px 5px 0px 0px;
+          }
+          .input__day{
+            width: 90px;
+            height: 50px;
+          }
+          &__comment{
+            font-size: 13px;
+            color: #666666;
+          }
+        }
+        &__pass{
+          margin-top: 15px;
+          &__title{
+
+          }
+          &__content{
+
+          }
+          &__check{
+            margin-top: 10px;
+          }
+          &__confirm{
+            margin-top: 14px;
+            font-weight: bold;
+          }
+          &__declaration{
+            font-size: 14px;
+          }
+          .input__default{
+            width: 350px;
+            height: 50px;
+            border-radius: 5px;
+            border: solid 0.5px #888888;
+          }
+        }
+        &__submit{
+          &__explain{
+            font-size: 14px;
+            margin-top: 20px ;
+            text-align: center;
+          }
+          .submit__btn{
+            width: 350px;
+            height: 50px;
+            background-color:#ea352d;
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 0 auto;
+            line-height: 50px;
+            border: none;
+            margin-top: 50px;
+          }
+        }
+
+    }
+
+    .form-require{
+      font-size: 12px;
+      color: white;
+      background-color: #ea352d;
+      padding: 2px 4px;
+    }
+    &__finish{
+      text-align: center;
+      padding: 40px 0px;
+    }
+    &__btn{
+      width: 350px;
+      height: 50px;
+      background-color:#ea352d;
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      line-height: 50px;
+      border: none;
+      margin-top: 20px;
+    }
+  }
+
+  }
+  &__bottom{
+    height: 100px;
+  }
+}

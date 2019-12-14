@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_12_12_093615) do
+ActiveRecord::Schema.define(version: 2019_12_10_090957) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -47,6 +48,15 @@ ActiveRecord::Schema.define(version: 2019_12_12_093615) do
     t.bigint "category_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["image_id"], name: "index_items_on_image_id"
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "credit_number", null: false
+    t.integer "limit_month", null: false
+    t.integer "limit_year", null: false
+    t.integer "security_number", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,6 +67,14 @@ ActiveRecord::Schema.define(version: 2019_12_12_093615) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
+    t.string "f_name_kanji"
+    t.string "l_name_kanji"
+    t.string "f_name_kana"
+    t.string "l_name_kana"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -64,4 +82,5 @@ ActiveRecord::Schema.define(version: 2019_12_12_093615) do
   add_foreign_key "categories", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "images"
+  add_foreign_key "credit_cards", "users"
 end

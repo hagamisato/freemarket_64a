@@ -1,0 +1,31 @@
+= render "reg_header"
+.sigup
+  .signup__wrapper
+    .signup__wrapper__head 支払い方法
+    .signup__wrapper__registration
+      .signup__wrapper__registration__form
+      = form_for @credit_card, url: finish_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+        .signup__wrapper__registration__form__box
+          カード番号
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :email, placeholder: '  例) 山田', class:"input__default"
+        .signup__wrapper__registration__form__box
+          有効期限
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.select :birth_month, [["01", "01"], ["02", "02"],["03", "03"],["04", "04"],["05", "05"],["06", "06"],["07", "07"],["08", "08"],["09", "09"],["10", "10"],["11", "11"],["12", "12"]], class:"input__number"
+          月
+          .signup-content__input-location
+          = f.select :birth_month, [["2019", "2019"], ["2020", "2020"],["2021", "2021"],["2023", "2023"],["2024", "2024"],["2025", "2025"],["2026", "2026"],["2027", "2027"],["2028", "2028"],["2029", "2029"]], class:"input__number"
+          年
+        .signup__wrapper__registration__form__box
+          セキュリティーコード
+          %span.form-require 必須
+          .signup-content__input-location
+          = f.text_field :email, placeholder: '  カード背面４桁もしくは３桁の番号', class:"input__default"
+          .signup__wrapper__registration__form__code
+            %i.fas.fa-question-circle カード裏面の番号とは？
+        .add__submit
+        =f.submit "次へ進む", class:"add__submit__btn"
+= render "mercari_bottom"

@@ -1,17 +1,34 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render "signup/mercari_top"
+.new
+  .new__box
+    .new__box__title 
+      .new__box__title__comment アカウントをお持ちでない方はこちら
+      =link_to "新規会員登録", top_signup_index_path, class:"registration"
+    .new__box__form
+      .new__box__form__btn
+        =link_to "/", class:"new__box__form__btn__facebook" do
+          %i.fab.fa-facebook-square.btn__facebook
+          %p2 Facebookでログイン
+      .new__box__form__btn
+        =link_to "/", class:"new__box__form__btn__google"  do
+          %i.fab.fa-google.btn__google     
+          %p3 Googleでログイン
+    .new__box__rogin
+      .new__box__rogin__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"  メールアドレス", class:"field"
+        = f.password_field :password, autocomplete: "current-password", placeholder:"  パスワード", class:"field"
+        .new__box__rogin__form__robot 
+          .new__box__rogin__form__robot__check
+          .new__box__rogin__form__robot__content reCHAPTCHA導入
+          .new__box__rogin__form__robot__mark
+        -# = invisible_recaptcha_tags({ text: "登録する", class: "robot__btn" })
+        .action
+          = f.submit "ログイン", class:"rogin__btn"
+
+      .forget__pass
+      =link_to "パスワードをお忘れの方", "devise/shared/links", class:"forget__pass"
+= render "signup/mercari_bottom"
+
+.rc-anchor-center-item.rc-anchor-checkbox-holder
+-# <span class="recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox" role="checkbox" aria-checked="false" id="recaptcha-anchor" tabindex="0" dir="ltr" aria-labelledby="recaptcha-anchor-label"><div class="recaptcha-checkbox-border" role="presentation"></div><div class="recaptcha-checkbox-borderAnimation" role="presentation"></div><div class="recaptcha-checkbox-spinner" role="presentation"></div><div class="recaptcha-checkbox-spinnerAnimation" role="presentation"></div><div class="recaptcha-checkbox-checkmark" role="presentation"></div></span></div>
