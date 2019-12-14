@@ -74,6 +74,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -86,3 +87,5 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+

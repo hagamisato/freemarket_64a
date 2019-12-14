@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_12_12_093615) do
+ActiveRecord::Schema.define(version: 2019_12_10_090957) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -27,6 +28,26 @@ ActiveRecord::Schema.define(version: 2019_12_12_093615) do
     t.index ["item_id"], name: "index_categories_on_item_id"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postage", null: false
+    t.string "shipping_area", null: false
+    t.string "shipping_date"
+    t.integer "price", null: false
+    t.string "name", null: false
+    t.text "explain", null: false
+    t.string "state", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "image_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["image_id"], name: "index_items_on_image_id"
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "credit_number", null: false
     t.integer "limit_month", null: false
@@ -83,6 +104,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_093615) do
   end
 
   add_foreign_key "categories", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "images"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "items", "categories"
 end
