@@ -24,14 +24,12 @@
           %h1 
             商品名
             %span.form-require 必須
-        -# %input#name{name: "name", placeholder: "商品名 (必須40文字まで)", type: "text"}/
         =f.text_field :name, id: "name", placeholder: "商品名 (必須40文字まで)"
         .exhibit-wrapper__sell-content__description
           .exhibit-wrapper__sell-content__description__title
             %h1 
               商品の説明
               %span.form-require 必須
-            -# %textarea#description{name: "name", type: "text", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
             =f.text_area :explain, id: "description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" 
       .exhibit-wrapper__sell-content.clearfix
         %h3 商品の詳細
@@ -41,21 +39,6 @@
               カテゴリー 
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
-            -# %select.category{name: "カテゴリー"}
-            -#   %option{value: ""} ---
-            -#   %option{value: "1"} レディース
-            -#   %option{value: "2"} メンズ
-            -#   %option{value: "3"} ベビー・キッズ
-            -#   %option{value: "4"} インテリア・住まい・小物
-            -#   %option{value: "5"} 本・音楽・ゲーム
-            -#   %option{value: "6"} おもちゃ・ホビー・グッズ
-            -#   %option{value: "7"} コスメ・香水・美容
-            -#   %option{value: "8"} 家電・スマホ・カメラ
-            -#   %option{value: "9"} スポーツ・レジャー
-            -#   %option{value: "10"} ハンドメイド
-            -#   %option{value: "11"} チケット
-            -#   %option{value: "12"} 自動車・オートバイ
-            -#   %option{value: "13"} その他
             -# =f.fields_for :categories do |i|
               =i.select :name, ["---","レディース"]
           .exhibit-wrapper__sell-content__pulldown__name-state
@@ -79,8 +62,6 @@
               発送元の地域 
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
-              -# %select{name: "発送元の地域"}
-              -#   %option{value: ""} ---
               =f.select :shipping_area, ["---","北海道"]
               -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
 
@@ -89,11 +70,6 @@
               発送までの日数 
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
-              -# %select{name: "配送の方法"}
-              -#   %option{value: ""} ---
-              -#   %option{value: "1"} 4~7日で発送
-              -#   %option{value: "2"}  
-              -#   %option{value: "3"}
               =f.select :shipping_date, ["---","1~2日で発送","2~3日で発送","4~7日で発送"]
 
       .exhibit-wrapper__sell-content.clearfix
@@ -133,7 +109,6 @@
           %a{href:""}加盟店規約
           に同意したことになります。
         .exhibit-wrapper__sell-content
-          -# %button.btn-red{type: "submit"}出品する
           =f.submit(class: "btn-red", value: "出品する")
           %a.return{href:  "/"}もどる
 %footer
