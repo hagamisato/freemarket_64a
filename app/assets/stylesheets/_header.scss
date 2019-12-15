@@ -4,7 +4,6 @@
 
 .body{
   width: 100vw;
-  // font-family: Arial, Helvetica, sans-serif;
   background-color: #fff;
   padding: 0px;
   margin: 0px;
@@ -27,7 +26,7 @@
           position: absolute;
           left: 50px;
           &__image{
-            width: 200px;
+            width: 180px;
             height: 40px;
           }
           &__name{
@@ -84,11 +83,15 @@
           justify-content: space-around;
           margin-left: 50px;
           &__category{
+            color: black;
+            text-decoration: none;
             &__icon{
               color: red;
             }
           }
           &__brand{
+            color: black;
+            text-decoration: none;
             &__icon{
               color: red;
             }
@@ -96,7 +99,6 @@
         }
         &__menue{
           display: flex;
-          // margin-left: 10px;
           &__like{
           }
           &__notice{

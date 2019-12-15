@@ -16,16 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :mypage, only: [:imdex] do
+  resources :mypage, only: [:imdex, :show] do
     collection do
       get :profile
       get :identification
       get :card
     end
   end
-
-
-
   
   get 'item/try', to: 'item#try' 
   # 何かを書いてみる為のページ用のルーティング
