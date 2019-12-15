@@ -1,16 +1,16 @@
 %header.exhibit
   %a{href:  "/"}
     = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
-.exhibit_modal-wrapper
-  %main.exhibit
-  .exhibit_modal-wrapper__content 
-    %h3.modal-head 出品が完了しました
-    .modal-body
-      %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-      .btn-red
-        %a{href: new_item_path ,id: "continue"} 続けて出品する
-      .show
-        %a{href: "/item/:id" ,id: "show"} 商品ページへ行ってシェアする
+%main.exhibit
+  .exhibit_modal-wrapper
+    .exhibit_modal-wrapper__content 
+      %h3.modal-head 出品が完了しました
+      .modal-body
+        %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+        .btn-red
+          %a{href: new_item_path ,id: "continue"} 続けて出品する
+        .show
+          %a{href: "/item/:id" ,id: "show"} 商品ページへ行ってシェアする
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
