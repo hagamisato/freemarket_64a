@@ -1,7 +1,7 @@
 # require 'Kconv'
 class ItemsController < ApplicationController
-  def create
-    @item = Item.new(item_params) 
+  def create 
+    @item = Item.new(item_params)
     if @item.save
       redirect_to '/'
     else
@@ -11,13 +11,12 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # @item.build_categories
-    # @item.build_images
+    @item.images.build
   end
 
   private
     def item_params
-      params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, categories_attributes:[:id, :name, :item_id])
+      params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes:[:id, :image, :item_id],categories_attributes:[:id, :name, :item_id])
     end
     
 end
