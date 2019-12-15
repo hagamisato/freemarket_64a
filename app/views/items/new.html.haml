@@ -14,8 +14,8 @@
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
-            -# =f.fields_for :images do |i|
-              =i.file_field :image, class: "hidden" do
+            =f.fields_for :images do |i|
+              =i.file_field :image do
                 %p 
                   ドラックアンドドロップ<br>
                   またはクリックしてファイルをアップロード
