@@ -3,7 +3,7 @@
     .mainbody__left__boxes
       .mainbody__left__boxes__menu
         .mainbody__left__boxes__menu__box 
-          =link_to mypage_show_path, class:"mainbody__left__boxes__menu__box__link" do
+          =link_to profile_mypage_index_path, class:"mainbody__left__boxes__menu__box__link" do
             -# マイページに飛ぶにはmypage/id(*)のようになるのでID必要ーーー書き換え必要ーー仮のリンクーーーーーー
             %span マイページ
             %i.fas.fa-chevron-right#icon__arrow
@@ -59,8 +59,6 @@
             %i.fas.fa-chevron-right.icon__arrrow
         .mainbody__left__boxes__menu__box 
           %span お問い合わせ
-
-
       .mainbody__left__boxes__merpay
         .mainbody__left__boxes__merpay__title 
           %p1 メルペイ
@@ -72,8 +70,6 @@
           %span ポイント
           .icon__arrrows
             %i.fas.fa-chevron-right.icon__arrrow
-
-
       .mainbody__left__boxes__setting
         .mainbody__left__boxes__setting__title
           設定

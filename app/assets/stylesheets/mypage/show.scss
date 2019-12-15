@@ -5,10 +5,10 @@
   padding-bottom: 50px;
   font-weight: bold;
   &__box{
-    background-color: #fff;
+    background-color: $white;
     &__top{
       height: 200px;
-      background-color: #FFEEFF;
+      background-color: $mypagepink;
       padding: 35px 0px;
       background-image : url("/app/assets/images/profile_back_small.png");
       &__content{
@@ -20,7 +20,7 @@
           &__icon{
             .icon__circle{
               font-size: 50px;
-              color: #666666;
+              color: $gray6;
             }
           }
           &__name{
@@ -51,22 +51,20 @@
             height: 2px;
             background-color: $red;
           }
-          &__message{
-          }
         }
         &__todo{
           width: 350px;
           height: 80px;
           text-align: center;
           line-height: 80px;
-          background-color: #e6e6e6;
+          background-color: $unchoicedgray;
         }
       }
       &__lower{
         padding: 120px 0px;
         &__content{
           text-align: center;
-          color: #999999;
+          color: $gray9;
           &__image{
             .nomessage{
               width: 100px;
@@ -83,7 +81,7 @@
     }
   }
   &__item{
-    background-color: #fff;
+    background-color: $white;
     margin-top:100px;
     &__top{
       height: 80px;
@@ -98,7 +96,7 @@
           &__icon{
             .icon__circle{
               font-size: 50px;
-              color: #666666;
+              color: $gray6;
             }
           }
           &__name{
@@ -128,22 +126,20 @@
             height: 2px;
             background-color: $red;
           }
-          &__message{
-          }
         }
         &__todo{
           width: 350px;
           height: 80px;
           text-align: center;
           line-height: 80px;
-          background-color: #e6e6e6;
+          background-color: $unchoicedgray;
         }
       }
       &__lower{
         padding: 120px 0px;
         &__content{
           text-align: center;
-          color: #999999;
+          color: $gray9;
 
           &__image{
             .nomessage{

@@ -2,26 +2,26 @@
   &__left{
     &__boxes{
       width: 250px;
-      background-color: white;
+      background-color: $white;
       &__menu{
         &__box{
           width: 250px;
           height: 45px;
           line-height: 45px;
-          border: solid 0.3px #f5f5f5;
+          border: solid 0.3px $backcolor;
           text-decoration: none;
           justify-content: space-between;
           &__link{
             width: 250px;
             height: 45px;
-            color:black;
+            color:$black;
             text-decoration: none;
             display: block;
             line-height: 45px;
             display: flex;
             justify-content: space-between;
             #icon__arrow{
-              color: #999999;
+              color: $gray9;
               font-size: 18px;
               line-height: 45px;
               text-align: end;
@@ -32,13 +32,13 @@
         span{
           height: 45px;
           text-decoration: none;
-          color: black;
+          color: $black;
           padding-left: 10px;
         }
       }
       &__merpay{
         &__title{
-          background-color: #f5f5f5;
+          background-color: $backcolor;
           padding-top: 50px;
 
         }
@@ -46,7 +46,7 @@
           width: 250px;
           height: 45px;
           line-height: 45px;
-          border: solid 0.3px #f5f5f5;
+          border: solid 0.3px $backcolor;
           text-decoration: none;
           display: flex;
           justify-content: space-between;
@@ -58,29 +58,28 @@
         span{
           height: 45px;
           text-decoration: none;
-          color: black;
+          color: $black;
           padding-left: 10px;
         }
       }
       &__setting{
         &__title{
-          background-color: #f5f5f5;
+          background-color: $backcolor;
           padding-top: 50px;
         }
         &__box{
           width: 250px;
           height: 45px;
           line-height: 45px;
-          border: solid 0.3px #f5f5f5;
+          border: solid 0.3px $backcolor;
           text-decoration: none;
           display: flex;
           justify-content: space-between;
         }
         span{
-          // width: px;
           height: 45px;
           text-decoration: none;
-          color: black;
+          color: $black;
           padding-left: 10px;
         }
       }
@@ -88,7 +87,7 @@
   }
 }
 .icon__arrrows{
-  color: #888888;
+  color: $gray8;
   text-align: end;
   padding-right: 15px;
 }

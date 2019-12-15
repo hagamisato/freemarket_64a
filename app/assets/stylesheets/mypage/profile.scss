@@ -4,7 +4,7 @@
   .profile{
     width: 750px;
     height: 100%;
-    background-color: #fff;
+    background-color: $white;
     margin-left: 100px;
     padding: 30px 0px 50px;
     &__box{
@@ -16,17 +16,16 @@
         }
         &__image{
           height: 150px;
-          background-color: #FFDDFF;
+          background-color: $mypagepink;
           background-image: url(plifile_back.png);
           &__container{
             display: flex;
             justify-content: center;
-            // line-height: 150px;
             padding-top: 30px;
             &__box{
               height: 100px;
               font-size: 40px;
-              color: #777777;
+              color: $gray7;
               line-height: 150px;
               display: flex;
               vertical-align: bottom;
@@ -36,13 +35,8 @@
               width: 180px;
               font-size: 20px;
               border-radius: 5px;
-              border: solid 1px #666666;
+              border: solid 1px $gray6;
               margin-bottom: 40px;
-            }
-            &__namebox{
-              padding-bottom: 50px;
-              // きいていないーーーーーーーーーー
-
             }
             .icon__person{
               margin-top: 20px;
@@ -51,7 +45,6 @@
           }
         }
         &__introduction{
-          // height: 300px;
           padding: 20px 20px 0px;
           .introduction{
             width: 100%;
@@ -63,8 +56,8 @@
           .submit__btn{
             width: 350px;
             height: 50px;
-            background-color:#ea352d;
-            color: white;
+            background-color: $red;
+            color: $white;
             text-decoration: none;
             display: block;
             margin: 0 auto;
