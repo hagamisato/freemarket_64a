@@ -56,6 +56,9 @@
           .introduction{
             width: 100%;
             height: 200px;
+            .introduction::placeholder{
+              vertical-align: text-top;
+            }
           }
           .submit__btn{
             width: 350px;
