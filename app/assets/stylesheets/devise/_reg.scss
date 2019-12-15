@@ -39,6 +39,7 @@
           &__comment{
             font-size: 13px;
             color: #666666;
+            margin-top: 20px;
           }
         }
         &__pass{
@@ -115,5 +116,12 @@
   }
   &__bottom{
     height: 100px;
+  }
+}
+.signup-content__input-location__date{
+  display: flex;
+  line-height: 55px;
+  .input__day{
+    margin-right: 15px;
   }
 }
