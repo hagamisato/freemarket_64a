@@ -62,6 +62,9 @@ body {
               cursor: pointer;
               position: absolute;
               margin-top: 20px;
+              .hidden {
+                
+              }
               p {
                 position: relative;
                 top: 50px;
@@ -129,18 +132,32 @@ body {
               width: 170px;
               border-radius: 4px;
               border: 1px solid #ccc;
-            }
+            }        
           }
           .fee__title {
             margin-top: 20px;
             margin-bottom: 20px;
             font-size: 13px;
           }
+          .fee__amount {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            position: absolute;
+            right: 410px;
+          }
           &-profit {
             .profit {
               &__title {
                 margin-top: 15px;
                 font-weight: bold;
+              }
+              &__amount {
+                margin-top: 15px;
+                font-weight: bold;
+                position: absolute;
+                top: 1680px;
+                right: 410px;
+                font-size: 28px;
               }
             }
           }

@@ -23,7 +23,7 @@
     .signup__wrapper__head 支払い方法
     .signup__wrapper__registration
       .signup__wrapper__registration__form
-      = form_for @user, url: finish_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+      = form_for @credit_card, url: finish_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         .signup__wrapper__registration__form__box
           カード番号
           %span.form-require 必須
