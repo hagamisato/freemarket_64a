@@ -39,7 +39,7 @@
               カテゴリー 
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
-            -# =f.fields_for :categories do |i|
+            =f.fields_for :category do |i|
               =i.select :name, ["---","レディース"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 

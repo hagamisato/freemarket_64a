@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   has_many :images
+  has_many :categories
   accepts_nested_attributes_for :images
-  mount_uploader :image, ImageUploader
+  accepts_nested_attributes_for :categories
+  # mount_uploader :image, ImageUploader
 end
