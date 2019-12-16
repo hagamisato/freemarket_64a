@@ -10,7 +10,7 @@
         .btn-red
           %a{href: new_item_path ,id: "continue"} 続けて出品する
         .show
-          %a{href: "/item/:id" ,id: "show"} 商品ページへ行ってシェアする
+          %a{href: item_path(:id) ,id: "show"} 商品ページへ行ってシェアする
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
@@ -24,7 +24,7 @@
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
             =f.fields_for :images do |i|
-              =i.file_field :image do
+              =i.file_field :image,{multipart: true} do
                 %p 
                   ドラックアンドドロップ<br>
                   またはクリックしてファイルをアップロード
