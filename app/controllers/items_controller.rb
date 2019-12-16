@@ -12,7 +12,11 @@ class ItemsController < ApplicationController
     @item.save  
   end
 
-  
+  def show
+    @image = Image.last
+    @item = Item.last
+    @category = Category.last
+  end
 
   private
   
