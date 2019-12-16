@@ -31,12 +31,14 @@
             .header__box__lower__menue__mypage
             = link_to method: :get do
               %i.fas.fa-user-circle.icon{"aria-hidden": "true"}
-              = link_to 'マイページ', "/"
+              = link_to  'マイページ', "/mypage/#{current_user.id}"
         -else 
           .header__box__lower__user
             .header__box__lower__user__registration
               =link_to "新規会員登録", top_signup_index_path, class:"header__box__lower__user__registration__red"
             .header__box__lower__user__rogin
               =link_to "ログイン", new_user_session_path, class:"header__box__lower__user__rogin__blue"
-
-              
+      .bread
+        - breadcrumb :root
+        = render "layouts/breadcrumbs"
+            
