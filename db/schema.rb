@@ -13,10 +13,16 @@
 ActiveRecord::Schema.define(version: 2019_12_10_090957) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
+    t.bigint "user_id"
+    t.integer "postal_code"
+    t.string "prefectures"
+    t.string "municipalities"
+    t.string "address"
+    t.string "building"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,9 +52,11 @@ ActiveRecord::Schema.define(version: 2019_12_10_090957) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
+    t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "credit_cards", "users"
 end
