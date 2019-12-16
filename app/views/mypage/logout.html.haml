@@ -1,0 +1,8 @@
+= render "layouts/header"
+.all
+  = render "side_bar"
+  .mypage
+    .mypage__logout
+      =link_to "ログアウト", destroy_user_session_path, method: :delete, class:"submit__btn" 
+= render "layouts/footer"
+= render "layouts/circle"
