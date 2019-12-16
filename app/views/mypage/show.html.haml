@@ -1,0 +1,43 @@
+= render "layouts/header"
+.all
+  = render "side_bar"
+  .mypage
+    .mypage__box
+      .mypage__box__top
+        .mypage__box__top__content
+          .mypage__box__top__content__upper
+            .mypage__box__top__content__upper__icon
+              %i.fas.fa-user-circle.icon__circle
+            .mypage__box__top__content__upper__name メルコ
+          .mypage__box__top__content__lower
+            .mypage__box__top__content__lower__evaluation 評価 ３
+            .mypage__box__top__content__lower__item 出品数 ２
+      .mypage__box__main
+        .mypage__box__main__upper
+          .mypage__box__main__upper__news
+            .mypage__box__main__upper__news__redbar
+            .mypage__box__main__upper__news__message お知らせ
+          .mypage__box__main__upper__todo
+            .mypage__box__main__upper__todo__message やることリスト
+        .mypage__box__main__lower
+          .mypage__box__main__lower__content
+            .mypage__box__main__lower__content__image
+              = image_tag src="logo_gray.svg", alt:"image", class:"nomessage"
+            .mypage__box__main__lower__content__message お知らせはありません
+    
+    .mypage__item
+      .mypage__item__top 購入した商品
+      .mypage__item__main
+        .mypage__item__main__upper
+          .mypage__item__main__upper__news
+            .mypage__item__main__upper__news__redbar
+            .mypage__item__main__upper__news__message 取引中
+          .mypage__item__main__upper__todo
+            .mypage__item__main__upper__todo__message 過去の取引
+        .mypage__item__main__lower
+          .mypage__item__main__lower__content
+            .mypage__item__main__lower__content__image
+              = image_tag src="logo_gray.svg", alt:"image", class:"nomessage"
+            .mypage__item__main__lower__content__message 取引中の商品がありません
+= render "layouts/footer"
+= render "layouts/circle"
