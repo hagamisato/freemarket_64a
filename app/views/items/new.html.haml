@@ -1,5 +1,5 @@
 %header.exhibit
-  %a{href:  root_path}
+  =link_to root_path do
     = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
 %main.exhibit
   .exhibit-wrapper
@@ -111,7 +111,8 @@
           に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red", value: "出品する")
-          %a.return{href: root_path}もどる
+          =link_to "もどる", root_path, class: "return" 
+    
 %footer
   .footer__nav
     %ul
@@ -119,8 +120,8 @@
       %li エフマーケット利用規約
       %li 特定商取引に関する表記
   .footer__logo
-    %a{href:  root_path}
-      = image_tag src="logo_gray.svg", alt:"［写真］", class:".gray-logo" 
+    =link_to root_path do
+      = image_tag src="logo_gray.svg", alt:"［写真］", class:"gray-logo"
     %p.small  
       ©︎Freemarket,64a.
 
