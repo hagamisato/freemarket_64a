@@ -1,21 +1,25 @@
-
-
+@import "./color";
 @import "./header";
 @import "./main";
 @import "./reset";
 @import "./footer";
-@import "./color";
 @import "./new";
 @import "./circle";
 @import "./top";
+@import "./devise/login";
 @import "./devise/reg";
 @import "./devise/tell.scss";
 @import "./devise/add.scss";
 @import "./devise/pay.scss";
+@import "./devise/reg_header.scss";
 @import "./mercari_top.scss";
 @import "./mercari_bottom.scss";
-@import "./devise/reg_header.scss";
-@import "./devise/rogin";
+@import "./mypage/profile.scss";
+@import "./mypage/side_bar.scss";
+@import "./mypage/show.scss";
+@import "./mypage/identification.scss";
+@import "./mypage/breadcrumbs.scss";
+@import "./mypage/mypage_header.scss";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "show";

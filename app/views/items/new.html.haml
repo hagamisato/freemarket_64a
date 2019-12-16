@@ -1,5 +1,5 @@
 %header.exhibit
-  %a{href:  "/"}
+  =link_to root_path do
     = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
 %main.exhibit
   .exhibit-wrapper
@@ -39,8 +39,8 @@
               カテゴリー 
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
-            -# =f.fields_for :categories do |i|
-              =i.select :name, ["---","レディース"]
+            =f.fields_for :categories do |i|
+              =i.select :category_name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
@@ -64,6 +64,7 @@
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :shipping_area, ["---","北海道"]
               -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              -# 後で、active_hashを用いるため残して起きました。
 
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
@@ -110,7 +111,8 @@
           に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red", value: "出品する")
-          %a.return{href:  "/"}もどる
+          =link_to "もどる", root_path, class: "return" 
+    
 %footer
   .footer__nav
     %ul
@@ -118,8 +120,8 @@
       %li エフマーケット利用規約
       %li 特定商取引に関する表記
   .footer__logo
-    %a{href:  "/"}
-      = image_tag src="logo_gray.svg", alt:"［写真］", class:".gray-logo" 
+    =link_to root_path do
+      = image_tag src="logo_gray.svg", alt:"［写真］", class:"gray-logo"
     %p.small  
       ©︎Freemarket,64a.
 
