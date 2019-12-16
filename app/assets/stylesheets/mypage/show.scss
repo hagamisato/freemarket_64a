@@ -1,0 +1,159 @@
+.mypage{
+  width: 700px;
+  height: 100%;
+  margin-left: 100px;
+  padding-bottom: 50px;
+  font-weight: bold;
+  &__box{
+    background-color: $white;
+    &__top{
+      height: 200px;
+      background-color: $mypagepink;
+      padding: 35px 0px;
+      background-image : url("/app/assets/images/profile_back_small.png");
+      &__content{
+        height: 130px;
+        width: 140px;
+        margin: 0 auto;
+        &__upper{
+          text-align: center;
+          &__icon{
+            .icon__circle{
+              font-size: 50px;
+              color: $gray6;
+            }
+          }
+          &__name{
+            margin-top: 10px;
+          }
+        }
+        &__lower{
+          display: flex;
+          font-weight: normal;
+          &__evaluation{
+            margin-right: 15px;
+          }
+          &__item{
+          }
+        }
+      }
+    }
+    &__main{
+      height: 400px;
+      &__upper{
+        display: flex;
+        &__news{
+          width: 350px;
+          height: 80px;
+          text-align: center;
+          line-height: 80px;
+          &__redbar{
+            height: 2px;
+            background-color: $red;
+          }
+        }
+        &__todo{
+          width: 350px;
+          height: 80px;
+          text-align: center;
+          line-height: 80px;
+          background-color: $unchoicedgray;
+        }
+      }
+      &__lower{
+        padding: 120px 0px;
+        &__content{
+          text-align: center;
+          color: $gray9;
+          &__image{
+            .nomessage{
+              width: 100px;
+              height: 100px;
+            }
+          }
+          &__message{
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+  &__item{
+    background-color: $white;
+    margin-top:100px;
+    &__top{
+      height: 80px;
+      line-height: 80px;
+      padding-left: 15px;
+      &__content{
+        height: 130px;
+        width: 140px;
+        margin: 0 auto;
+        &__upper{
+          text-align: center;
+          &__icon{
+            .icon__circle{
+              font-size: 50px;
+              color: $gray6;
+            }
+          }
+          &__name{
+            margin-top: 10px;
+          }
+        }
+        &__lower{
+          display: flex;
+          &__evaluation{
+            margin-right: 15px;
+          }
+          &__item{
+          }
+        }
+      }
+    }
+    &__main{
+      height: 400px;
+      &__upper{
+        display: flex;
+        &__news{
+          width: 350px;
+          height: 80px;
+          text-align: center;
+          line-height: 80px;
+          &__redbar{
+            height: 2px;
+            background-color: $red;
+          }
+        }
+        &__todo{
+          width: 350px;
+          height: 80px;
+          text-align: center;
+          line-height: 80px;
+          background-color: $unchoicedgray;
+        }
+      }
+      &__lower{
+        padding: 120px 0px;
+        &__content{
+          text-align: center;
+          color: $gray9;
+
+          &__image{
+            .nomessage{
+              width: 100px;
+              height: 100px;
+            }
+          }
+          &__message{
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
