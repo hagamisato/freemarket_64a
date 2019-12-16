@@ -7,7 +7,7 @@
     -#  @users = @item.users コントローラー？？？
     .main__content__body__new__items__item__image__price 
       %span ¥
-      =item.price
+      = converting_to_jpy(item.price)
   .main__content__body__new__items__item__name 
     =item.name
   .main__content__body__new__items__item__link
