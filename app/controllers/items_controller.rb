@@ -9,11 +9,9 @@ class ItemsController < ApplicationController
 
   def create 
     @item = Item.new(item_params)
-    if @item.save
-
-    else
+    if @item.save == false 
       render :new
-    end   
+    end
   end
 
   
