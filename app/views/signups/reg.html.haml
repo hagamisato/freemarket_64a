@@ -22,7 +22,7 @@
     .signup__wrapper__head 会員情報入力
     .signup__wrapper__registration
       .signup__wrapper__registration__form
-      = form_for @user, url: tell_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+      = form_for @user, url: tell_signups_path, method: :get, html: {class: 'first-main__box'} do |f|
         .signup__wrapper__registration__form__box
           ニックネーム
           %span.form-require 必須
@@ -36,7 +36,7 @@
           .signup__wrapper__registration__form__pass__title
             パスワード
             %span.form-require 必須
-          = f.password_field :encrypted_password, placeholder: ' 7文字以上の半角英数', class:"input__default"
+          = f.password_field :password, placeholder: ' 7文字以上の半角英数', class:"input__default"
           .signup__wrapper__registration__form__pass__content
             ※ 英字と数字の両方を含めて設定してください
           .signup__wrapper__registration__form__pass__check

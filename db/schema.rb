@@ -76,5 +76,8 @@ ActiveRecord::Schema.define(version: 2019_12_11_025815) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "categories", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "images"
   add_foreign_key "credit_cards", "users"
 end
