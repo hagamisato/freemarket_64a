@@ -2,8 +2,8 @@
   .header__box
     .header__box__upper
       .header__box__upper__rogo
-        = image_tag src="fmarket_logo_red.svg", alt:"mercari_lodo", class:"header__box__upper__rogo__image"
-        =link_to "", "/", class:"header__box__upper__rogo__name" 
+        = link_to root_path do
+          = image_tag src='fmarket_logo_red.svg', alt: 'mercari', class:"header__box__upper__rogo__image" 
       .header__box__upper__search      
         = form_with(url: "/", local: true, method: :get) do |form|
           = form.text_field :keyword, placeholder: "何かお探しですか？", class: "header__box__upper__search__input"
