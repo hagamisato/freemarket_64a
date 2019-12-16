@@ -378,6 +378,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   fog-aws
+  fog-core (~> 2.1, >= 2.1.2)
   font-awesome-sass
   gretel
   haml-rails
