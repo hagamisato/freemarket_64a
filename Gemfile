@@ -74,6 +74,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'fog-aws'
+gem 'gretel'
 gem 'dotenv-rails'
 
 group :production do
