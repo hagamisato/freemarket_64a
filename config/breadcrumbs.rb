@@ -8,18 +8,21 @@ end
 
 crumb :mypage do
   link "マイページ"
-  # ルートパスつけるーーーー
+    # ルートパスつけるーーーー
 end
 
 crumb :profile do
-  link "プロフィール"
-  # ルートパスつけるーーーー
+  link "プロフィール", profile_mypage_index_path
   parent :mypage
 end
 
-crumb :rogout do
-  link "ログアウト"
-   # パスつけるーーーー
+crumb :logout do
+  link "ログアウト", logout_mypage_index_path
+   parent :mypage
+end
+
+crumb :identification do
+  link "本人情報の登録", identification_mypage_index_path
    parent :mypage
 end
 
