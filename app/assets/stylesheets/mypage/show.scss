@@ -156,4 +156,24 @@
       }
     }
   }
+  &__logout{
+    height: 220px;
+    padding: 60px 60px;
+    background-color: $white;
+    line-height: 220px;
+    .submit__btn{
+      width: 300px;
+      height: 50px;
+      font-weight: normal;
+      background-color: $red;
+      color: $white;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      line-height: 50px;
+      border: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
 }
