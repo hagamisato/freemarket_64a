@@ -14,16 +14,18 @@ end
 crumb :profile do
   link "プロフィール"
   # ルートパスつけるーーーー
+  parent :mypage
 end
 
 crumb :rogout do
   link "ログアウト"
    # パスつけるーーーー
+   parent :mypage
 end
 
 
 
-# 新規登録関連ーーーー使わないーーーーーーーーーー
+# 新規登録関連ーーーー使わない?ーーーーーーーーーー
 crumb :choice do
   link "選択"
   # , top_signup_index_path
