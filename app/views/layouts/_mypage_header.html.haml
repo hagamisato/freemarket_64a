@@ -1,0 +1,34 @@
+.body
+  .header2
+    .header2__box
+      .header2__box__upper
+        .header2__box__upper__rogo
+          =link_to image_tag("fmarket_logo_red.svg", alt:"mercari_lodo"), root_path, class:"header2__box__upper__rogo__image"
+        .header2__box__upper__search      
+          = form_with(url: "/", local: true, method: :get) do |form|
+            = form.text_field :keyword, placeholder: "何かお探しですか？", class: "header2__box__upper__search__input"
+            %button.button{type:"submit", "aria-hidden": "true"}
+              %i.fas.fa-search.icon
+      .header__box__lower
+        .header__box__lower__left
+          =link_to profile_mypage_index_path, class:"header2__box__lower__left__category"  do
+            %i.fas.fa-list-ul.header__box__lower__left__category__icon  
+            %span カテゴリーから探す
+          =link_to root_path, class:"header2__box__lower__left__brand"  do
+            %i.fas.fa-list-ul.header__box__lower__left__brand__icon  
+            %span ブランドから探す    
+        .header__box__lower__menue  
+          .header__box__lower__menue__like    
+            %i.far.fa-heart.icon
+            いいね一覧
+          .header__box__lower__menue__notice   
+            %i.far.fa-bell.icon
+            お知らせ
+          .header__box__lower__menue__list    
+            %i.fas.fa-check.icon
+            やることリスト
+          .header__box__lower__menue__mypage
+          = link_to method: :get do
+            %i.fas.fa-user-circle.icon{"aria-hidden": "true"}
+            = link_to  'マイページ'
+            -# = link_to  'マイページ', "/mypage/#{current_user.id}"------マイページ作成したら

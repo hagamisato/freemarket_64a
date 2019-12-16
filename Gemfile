@@ -89,4 +89,4 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-
+gem "aws-sdk-s3", require: false

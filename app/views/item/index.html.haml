@@ -3,12 +3,8 @@
   -# = breadcrumbs separator: " &rsaquo; "
 
 .body
+  = link_to "ログアウト", destroy_user_session_path, method: :delete 
   = render "layouts/header"
   = render "main"
   = render "layouts/footer"
   = render "layouts/circle"
-
-
--# = render "layouts/mercari_top"
--# = render "layouts/top"
--# = render "layouts/mercari_bottom"
