@@ -13,39 +13,44 @@
         .main__content__category__junle__each 家電・スマホ・カメラ
         .main__content__category__junle__each おもちゃ・ホビー・グッズ
     .main__content__body
+    -@items.each do |item| 
+      .main__content__body__new 
+        .main__content__body__new__top
+          .main__content__body__new__top__title 新着アイテム
+          .main__content__body__new__top__right 
+            もっと見る
+            %i.fas.fa-chevron-right
+        .main__content__body__new__items
+          = render @items
       .main__content__body__new 
         .main__content__body__new__top
           .main__content__body__new__top__title レディース新着アイテム
-          .main__content__body__new__top__right もっと見る
+          .main__content__body__new__top__right 
+            もっと見る
+            %i.fas.fa-chevron-right
         .main__content__body__new__items
-          .main__content__body__new__items__item
-            .main__content__body__new__items__item__image
-              .main__content__body__new__items__item__image__price 金額
-            .main__content__body__new__items__item__name 商品名
+          = render @items 
       .main__content__body__new 
         .main__content__body__new__top
           .main__content__body__new__top__title メンズ新着アイテム
-          .main__content__body__new__top__right もっと見る
+          .main__content__body__new__top__right 
+            もっと見る
+            %i.fas.fa-chevron-right
         .main__content__body__new__items
-          .main__content__body__new__items__item
-            .main__content__body__new__items__item__image 
-              .main__content__body__new__items__item__image__price 金額
-            .main__content__body__new__items__item__name 商品名
+          = render @items 
       .main__content__body__new 
         .main__content__body__new__top
           .main__content__body__new__top__title 家電・スマホ・カメラ新着アイテム
-          .main__content__body__new__top__right もっと見る
+          .main__content__body__new__top__right 
+            もっと見る
+            %i.fas.fa-chevron-right
         .main__content__body__new__items
-          .main__content__body__new__items__item
-            .main__content__body__new__items__item__image 
-              .main__content__body__new__items__item__image__price 金額
-            .main__content__body__new__items__item__name 商品名
+          = render @items
       .main__content__body__new 
         .main__content__body__new__top
           .main__content__body__new__top__title おもちゃ・ホビー・グッズ新着アイテム
-          .main__content__body__new__top__right もっと見る
+          .main__content__body__new__top__right 
+            もっと見る
+            %i.fas.fa-chevron-right
         .main__content__body__new__items
-          .main__content__body__new__items__item
-            .main__content__body__new__items__item__image
-              .main__content__body__new__items__item__image__price 金額
-            .main__content__body__new__items__item__name 商品名
+          = render @items
