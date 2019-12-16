@@ -2,10 +2,12 @@
 .body
   = render "layouts/header" 
   .item
-    .item__title 出品商品名
-    .item__introduce itemついての説明文
+    .item__title  
+      =@item.name
+    .item__introduce
     .item__content
       .item__content__image
+        = image_tag @image.image.url , width: 280; 
       .item__content__table
         %table
           %tr 
@@ -25,6 +27,7 @@
           %tr 
             %td.item__content__table__title カテゴリー
             %td.item__content__table__content 
+              =@category.category_name
           %tr 
             %td.item__content__table__titles ブランド
             %td.item__content__table__contents 
@@ -34,26 +37,33 @@
           %tr 
             %td.item__content__table__titles 商品の状態
             %td.item__content__table__contents 
+              =@item.state
           %tr 
             %td.item__content__table__titles 配送料の負担
             %td.item__content__table__contents 
+              =@item.postage
           %tr 
             %td.item__content__table__titles 配送の方法
             %td.item__content__table__contents 
           %tr 
             %td.item__content__table__titles 配送元地域
             %td.item__content__table__contents
+              =@item.shipping_area
           %tr 
             %td.item__content__table__titles 発送日の目安
             %td.item__content__table__contents 
+              =@item.shipping_date 
     .item__buy
       .item__buy__box
-        .item__buy__box__price ¥10000
+        .item__buy__box__price
+          ¥  
+          =@item.price
         .item__buy__box__tax （税込）
         .item__buy__box__shippingfee 送料込み
       =link_to "購入画面に進む", "/", class:"item__buy__btn"
     .item__discription 
-      .item__discription__content 商品説明
+      .item__discription__content 
+        =@item.explain
       .item__discription__footer
         .item__discription__footer__like
           %i.far.fa-heart
