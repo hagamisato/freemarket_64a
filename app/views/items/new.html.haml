@@ -8,9 +8,9 @@
       .modal-body
         %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
         .btn-red
-          %a{href: new_item_path ,id: "continue"} 続けて出品する
+          =link_to "続けて出品する",new_item_path, id: "continue"
         .show
-          %a{href: "/item/:id" ,id: "show"} 商品ページへ行ってシェアする
+          =link_to "商品ページへ行ってシェアする", item_path(:id), id: "show"
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
