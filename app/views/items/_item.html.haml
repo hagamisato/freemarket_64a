@@ -1,0 +1,12 @@
+.main__content__body__new__items__item
+  -# =link_to "/",  do
+  .main__content__body__new__items__item__image
+    -# = item.image.url
+    .main__content__body__new__items__item__image__price 
+      %span ¥
+      =item.price
+  .main__content__body__new__items__item__name 
+    =item.name
+  .main__content__body__new__items__item__link
+    =link_to "", "/items/#{item.id}"
+
