@@ -72,8 +72,8 @@
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :shipping_area, ["---","北海道"]
-              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-
+              -# = f.collection_select :shipping_area, Prefecture.all, :id, :name
+              -# active_hashが上手く行かなかったのでコメントアウト
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 
