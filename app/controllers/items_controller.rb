@@ -23,8 +23,12 @@ class ItemsController < ApplicationController
     @category = Category.last
   end
 
-  def show
-    @item = Item.find(params[:id])
+  # def show
+  #   @item = Item.find(params[:id])
+  # end
+  # Couldn't find Item with 'id'=idというエラーが出たためコメントアウトしました。
+
+  def edit
   end
 
   private
