@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'credit_card/new'
+  get 'credit_card/show'
+  get 'purchases/index'
+  get 'purchases/done'
   devise_for :users
   root "items#index"
-  resources :items, only:[:new, :create, :show, :edit, :update]
+  resources :items, only:[:new, :create, :show, :edit, :update, :index]
   resources :item, only:[:index, :create, :new]
   resources :signups, only: [:index, :create] do
-
     collection do
       get :top
       get :reg
@@ -14,6 +17,16 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :credit_card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credit_card#show'
+      post 'pay', to: 'credit_card#pay'
+      post 'delete', to: 'credit_card#delete'
+    end
+  end
+  
+ 
   resources :mypage, only: [:imdex, :show] do
     collection do
       get :profile
@@ -22,4 +35,11 @@ Rails.application.routes.draw do
       get :logout
     end
   end
+
+  resources :purchases, only: :index do
+    collection do
+    get :done
+    end
+  end
+  
 end

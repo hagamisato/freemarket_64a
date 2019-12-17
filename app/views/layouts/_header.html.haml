@@ -31,7 +31,7 @@
           .header__box__lower__menue__mypage
           = link_to method: :get do
             %i.fas.fa-user-circle.icon{"aria-hidden": "true"}
-            = link_to 'マイページ', "/"
+            = link_to 'マイページ', mypage_path(current_user.id)
       -else 
         .header__box__lower__user
           .header__box__lower__user__registration

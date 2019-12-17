@@ -1,0 +1,105 @@
+.purchases{
+  &__box{
+    width: 700px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    &__title{
+      height: 100px;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px;
+      border-bottom: $bordergray;
+    }
+    &__main{
+      padding: 30px 0px 50px;
+      &__form{
+        width: 350px;
+        margin: 0 auto;
+        &__item{
+          display: flex;
+          padding: 20px 0px;
+          border-bottom: $bordergray;
+          &__image{
+            width: 80px;
+            height: 80px;
+            background-color: #EEFFFF;
+          }
+          &__detail{
+            margin-left: 20px;
+            &__name{
+              width: 250px;
+              height: 40px;
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+            &__prices{
+              display: flex;
+              &__price{
+                font-size: 15px;
+                font-weight: bold;
+              }
+              &__tax{
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        &__payment{
+          height: 100px;
+          border-bottom: $bordergray;
+          padding: 30px 0px 20px;
+          &__upper{
+            display: flex;
+            justify-content: space-between;
+            &__title{
+              font-size: 18px;
+              font-weight: bold;
+            }
+            &__price{
+              font-size: 30px;
+              font-weight: bold;
+              margin-left: 30px;
+            }
+          }
+          &__lower{
+            color: $gray9;
+            .square{
+              margin-right: 5px;
+            }
+          }
+        }
+        &__container{
+          border-bottom: $bordergray;
+          padding: 30px 0px 20px;
+          &__upper{
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          &__lower{
+            font-size: 14px;
+            color: $explainblue;
+            margin-top: 10px;
+            .plus{
+              font-size: 16px;
+            }
+          }
+        }
+        &__btn{
+          margin-top: 40px;
+          &__submit{
+          background-color:$gray9;
+          color: $white;
+          text-align: center;
+          text-decoration: none;
+          line-height: 50px;
+          border: none;
+          margin-top: 50px;
+          padding: 20px 143px;
+          }
+        }
+      }
+    }
+  }
+}
