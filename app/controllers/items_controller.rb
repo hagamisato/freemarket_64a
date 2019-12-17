@@ -29,6 +29,13 @@ class ItemsController < ApplicationController
   # Couldn't find Item with 'id'=idというエラーが出たためコメントアウトしました。
 
   def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to item_path(item.id)
   end
 
   private
