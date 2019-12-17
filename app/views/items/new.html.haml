@@ -1,11 +1,21 @@
 %header.exhibit
-  %a{href:  "/"}
+  =link_to root_path do
     = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
 %main.exhibit
+  .exhibit_modal-wrapper
+    .exhibit_modal-wrapper__content 
+      %h3.modal-head 出品が完了しました
+      .modal-body
+        %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+        .btn-red
+          =link_to "続けて出品する",new_item_path, id: "continue"
+        .show
+          =link_to "商品ページへ行ってシェアする", item_path(:id), id: "show"
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
-    %form.exhibit-wrapper__form
+    .exhibit-wrapper__form
+    = form_for(@item,url: items_path) do |f|
       .exhibit-wrapper__form__upload-box
         .exhibit-wrapper__form__upload-box__title
           %h3 
@@ -13,21 +23,23 @@
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
-            %p 
-              ドラックアンドドロップ<br>
-              またはクリックしてファイルをアップロード
+            =f.fields_for :images do |i|
+              =i.file_field :image,{multipart: true} do
+                %p 
+                  ドラックアンドドロップ<br>
+                  またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
             商品名
             %span.form-require 必須
-        %input#name{name: "name", placeholder: "商品名 (必須40文字まで)", type: "text"}/
+        =f.text_field :name, id: "name", placeholder: "商品名 (必須40文字まで)"
         .exhibit-wrapper__sell-content__description
           .exhibit-wrapper__sell-content__description__title
             %h1 
               商品の説明
               %span.form-require 必須
-            %textarea#description{name: "name", type: "text", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+            =f.text_area :explain, id: "description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" 
       .exhibit-wrapper__sell-content.clearfix
         %h3 商品の詳細
         .exhibit-wrapper__sell-content__pulldown
@@ -36,34 +48,14 @@
               カテゴリー 
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
-            %select.category{name: "カテゴリー"}
-              %option{value: ""} ---
-              %option{value: "1"} レディース
-              %option{value: "2"} メンズ
-              %option{value: "3"} ベビー・キッズ
-              %option{value: "4"} インテリア・住まい・小物
-              %option{value: "5"} 本・音楽・ゲーム
-              %option{value: "6"} おもちゃ・ホビー・グッズ
-              %option{value: "7"} コスメ・香水・美容
-              %option{value: "8"} 家電・スマホ・カメラ
-              %option{value: "9"} スポーツ・レジャー
-              %option{value: "10"} ハンドメイド
-              %option{value: "11"} チケット
-              %option{value: "12"} 自動車・オートバイ
-              %option{value: "13"} その他
+            =f.fields_for :categories do |i|
+              =i.select :category_name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
               %span.form-require 必須
           .exhibit-wrapper__sell-content__select-wrap
-            %select{name: "商品の状態"}
-              %option{value: ""} ---
-              %option{value: "1"} 新品、未使用
-              %option{value: "2"} 未使用に近い
-              %option{value: "3"} 目立った傷や汚れなし
-              %option{value: "4"} やや傷や汚れあり
-              %option{value: "5"} 傷や汚れあり
-              %option{value: "6"} 全体的に状態が悪い
+            =f.select :state, ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
 
       .exhibit-wrapper__sell-content.clearfix
         %h3 配送について
@@ -72,32 +64,22 @@
             %p 
               配送料の負担 
               %span.form-require 必須
-            %form
             .exhibit-wrapper__sell-content__select-wrap
-              %select{name: "配送料の負担"}
-                %option{value: ""} ---
-                %option{value: "1"} 送料込み(出品者負担)
-                %option{value: "2"} 着払い(購入者負担) 
+              =f.select :postage, ["---","送料込み(出品者負担)","着払い(購入者負担)"]
           .exhibit-wrapper__sell-content__pulldown__name-delivery
             %p 
               発送元の地域 
               %span.form-require 必須
-            %form
             .exhibit-wrapper__sell-content__select-wrap
-              %select{name: "発送元の地域"}
-                %option{value: ""} ---
-
+              =f.select :shipping_area, ["---","北海道"]
+              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              -# 後で、active_hashを用いるため残して起きました。
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 
               %span.form-require 必須
-            %form
             .exhibit-wrapper__sell-content__select-wrap
-              %select{name: "配送の方法"}
-                %option{value: ""} ---
-                %option{value: "1"} 4~7日で発送
-                %option{value: "2"}  
-                %option{value: "3"}
+              =f.select :shipping_date, ["---","1~2日で発送","2~3日で発送","4~7日で発送"]
 
       .exhibit-wrapper__sell-content.clearfix
         %h3 販売価格(300~9,999,999)
@@ -108,17 +90,19 @@
               %span.form-require 必須 
             %p.price
               ¥ 
-              %input{placeholder: "例) 300"}/
+              = f.number_field :price, placeholder: "例) 300", class: "input-price"
           .exhibit-wrapper__sell-content__pulldown__name
             .fee__title
               販売手数料(10%)
-            .fee__amount
-              -
+            .fee__amount 
+              ¥ 
+              %span#fee -
           .exhibit-wrapper__sell-content__pulldown__name-profit
             .profit__title
               販売利益    
             .profit__amount
-              -          
+              ¥ 
+              %span#amount -      
       .exhibit-wrapper__sell-content.clearfix
         %p 
         %a{href:""}禁止されている出品
@@ -134,8 +118,9 @@
           %a{href:""}加盟店規約
           に同意したことになります。
         .exhibit-wrapper__sell-content
-          %button.btn-red{type: "submit"}出品する
-          %a.return{href:  "/"}もどる
+          =f.submit(class: "btn-red", value: "出品する")
+          =link_to "もどる", root_path, class: "return" 
+    
 %footer
   .footer__nav
     %ul
@@ -143,8 +128,8 @@
       %li エフマーケット利用規約
       %li 特定商取引に関する表記
   .footer__logo
-    %a{href:  "/"}
-      = image_tag src="logo_gray.svg", alt:"［写真］", class:".gray-logo"
+    =link_to root_path do
+      = image_tag src="logo_gray.svg", alt:"［写真］", class:"gray-logo"
     %p.small  
       ©︎Freemarket,64a.
 

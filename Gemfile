@@ -76,7 +76,9 @@ gem 'active_hash'
 gem 'fog-aws'
 gem 'payjp'
 gem 'dotenv-rails'
-
+gem 'gretel'
+gem 'dotenv-rails'
+gem 'fog-core', '~> 2.1', '>= 2.1.2'
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -88,3 +90,5 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+gem "aws-sdk-s3", require: false

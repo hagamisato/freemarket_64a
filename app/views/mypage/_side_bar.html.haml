@@ -1,0 +1,109 @@
+.mainbody
+  .mainbody__left
+    .mainbody__left__boxes
+      .mainbody__left__boxes__menu
+        .mainbody__left__boxes__menu__box 
+          =link_to profile_mypage_index_path, class:"mainbody__left__boxes__menu__box__link" do
+            -# =link_to mypage_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do
+            -# マイページに飛ぶにはmypage/id(*)のようになるのでID必要ーーー書き換え必要ーー仮のリンクーーーーーー
+            %span マイページ
+            %i.fas.fa-chevron-right#icon__arrow
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span お知らせ
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span やることリスト
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span いいね！一覧
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 出品する
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 出品した商品-出品中
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 出品した商品-取引中
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 出品した商品-売却済み
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 購入した商品-取引中
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 購入した商品-過去の取引
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span ニュース一覧
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span 評価一覧
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span ガイド
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__menu__box 
+          %span お問い合わせ
+      .mainbody__left__boxes__merpay
+        .mainbody__left__boxes__merpay__title 
+          %p1 メルペイ
+        .mainbody__left__boxes__merpay__box 
+          %span 売り上げ・申請
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__merpay__box 
+          %span ポイント
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+      .mainbody__left__boxes__setting
+        .mainbody__left__boxes__setting__title
+          設定
+        .mainbody__left__boxes__setting__box 
+          =link_to profile_mypage_index_path, class:"mainbody__left__boxes__menu__box__link" do
+            %span プロフィール
+            .icon__arrrows
+              %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          =link_to root_path, class:"mainbody__left__boxes__menu__box__link" do
+            %span 発送元・お届け先住所変更
+            .icon__arrrows
+              %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          =link_to root_path, class:"mainbody__left__boxes__menu__box__link" do
+            %span 支払い方法
+            .icon__arrrows
+              %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          %span メール/パスワード
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          =link_to identification_mypage_index_path, class:"mainbody__left__boxes__menu__box__link" do
+            %span 本人情報
+            .icon__arrrows
+              %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          %span 電話番号の確認
+          .icon__arrrows
+            %i.fas.fa-chevron-right.icon__arrrow
+        .mainbody__left__boxes__setting__box 
+          =link_to logout_mypage_index_path, method: :delete, class:"mainbody__left__boxes__menu__box__link" do
+            %span ログアウト
+            .icon__arrrows
+              %i.fas.fa-chevron-right.icon__arrrow
