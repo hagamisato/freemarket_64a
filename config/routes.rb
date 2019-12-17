@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'purchases/done'
   devise_for :users
   root "items#index"
-  resources :items, only:[:new, :create, :show, :index]
+  resources :items, only:[:new, :create, :show, :edit, :update, :index]
+  resources :item, only:[:index, :create, :new]
   resources :signups, only: [:index, :create] do
     collection do
       get :top
@@ -25,8 +26,7 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'item/try', to: 'item#try' 
-  # 何かを書いてみる為のページ用のルーティング
+ 
   resources :mypage, only: [:imdex, :show] do
     collection do
       get :profile
