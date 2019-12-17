@@ -3,7 +3,7 @@ class CreditCardController < ApplicationController
   require "payjp"
   
   def new
-    credit_card = Credit_card.where(user_id: current_user.id)
+    credit_card = CreditCard.where(user_id: current_user.id)
     redirect_to action: "show" if credit_card.exists?
   end
 
@@ -28,7 +28,7 @@ class CreditCardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    credit_card = Credit_card.where(user_id: current_user.id).first
+    credit_card = CreditCard.where(user_id: current_user.id).first
     if credit_card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -40,7 +40,7 @@ class CreditCardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    credit_card = Credit_card.where(user_id: current_user.id).first
+    credit_card = CreditCard.where(user_id: current_user.id).first
     if credit_card.blank?
       redirect_to action: "new" 
     else
