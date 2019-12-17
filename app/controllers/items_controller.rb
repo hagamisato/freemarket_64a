@@ -32,8 +32,11 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def update
-    @item.update(item_params)
-    redirect_to item_path(@item.id)
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else 
+      redirect_to edit_item_path(@item.id) 
+    end
   end
 
   private
