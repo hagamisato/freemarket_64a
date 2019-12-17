@@ -24,7 +24,7 @@
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
             =f.fields_for :images do |i|
-              =i.file_field :image do
+              =i.file_field :image,{multipart: true} do
                 %p 
                   ドラックアンドドロップ<br>
                   またはクリックしてファイルをアップロード
@@ -74,7 +74,6 @@
               =f.select :shipping_area, ["---","北海道"]
               -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
               -# 後で、active_hashを用いるため残して起きました。
-
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 

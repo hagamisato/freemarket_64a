@@ -17,7 +17,11 @@ class ItemsController < ApplicationController
     render :new unless @item.save
   end
 
-  
+  def show
+    @image = Image.last
+    @item = Item.last
+    @category = Category.last
+  end
 
   def show
     @item = Item.find(params[:id])
