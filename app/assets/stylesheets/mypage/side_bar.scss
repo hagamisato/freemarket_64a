@@ -1,0 +1,93 @@
+.mainbody{
+  &__left{
+    &__boxes{
+      width: 250px;
+      background-color: $white;
+      &__menu{
+        &__box{
+          width: 250px;
+          height: 45px;
+          line-height: 45px;
+          border: solid 0.3px $backcolor;
+          text-decoration: none;
+          justify-content: space-between;
+          &__link{
+            width: 250px;
+            height: 45px;
+            color:$black;
+            text-decoration: none;
+            display: block;
+            line-height: 45px;
+            display: flex;
+            justify-content: space-between;
+            #icon__arrow{
+              color: $gray9;
+              font-size: 18px;
+              line-height: 45px;
+              text-align: end;
+              padding-right: 15px;
+            }
+          }
+        }
+        span{
+          height: 45px;
+          text-decoration: none;
+          color: $black;
+          padding-left: 10px;
+        }
+      }
+      &__merpay{
+        &__title{
+          background-color: $backcolor;
+          padding-top: 50px;
+
+        }
+        &__box{
+          width: 250px;
+          height: 45px;
+          line-height: 45px;
+          border: solid 0.3px $backcolor;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+
+          &__message{
+            font-size: 10px;
+          }
+        }
+        span{
+          height: 45px;
+          text-decoration: none;
+          color: $black;
+          padding-left: 10px;
+        }
+      }
+      &__setting{
+        &__title{
+          background-color: $backcolor;
+          padding-top: 50px;
+        }
+        &__box{
+          width: 250px;
+          height: 45px;
+          line-height: 45px;
+          border: solid 0.3px $backcolor;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+        }
+        span{
+          height: 45px;
+          text-decoration: none;
+          color: $black;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+.icon__arrrows{
+  color: $gray8;
+  text-align: end;
+  padding-right: 15px;
+}

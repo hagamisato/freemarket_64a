@@ -1,0 +1,114 @@
+= render "layouts/mypage_header"
+- breadcrumb :identification
+= render "layouts/breadcrumbs"
+.all
+  = render "side_bar"
+  .iden
+    .iden__title 本人情報の登録
+    .iden__body
+      .iden__body__top
+        .iden__body__top__comment
+          お客さまの本人情報をご登録ください。<br>
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .iden__body__top__explain
+          本人確認書類のアップロードについて
+          %i.fas.fa-chevron-right
+      .iden__body__form
+        .iden__body__form__box
+          .iden__body__form__box__title お名前
+          .iden__body__form__box__content 山田 彩
+          -# =user.f_name_kanji
+          -# =user.l_name_kanji
+        .iden__body__form__box
+          .iden__body__form__box__title お名前カナ
+          .iden__body__form__box__content ヤマダ アヤ
+          -# =user.f_name_kana
+          -# =user.l_name_kana
+        .iden__body__form__box
+          .iden__body__form__box__title 生年月日
+          .iden__body__form__box__content 2019年01月01日
+          -# =user.birth_year 年
+          -# =user.birth_month 月
+          -# =user.birth_day 日
+        .iden__body__form__box
+          -# if @user.---- == nill
+            -# .iden__body__form__box__title 
+            -#   郵便番号
+            -#   %span.form-optional 任意
+            -#   .iden__body__form__box__content 
+            -#   %input.input__default
+            -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
+          -# -else 
+          .iden__body__form__box__title 
+            郵便番号
+          .iden__body__form__box__content 
+            1234567
+            -# =addres.
+        .iden__body__form__box
+          -# if @user.---- == nill
+            -# .iden__body__form__box__title
+            -#   都道府県
+            -#   %span.form-optional 任意
+            -#   .iden__body__form__box__content 
+            -#   %input.input__default
+            -#   -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
+          -# -else 
+          .iden__body__form__box__title
+            都道府県
+          .iden__body__form__box__content 
+            北海道
+            -# =address.prefecture
+        .iden__body__form__box
+          -# if @user.---- == nill
+            -# .iden__body__form__box__title 
+            -# 市区町村
+            -# %span.form-optional 任意
+            -# .iden__body__form__box__content 
+            -# %input.input__default
+            -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
+          -# -else 
+          .iden__body__form__box__title 
+            市区町村
+          .iden__body__form__box__content 
+            名古屋市
+            -# =address.
+        .iden__body__form__box
+          -# if @user.---- == nill
+            -# .iden__body__form__box__title 
+              -# 番地
+              -# %span.form-optional 任意
+              -# .iden__body__form__box__content 
+              -# %input.input__default
+            -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default" 
+          -# -else 
+          .iden__body__form__box__title 
+            番地
+          .iden__body__form__box__content 
+            1-1
+            -# =address.
+        .iden__body__form__box
+          -# if @user.---- == nill
+            -#  .iden__body__form__box__title 
+            -#   建物名
+            -#   %span.form-optional 任意
+            -#   .iden__body__form__box__content 
+            -#   %input.input__default
+            -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
+          -# -else 
+          .iden__body__form__box__title 
+            建物名  
+          .iden__body__form__box__content 
+            -# =address.
+          .iden__body__form__box__submit
+            =link_to  "変更する", identification_mypage_index_path,  class:"submit__btn__iden"
+            -# =f.submit "変更する", class:"submit__btn"
+          -# .iden__body__form__box__submit
+          -#   =link_to  "登録する", identification_mypage_index_path,  class:"submit__btn__iden"
+            -# =f.submit "変更する", class:"submit__btn"
+          .iden__body__top__explain
+            本人情報の登録について  
+            %i.fas.fa-chevron-right
+
+= render "layouts/footer"
+= render "layouts/circle"
+

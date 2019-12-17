@@ -1,0 +1,15 @@
+.main__content__body__new__items__item
+  .main__content__body__new__items__item__image
+    -# = item.image.url  イメージカラムできたらーーーーーーー
+    -#  - @item.imagess.each do |image|
+    -# -user = item.user
+    -# @item = Item.find(:id)
+    -#  @users = @item.users コントローラー？？？
+    .main__content__body__new__items__item__image__price 
+      %span ¥
+      = converting_to_jpy(item.price)
+  .main__content__body__new__items__item__name 
+    =item.name
+  .main__content__body__new__items__item__link
+    =link_to "", item_path(item.id)
+

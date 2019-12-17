@@ -18,15 +18,16 @@
 - has_one :address
 - has_one :credit_card
 
-## adressテーブル
+## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
+|postal_code|integer|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |address|string|null: false|
 |building|string||
-|phone number|string||
+|phone_number|integer||
 ### Association
 - belongs_to :users
 

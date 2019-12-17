@@ -1,6 +1,11 @@
 # require 'Kconv'
 class ItemsController < ApplicationController
 
+
+  def index
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
     @item.images.build
@@ -9,17 +14,17 @@ class ItemsController < ApplicationController
 
   def create 
     @item = Item.new(item_params)
-    if @item.save
-      
-    else
-      render :new
-    end   
+    render :new unless @item.save
   end
 
   def show
     @image = Image.last
     @item = Item.last
     @category = Category.last
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   private

@@ -74,6 +74,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'fog-aws'
+gem 'gretel'
 gem 'dotenv-rails'
 gem 'fog-core', '~> 2.1', '>= 2.1.2'
 group :production do
@@ -88,4 +89,4 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-
+gem "aws-sdk-s3", require: false
