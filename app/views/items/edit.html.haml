@@ -56,7 +56,6 @@
               %span.form-require 必須
           .exhibit-wrapper__sell-content__select-wrap
             =f.select :state, ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
-
       .exhibit-wrapper__sell-content.clearfix
         %h3 配送について
         .exhibit-wrapper__sell-content__pulldown
@@ -80,7 +79,6 @@
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :shipping_date, ["---","1~2日で発送","2~3日で発送","4~7日で発送"]
-
       .exhibit-wrapper__sell-content.clearfix
         %h3 販売価格(300~9,999,999)
         .exhibit-wrapper__sell-content__pulldown
@@ -104,24 +102,22 @@
               ¥ 
               %span#amount -      
       .exhibit-wrapper__sell-content.clearfix
-        %p 
-        %a{href:""}禁止されている出品
-        、
-        %a{href:""}行為
-        を必ずご確認ください。
+        %p
+          =link_to "禁止されている出品", ""  
+          、
+          =link_to "行為", ""
+          を必ずご確認ください。
         %p 
           またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{href:""}偽ブランドの転売
+          =link_to "偽ブランドの転売", ""
           は犯罪であり処罰される可能性があります。
         %p 
           また、出品をもちまして
-          %a{href:""}加盟店規約
+          =link_to "加盟店規約", ""
           に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red-edit", value: "変更する")
-
           =link_to "キャンセル", item_path(@item.id), class: "return" 
-    
 %footer
   .footer__nav
     %ul
@@ -133,28 +129,3 @@
       = image_tag src="logo_gray.svg", alt:"［写真］", class:"gray-logo"
     %p.small  
       ©︎Freemarket,64a.
-
-
-
-                  
-        
-
-      
-        
-              
-
-
-        
-
-      
-      
-
-
-
-
-
-
-
-    
-
-
