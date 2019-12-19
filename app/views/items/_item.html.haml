@@ -1,10 +1,7 @@
 .main__content__body__new__items__item
   .main__content__body__new__items__item__image
-    -# = item.image.url  イメージカラムできたらーーーーーーー
-    -#  - @item.imagess.each do |image|
-    -# -user = item.user
-    -# @item = Item.find(:id)
-    -#  @users = @item.users コントローラー？？？
+    - if item.images[0].present?
+      = image_tag item.images[0].image.url , width: 190, height: 170;
     .main__content__body__new__items__item__image__price 
       %span ¥
       = converting_to_jpy(item.price)

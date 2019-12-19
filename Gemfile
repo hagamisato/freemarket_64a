@@ -77,7 +77,6 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'gretel'
-gem 'dotenv-rails'
 gem 'fog-core', '~> 2.1', '>= 2.1.2'
 group :production do
   gem 'unicorn', '5.4.1'
@@ -92,3 +91,6 @@ group :development, :test do
 end
 
 gem "aws-sdk-s3", require: false
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
