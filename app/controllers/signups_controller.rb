@@ -60,21 +60,8 @@ class SignupsController < ApplicationController
         provider: session[:provider],
         user_id: @user.id
       )    
-<<<<<<< HEAD
-<<<<<<< HEAD
-      # session[:user_id] = @user.id
-      sign_in User.find(@user.id) unless user_signed_in?
-      redirect_to root_path
-=======
       sign_in User.find(settion[:id]) unless user_signed_in?
       redirect_to new_card_path
-
->>>>>>> 63303d65a3c2a26eda5dd61f0e3669fd509f5464
-=======
-      sign_in User.find(settion[:id]) unless user_signed_in?
-      redirect_to new_card_path
-
->>>>>>> 63303d65a3c2a26eda5dd61f0e3669fd509f5464
     else
       render '/signups/reg'
     end
