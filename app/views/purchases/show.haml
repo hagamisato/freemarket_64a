@@ -6,6 +6,7 @@
       .purchases__box__main__form
         .purchases__box__main__form__item
           .purchases__box__main__form__item__image
+            =image_tag @item.images[0].image.url, width: 80, height: 80;
           .purchases__box__main__form__item__detail
             .purchases__box__main__form__item__detail__name 
               = @item.name
@@ -36,9 +37,10 @@
                 カード番号
               .card__box__number
               = "**** **** **** " + @default_card_information.last4
-              - exp_month = @default_card_information.exp_month.to_s
-              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-              = exp_month + " / " + exp_year
+              %p
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
 
         .purchases__box__main__form__container
           .purchases__box__main__form__container__upper 配送先
