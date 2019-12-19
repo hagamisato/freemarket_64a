@@ -1,3 +1,9 @@
 %h2 購入が完了しました！
 %p Apple MacBook Pro 13インチ
+=@item.name
 %p ¥135,000(送料込み)
+= converting_to_jpy(@item.price)
+
+.submit__btn
+  =link_to "トップページへ戻る", root_path, class:"submit__btn" 
+  =link_to "マイページへ戻る", mypage_path(current_user.id), class:"submit__btn" 

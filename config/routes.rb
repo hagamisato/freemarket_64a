@@ -36,8 +36,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchases, only: [:index ] do
-    collection do
+  resources :purchases, only: [:index, :show ] do
+    member do
     post 'pay', to: 'purchases#pay'
     get :done
     end
