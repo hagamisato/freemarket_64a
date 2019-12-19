@@ -118,7 +118,8 @@
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red-edit", value: "変更する")
         .destroy
-          =link_to "この商品を削除する", item_path(@item.id), method: :delete, class:"gray-btn"
+          
+        =link_to "この商品を削除する", item_path(@item.id), method: :delete, class:"gray-btn"
         .cancel
           =link_to "キャンセル", item_path(@item.id), class: "gray-btn" 
           
