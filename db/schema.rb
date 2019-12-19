@@ -13,20 +13,16 @@
 ActiveRecord::Schema.define(version: 2019_12_18_012232) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
+    t.bigint "user_id"
+    t.integer "postal_code"
+    t.string "prefectures"
+    t.string "municipalities"
+    t.string "address"
+    t.string "building"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.bigint "item_id"
-    t.text "image"
-    t.string "category_name"
-    t.index ["item_id"], name: "index_categories_on_item_id"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_012232) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postage", null: false
-    t.string "shipping_area", default: "", null: false
+    t.string "shipping_area", null: false
     t.string "shipping_date"
     t.integer "price", null: false
     t.string "name", null: false
@@ -64,11 +60,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_012232) do
     t.string "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
-    t.text "image"
-    t.bigint "prefecture_id"
-    t.bigint "image_id"
-    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,13 +83,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_012232) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "addresses", "users"
-
-  add_foreign_key "categories", "items"
-  add_foreign_key "credit_cards", "users"
-
   add_foreign_key "images", "items"
-  add_foreign_key "items", "categories"
-
 end
