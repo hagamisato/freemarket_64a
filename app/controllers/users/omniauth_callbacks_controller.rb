@@ -8,7 +8,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:google)
   end
   def callback_for(provider)
-    # binding.pry
     info = User.find_oauth(request.env["omniauth.auth"])
     
     @user = User.where(nickname: info[:user][:nickname]).or(User.where(email: info[:user][:email])).first || info[:user]
