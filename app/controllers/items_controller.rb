@@ -18,7 +18,7 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def show
-    @item = Item.last
+    @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
     @category = Category.find_by(item_id: @item.id)
   end
@@ -30,6 +30,15 @@ before_action :set_item, only:[:edit, :update]
     if @item.update(item_params)
       redirect_to item_path(@item.id)
     else 
+      redirect_to edit_item_path(@item.id) 
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      redirect_to root_path
+    else
       redirect_to edit_item_path(@item.id) 
     end
   end
