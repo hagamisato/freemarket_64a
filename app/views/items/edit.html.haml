@@ -1,0 +1,135 @@
+%header.exhibit
+  =link_to root_path do
+    = image_tag src="fmarket_logo_red.svg", alt:"［写真］", class:"image"
+%main.exhibit
+  .exhibit_modal-wrapper
+    .exhibit_modal-wrapper__content 
+      %h3.modal-head 出品が完了しました
+      .modal-body
+        %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+        .btn-red
+          =link_to "続けて出品する",new_item_path, id: "continue"
+        .show
+          =link_to "商品ページへ行ってシェアする", item_path(:id), id: "show"
+  .exhibit-wrapper
+    .exhibit-wrapper__head
+      %h2 商品の情報を入力
+    .exhibit-wrapper__form
+    = form_for(@item,url: item_path, action: item_path(@item.id)) do |f|
+      .exhibit-wrapper__form__upload-box
+        .exhibit-wrapper__form__upload-box__title
+          %h3 
+            出品画像  
+            %span.form-require 必須
+          %p 最大10枚までアップロードできます。
+          .exhibit-wrapper__form__upload-box__upload-space
+            =f.fields_for :images do |i|
+              =i.file_field :image,{multipart: true} do
+                %p 
+                  ドラックアンドドロップ<br>
+                  またはクリックしてファイルをアップロード
+      .exhibit-wrapper__sell-content
+        .exhibit-wrapper__sell-content__name
+          %h1 
+            商品名
+            %span.form-require 必須
+        =f.text_field :name, id: "name", placeholder: "商品名 (必須40文字まで)"
+        .exhibit-wrapper__sell-content__description
+          .exhibit-wrapper__sell-content__description__title
+            %h1 
+              商品の説明
+              %span.form-require 必須
+            =f.text_area :explain, id: "description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" 
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 商品の詳細
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name-category
+            %p 
+              カテゴリー 
+              %span.form-require  必須
+          .exhibit-wrapper__sell-content__select-wrap
+            =f.fields_for :categories do |i|
+              =i.select :category_name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
+          .exhibit-wrapper__sell-content__pulldown__name-state
+            %p 
+              商品の状態 
+              %span.form-require 必須
+          .exhibit-wrapper__sell-content__select-wrap
+            =f.select :state, ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 配送について
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name-delivery
+            %p 
+              配送料の負担 
+              %span.form-require 必須
+            .exhibit-wrapper__sell-content__select-wrap
+              =f.select :postage, ["---","送料込み(出品者負担)","着払い(購入者負担)"]
+          .exhibit-wrapper__sell-content__pulldown__name-delivery
+            %p 
+              発送元の地域 
+              %span.form-require 必須
+            .exhibit-wrapper__sell-content__select-wrap
+              =f.select :shipping_area, ["---","北海道"]
+              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              -# 後で、active_hashを用いるため残して起きました。
+          .exhibit-wrapper__sell-content__pulldown__name-delivery    
+            %p 
+              発送までの日数 
+              %span.form-require 必須
+            .exhibit-wrapper__sell-content__select-wrap
+              =f.select :shipping_date, ["---","1~2日で発送","2~3日で発送","4~7日で発送"]
+      .exhibit-wrapper__sell-content.clearfix
+        %h3 販売価格(300~9,999,999)
+        .exhibit-wrapper__sell-content__pulldown
+          .exhibit-wrapper__sell-content__pulldown__name
+            %p.name 
+              価格   
+              %span.form-require 必須 
+            %p.price
+              ¥ 
+              = f.number_field :price, placeholder: "例) 300", class: "input-price"
+          .exhibit-wrapper__sell-content__pulldown__name
+            .fee__title
+              販売手数料(10%)
+            .fee__amount 
+              ¥ 
+              %span#fee -
+          .exhibit-wrapper__sell-content__pulldown__name-profit
+            .profit__title
+              販売利益    
+            .profit__amount
+              ¥ 
+              %span#amount -      
+      .exhibit-wrapper__sell-content.clearfix
+        %p
+          =link_to "禁止されている出品", ""  
+          、
+          =link_to "行為", ""
+          を必ずご確認ください。
+        %p 
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          =link_to "偽ブランドの転売", ""
+          は犯罪であり処罰される可能性があります。
+        %p 
+          また、出品をもちまして
+          =link_to "加盟店規約", ""
+          に同意したことになります。
+        .exhibit-wrapper__sell-content
+          =f.submit(class: "btn-red-edit", value: "変更する")
+        .destroy
+          =link_to "この商品を削除する", item_path(@item.id), method: :delete, class:"gray-btn"
+        .cancel
+          =link_to "キャンセル", item_path(@item.id), class: "gray-btn" 
+          
+%footer
+  .footer__nav
+    %ul
+      %li プライバシーポリシー
+      %li エフマーケット利用規約
+      %li 特定商取引に関する表記
+  .footer__logo
+    =link_to root_path do
+      = image_tag src="logo_gray.svg", alt:"［写真］", class:"gray-logo"
+    %p.small  
+      ©︎Freemarket,64a.

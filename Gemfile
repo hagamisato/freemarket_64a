@@ -77,7 +77,6 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'gretel'
-gem 'dotenv-rails'
 gem 'fog-core', '~> 2.1', '>= 2.1.2'
 group :production do
   gem 'unicorn', '5.4.1'
