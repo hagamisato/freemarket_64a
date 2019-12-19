@@ -92,3 +92,6 @@ group :development, :test do
 end
 
 gem "aws-sdk-s3", require: false
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
