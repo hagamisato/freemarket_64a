@@ -18,15 +18,10 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def show
-    @image = Image.last
     @item = Item.last
-    @category = Category.last
+    @image = Image.find_by(item_id: @item.id)
+    @category = Category.find_by(item_id: @item.id)
   end
-
-  # def show
-  #   @item = Item.find(params[:id])
-  # end
-  # Couldn't find Item with 'id'=idというエラーが出たためコメントアウトしました。
 
   def edit
   end
