@@ -18,7 +18,7 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def show
-    @item = Item.last
+    @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
     @category = Category.find_by(item_id: @item.id)
   end
