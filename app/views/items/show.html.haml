@@ -7,7 +7,7 @@
     .item__introduce
     .item__content
       .item__content__image
-        = image_tag @image.image.url , width: 280; 
+        = image_tag @item.images[0].image.url , width: 280, height: 200; 
       .item__content__table
         %table
           %tr 
@@ -57,7 +57,7 @@
       .item__buy__box
         .item__buy__box__price
           ¥  
-          =@item.price
+          = converting_to_jpy(@item.price)
         .item__buy__box__tax （税込）
         .item__buy__box__shippingfee 送料込み
       -# =link_to "購入画面に進む", "/", class:"item__buy__btn"
