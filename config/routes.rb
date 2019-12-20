@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'purchases/done'
   devise_for :users
   root "items#index"
-  resources :items, only:[:new, :create, :show, :edit, :update, :index]
+  resources :items
   resources :item, only:[:index, :create, :new]
   resources :signups, only: [:index, :create] do
     collection do

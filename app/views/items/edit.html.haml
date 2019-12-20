@@ -117,7 +117,11 @@
           に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red-edit", value: "変更する")
-          =link_to "キャンセル", item_path(@item.id), class: "return" 
+        .destroy
+          =link_to "この商品を削除する", item_path(@item.id), method: :delete, class:"gray-btn"
+        .cancel
+          =link_to "キャンセル", item_path(@item.id), class: "gray-btn" 
+          
 %footer
   .footer__nav
     %ul
