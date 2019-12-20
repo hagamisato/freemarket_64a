@@ -8,11 +8,11 @@
           %i.far.fa-envelope.btn__mail{"aria-hidden": "true"} 
           %p1 メールアドレスで登録する
       .topmain__box__form__btn
-        =link_to "/", class:"topmain__box__form__btn__facebook" do
+        =link_to user_facebook_omniauth_authorize_path, method: :post, class:"topmain__box__form__btn__facebook" do
           %i.fab.fa-facebook-square.btn__facebook
           %p2 Facebookで登録する
       .topmain__box__form__btn
-        =link_to "/", class:"topmain__box__form__btn__google"  do
+        =link_to user_google_oauth2_omniauth_authorize_path, method: :post, class:"topmain__box__form__btn__google"  do
           %i.fab.fa-google.btn__google     
           %p3 Googleで登録する
 = render "mercari_bottom"
