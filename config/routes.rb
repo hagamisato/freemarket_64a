@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   
  
   resources :mypage, only: [:imdex, :show] do
-    collection do
+    member do
       get :profile
       get :identification
       get :card

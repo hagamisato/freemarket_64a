@@ -7,22 +7,21 @@ end
 # マイページ関連ーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 crumb :mypage do
-  link "マイページ"
-    # ルートパスつけるーーーー
+  link "マイページ", profile_mypage_path
 end
 
 crumb :profile do
-  link "プロフィール", profile_mypage_index_path
+  link "プロフィール", profile_mypage_path
   parent :mypage
 end
 
 crumb :logout do
-  link "ログアウト", logout_mypage_index_path
+  link "ログアウト", logout_mypage_path
    parent :mypage
 end
 
 crumb :identification do
-  link "本人情報の登録", identification_mypage_index_path
+  link "本人情報の登録", identification_mypage_path
    parent :mypage
 end
 
