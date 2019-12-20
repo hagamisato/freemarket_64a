@@ -5,8 +5,16 @@ class SignupsController < ApplicationController
   end
 
   def reg
-    @user = User.new
-
+    @user = if session[:password_confirmation]
+      User.new(
+        nickname: session[:nickname],
+        email: session[:email],
+        password_confirmation: session[:password_confirmation]
+      )
+    else
+      User.new
+    end
+    # @user = User.new
   end
 
   def tell
@@ -47,7 +55,11 @@ class SignupsController < ApplicationController
     )
     @user.build_address(user_params[:address_attributes])
     if @user.save
-      session[:user_id] = @user.id
+      SnsCredential.create(
+        uid: session[:uid],
+        provider: session[:provider],
+        user_id: @user.id
+      )    
       sign_in User.find(settion[:id]) unless user_signed_in?
       redirect_to new_card_path
     else

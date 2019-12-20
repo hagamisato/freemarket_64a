@@ -1,0 +1,72 @@
+=render "signups/mercari_top"
+.purchases
+  .purchases__box
+    .purchases__box__title 購入内容の確認
+    .purchases__box__main
+      .purchases__box__main__form
+        .purchases__box__main__form__item
+          .purchases__box__main__form__item__image
+            =image_tag @item.images[0].image.url, width: 80, height: 80;
+          .purchases__box__main__form__item__detail
+            .purchases__box__main__form__item__detail__name 
+              = @item.name
+            .purchases__box__main__form__item__detail__prices 
+              .purchases__box__main__form__item__detail__prices__price 
+                ¥
+                = converting_to_jpy(@item.price)
+              .purchases__box__main__form__item__detail__prices__tax （税込）送料込み
+        .purchases__box__main__form__payment
+          .purchases__box__main__form__payment__upper
+            .purchases__box__main__form__payment__upper__title 支払い金額
+            .purchases__box__main__form__payment__upper__price 
+              ¥
+              = converting_to_jpy(@item.price)
+          .purchases__box__main__form__payment__lower
+            %i.fas.fa-square.square
+            ポイントを使用(所持ポイント: 0p)
+        .purchases__box__main__form__container
+          .purchases__box__main__form__container__upper 支払い方法
+          .purchases__box__main__form__container__lower 
+            - if @default_card_information.blank?
+              %i.fas.fa-plus-circle.plus
+              登録してください
+            - else
+            .card__box
+              -#以下カード情報を表示
+              .card__box__title
+                カード番号
+              .card__box__number
+              = "**** **** **** " + @default_card_information.last4
+              %p
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+
+
+        -if @address == nil
+          .purchases__box__main__form__container
+            %i.fas.fa-plus-circle.plus
+            登録してください
+        -else
+          .purchases__box__main__form__container
+            .purchases__box__main__form__container__upper 配送先
+            .purchases__box__main__form__container__lower 
+              %span 〒
+              =@address.postal_code
+              %p
+              =@address.prefectures
+              =@address.municipalities
+              =@address.address
+              %p
+              =@address.building
+              -# %i.fas.fa-plus-circle.plus
+              -# 登録してください
+        .purchases__box__main__form__btn
+          -# =link_to "購入する", purchases_path(params[:id]), class:"purchases__box__main__form__btn__submit" 
+          = form_tag(action: :pay, method: :post, class:"purchases__box__main__form__btn__submit") do
+            %button.purchases_button 購入する
+
+=render "signups/mercari_bottom"
+
+
+

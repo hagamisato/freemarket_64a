@@ -21,7 +21,8 @@
 /yarn-error.log
 
 /public/assets
-.byebug_history
+/.byebug_history
+.env
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
