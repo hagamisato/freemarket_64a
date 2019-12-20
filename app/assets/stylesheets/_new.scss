@@ -236,7 +236,8 @@ body {
         }
         .btn-red {
           margin-top: 20px;
-          width: 100%;
+          margin-left: 35px;
+          width: 470px;
           background-color: #ea352d;
           color: #fff;
           line-height: 48px;
@@ -252,15 +253,22 @@ body {
           width: 87%;
           margin: 20px auto 0;
           display: block;
-          background-color: #aaa;
+          background-color: #aaa; 
           color: #fff;
           text-align: center;
           line-height: 48px;
           text-decoration: none;
         }
+        &-change {
+          width: 87%;
+          margin-left: 40px;
+        }
         a {
           color: #0099e8;
           text-decoration: none;
+        }
+        &__explain {
+          margin-bottom: 35px;
         }
       }
   }

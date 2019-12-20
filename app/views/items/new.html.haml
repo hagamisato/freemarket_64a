@@ -10,7 +10,7 @@
         .btn-red
           =link_to "続けて出品する",new_item_path, id: "continue"
         .show
-          =link_to "商品ページへ行ってシェアする", item_path(:id), id: "show"
+          =link_to "トップページに戻る", root_path, id: "show"
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
@@ -104,22 +104,23 @@
               ¥ 
               %span#amount -      
       .exhibit-wrapper__sell-content.clearfix
-        %p 
-        %a{href:""}禁止されている出品
-        、
-        %a{href:""}行為
-        を必ずご確認ください。
-        %p 
-          またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{href:""}偽ブランドの転売
-          は犯罪であり処罰される可能性があります。
-        %p 
-          また、出品をもちまして
-          %a{href:""}加盟店規約
-          に同意したことになります。
+        .exhibit-wrapper__sell-content__explain
+          %p 
+          %a{href:""}禁止されている出品
+          、
+          %a{href:""}行為
+          を必ずご確認ください。
+          %p 
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %a{href:""}偽ブランドの転売
+            は犯罪であり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            %a{href:""}加盟店規約
+            に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red", value: "出品する")
-          =link_to "もどる", root_path, class: "return" 
+          =link_to "もどる", root_path, class: "gray-btn" 
     
 %footer
   .footer__nav
