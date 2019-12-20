@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   
  
   resources :mypage, only: [:imdex, :show] do
-    member do
+    collection do
       get :profile
       get :identification
       get :card
@@ -56,9 +56,9 @@ Rails.application.routes.draw do
 
   resources :purchases, only: [:index, :show ] do
     member do
-    post 'pay', to: 'purchases#pay'
-    get :done
-    end
+      post 'pay', to: 'purchases#pay'
+      get :done
+      end
   end
   
 end
