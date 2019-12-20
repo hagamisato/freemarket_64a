@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   before_action :set_item
 
   def show
+    card = current_user.card
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "cards", action: "new"
@@ -17,6 +18,7 @@ class PurchasesController < ApplicationController
 
 
   def pay
+    card = current_user.card
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     amount: @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -30,7 +32,7 @@ class PurchasesController < ApplicationController
   end
 
   def set_item
-    card = current_user.card
+    @item = Item.find(params[:id])
   end
 end
 
