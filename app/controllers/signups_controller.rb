@@ -48,7 +48,7 @@ class SignupsController < ApplicationController
     @user.build_address(user_params[:address_attributes])
     if @user.save
       session[:user_id] = @user.id
-      sign_in User.find(settion[:id]) unless user_signed_in?
+      sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_card_path
     else
       render '/signups/reg'
