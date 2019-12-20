@@ -71,7 +71,6 @@
       -# -# .destroy
       -# -#   =link_to "この商品を削除する", destroy_path, class:"item__buy__btn"
       -# 一旦停止と削除を実装するまではコメントアウトしておく
-
       -# =link_to "購入画面に進む", purchases_index_path, class:"item__buy__btn"
       -# 購入画面を実装する時に使用する。
     .item__discription 
@@ -89,7 +88,6 @@
       .comment__container__box
         .comment__container__box__title 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         .comment__container__box__form
-        -# =form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
         =form_with(local: true) do |form|
           =form.text_area :text, rows: "8", class: "comment__container__box__form__content" 
           =form.submit "コメントする", class: "comment__container__box__form__submit"
