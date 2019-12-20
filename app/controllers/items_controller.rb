@@ -9,7 +9,7 @@ before_action :set_item, only:[:edit, :update]
   def new
     @item = Item.new
     @item.images.build
-    # @item.categories.build
+    @item.categories.build
   end
 
   def create 
@@ -20,12 +20,12 @@ before_action :set_item, only:[:edit, :update]
   def show
     @image = Image.last
     @item = Item.last
-    # @category = Category.last
+    @category = Category.last
   end
 
-  # def show
-  #   @item = Item.find(params[:id])
-  # end
+  def show
+    @item = Item.find(params[:id])
+  end
   # Couldn't find Item with 'id'=idというエラーが出たためコメントアウトしました。
 
   def edit
