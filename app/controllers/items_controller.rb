@@ -20,12 +20,12 @@ before_action :set_item, only:[:edit, :update]
   def show
     @image = Image.last
     @item = Item.last
-  #  エラーが出たためコメントアウトしました。
+  #  ↓エラーが出たためコメントアウトしました。商品購入実装で仮で表示させるようになっています
   #   @category = Category.last
   #   @item = Item.find(params[:id])
   #   @image = Image.find_by(item_id: @item.id)
   #   @category = Category.find_by(item_id: @item.id)
-  # エラーが出るためコメントアウトーーーーーー柴田さんの記述に合わせて変更
+  #  ↑エラーが出るためコメントアウトーーーーーー柴田さんの記述に合わせて変更
   end
 
   def edit
