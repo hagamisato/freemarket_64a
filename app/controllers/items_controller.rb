@@ -1,9 +1,9 @@
 # require 'Kconv'
 class ItemsController < ApplicationController
-
+before_action :set_item, only:[:edit, :update]
 
   def index
-    @items = Item.all
+    @items = Item.limit(10).order('id DESC')
   end
 
   def new
@@ -20,16 +20,41 @@ class ItemsController < ApplicationController
   def show
     @image = Image.last
     @item = Item.last
-    @category = Category.last
+  #  ↓エラーが出たためコメントアウトしました。商品購入実装で仮で表示させるようになっています
+  #   @category = Category.last
+  #   @item = Item.find(params[:id])
+  #   @image = Image.find_by(item_id: @item.id)
+  #   @category = Category.find_by(item_id: @item.id)
+  #  ↑エラーが出るためコメントアウトーーーーーー柴田さんの記述に合わせて変更
   end
 
-  def show
-    @item = Item.find(params[:id])
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else 
+      redirect_to edit_item_path(@item.id) 
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      redirect_to root_path
+    else
+      redirect_to edit_item_path(@item.id) 
+    end
   end
 
   private
   
   def item_params 
     params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes: [:id, :image, :item_id], categories_attributes: [:id, :name, :item_id, :category_name])
-  end  
+  end
+  
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end

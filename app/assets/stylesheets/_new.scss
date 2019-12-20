@@ -235,15 +235,22 @@ body {
           float: right;
         }
         .btn-red {
+          margin-top: 20px;
+          width: 100%;
+          background-color: #ea352d;
+          color: #fff;
+          line-height: 48px;
+        }
+        .btn-red-edit {
           margin-top: 40px;
           width: 100%;
           background-color: #ea352d;
           color: #fff;
           line-height: 48px;
         }
-        .return {
-          width: 45%;
-          margin: 24px auto 0;
+        .gray-btn {
+          width: 87%;
+          margin: 20px auto 0;
           display: block;
           background-color: #aaa;
           color: #fff;
