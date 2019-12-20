@@ -14,22 +14,23 @@
           本人確認書類のアップロードについて
           %i.fas.fa-chevron-right
       .iden__body__form
-        .iden__body__form__box
+        .iden__body__form__box 
           .iden__body__form__box__title お名前
-          .iden__body__form__box__content 山田 彩
-          -# =user.f_name_kanji
-          -# =user.l_name_kanji
+          =@user.f_name_kanji
+          =@user.l_name_kanji
         .iden__body__form__box
           .iden__body__form__box__title お名前カナ
-          .iden__body__form__box__content ヤマダ アヤ
-          -# =user.f_name_kana
-          -# =user.l_name_kana
+          =@user.f_name_kana
+          =@user.l_name_kana
         .iden__body__form__box
           .iden__body__form__box__title 生年月日
-          .iden__body__form__box__content 2019年01月01日
-          -# =user.birth_year 年
-          -# =user.birth_month 月
-          -# =user.birth_day 日
+          .iden__body__form__box__content 
+          =@user.birth_year 
+          年
+          =@user.birth_month 
+          月
+          =@user.birth_day 
+          日
         .iden__body__form__box
           -# if @user.---- == nill
             -# .iden__body__form__box__title 
@@ -100,7 +101,7 @@
           .iden__body__form__box__content 
             -# =address.
           .iden__body__form__box__submit
-            =link_to  "変更する", identification_mypage_index_path,  class:"submit__btn__iden"
+            =link_to  "変更する", identification_mypage_path,  class:"submit__btn__iden"
             -# =f.submit "変更する", class:"submit__btn"
           -# .iden__body__form__box__submit
           -#   =link_to  "登録する", identification_mypage_index_path,  class:"submit__btn__iden"
