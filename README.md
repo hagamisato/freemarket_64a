@@ -11,6 +11,7 @@
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
+|phone_number|string||
 ### Association
 - has_many :commnets
 - has_many :items, through: :user_items
@@ -27,7 +28,7 @@
 |municipalities|string|null: false|
 |address|string|null: false|
 |building|string||
-|phone_number|integer||
+|phone_number|string||
 ### Association
 - belongs_to :users
 
@@ -93,6 +94,7 @@
 |user_id|references|null: false, foreign_key: true|
 |categorys_id|references||
 ### Association
+
 
 ## categorysテーブル
 |Column|Type|Options|

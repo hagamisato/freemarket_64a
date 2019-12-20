@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'cards/show'
   get 'purchases/index'
   get 'purchases/done'
-  devise_for :users
+  devise_for :users,
+  controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
   root "items#index"
   resources :items
   resources :item, only:[:index, :create, :new]
