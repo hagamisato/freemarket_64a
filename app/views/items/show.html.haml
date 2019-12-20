@@ -60,11 +60,15 @@
           = converting_to_jpy(@item.price)
         .item__buy__box__tax （税込）
         .item__buy__box__shippingfee 送料込み
-      -# =link_to "購入画面に進む", "/", class:"item__buy__btn"
-      -# 商品の編集ボタンを作成するため一時的にコメントアウトしました。
-      .edit
-        =link_to "商品の編集", edit_item_path(@item.id), class:"item__buy__btn"
-      -# .option
+      
+      - if user_signed_in? && current_user.id == @item.user_id
+        .edit
+          =link_to "商品の編集", edit_item_path(@item.id), class:"item__buy__btn"
+      - else
+        .purchase
+          =link_to "購入画面に進む", "/", class:"item__buy__btn"
+    
+      -# 
       -#   or
       -# -# .stop
       -# -#   =link_to "出品を一旦停止する", [停止する処理を行なっているパス], class:"item__buy__btn"
