@@ -115,3 +115,25 @@
     }
   }
 }
+
+.triangle{
+width: 80px;
+height: 80px;
+border-top: 40px solid $red;
+border-right: 40px solid transparent;
+border-bottom: 40px solid transparent;
+border-left: 40px solid $red;
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: 4;
+}
+.sold{
+color: $white;
+font-size: 21px;
+font-weight: bold;
+transform: rotate(-45deg);
+position: absolute;
+top: 16px;
+z-index: 5;
+}
