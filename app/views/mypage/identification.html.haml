@@ -40,11 +40,10 @@
             -#   %input.input__default
             -# = f.text_field :phone_number, placeholder: '  例) 090-1234-5678', class:"input__default"
           -# -else 
-          .iden__body__form__box__title 
-            郵便番号
+          .iden__body__form__box__title 郵便番号
           .iden__body__form__box__content 
-            1234567
-            -# =addres.
+            %span 〒
+            =@address.postal_code
         .iden__body__form__box
           -# if @user.---- == nill
             -# .iden__body__form__box__title
@@ -57,8 +56,7 @@
           .iden__body__form__box__title
             都道府県
           .iden__body__form__box__content 
-            北海道
-            -# =address.prefecture
+            =@address.prefectures
         .iden__body__form__box
           -# if @user.---- == nill
             -# .iden__body__form__box__title 
@@ -71,8 +69,7 @@
           .iden__body__form__box__title 
             市区町村
           .iden__body__form__box__content 
-            名古屋市
-            -# =address.
+            =@address.municipalities
         .iden__body__form__box
           -# if @user.---- == nill
             -# .iden__body__form__box__title 
@@ -85,8 +82,7 @@
           .iden__body__form__box__title 
             番地
           .iden__body__form__box__content 
-            1-1
-            -# =address.
+            =@address.address
         .iden__body__form__box
           -# if @user.---- == nill
             -#  .iden__body__form__box__title 
@@ -99,7 +95,7 @@
           .iden__body__form__box__title 
             建物名  
           .iden__body__form__box__content 
-            -# =address.
+            =@address.building
           .iden__body__form__box__submit
             =link_to  "変更する", identification_mypage_path,  class:"submit__btn__iden"
             -# =f.submit "変更する", class:"submit__btn"

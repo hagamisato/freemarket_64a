@@ -12,6 +12,7 @@ class MypageController < ApplicationController
   end
 
   def identification
+    @address = Address.find_by(user_id: current_user.id)
   end
 
   def card
