@@ -36,7 +36,8 @@
               font-size: 20px;
               border-radius: 5px;
               border: solid 1px $gray6;
-              margin-bottom: 40px;
+              margin:0px 0px 40px 10px;
+              padding-left: 10px;
             }
             .icon__person{
               margin-top: 20px;
@@ -45,12 +46,21 @@
           }
         }
         &__introduction{
-          padding: 20px 20px 0px;
+          padding: 40px 20px 0px;
+          flex-wrap: wrap;
+          overflow: auto;
+          word-wrap: break-word;
           .introduction{
-            width: 100%;
+            width: 700px;
             height: 200px;
+            flex-wrap: wrap;
+            overflow: auto;
+            word-wrap: break-word;
             .introduction::placeholder{
               vertical-align: text-top;
+              flex-wrap: wrap;
+              overflow: auto;
+              word-wrap: break-word;
             }
           }
           .submit__btn{
@@ -63,7 +73,7 @@
             margin: 0 auto;
             line-height: 50px;
             border: none;
-            margin-top: 20px;
+            margin-top: 40px;
             text-align: center;
           }
         }

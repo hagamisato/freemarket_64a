@@ -18,14 +18,9 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def show
-    @image = Image.last
-    @item = Item.last
-  #  ↓エラーが出たためコメントアウトしました。商品購入実装で仮で表示させるようになっています
-  #   @category = Category.last
-  #   @item = Item.find(params[:id])
-  #   @image = Image.find_by(item_id: @item.id)
-  #   @category = Category.find_by(item_id: @item.id)
-  #  ↑エラーが出るためコメントアウトーーーーーー柴田さんの記述に合わせて変更
+    @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: @item.id)
+    @category = Category.find_by(item_id: @item.id)
   end
 
   def edit
@@ -51,7 +46,7 @@ before_action :set_item, only:[:edit, :update]
   private
   
   def item_params 
-    params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes: [:id, :image, :item_id], categories_attributes: [:id, :name, :item_id, :category_name])
+    params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes: [:id, :image, :item_id], categories_attributes: [:id, :name, :item_id, :category_name]).merge(user_id: current_user.id)
   end
   
   def set_item
