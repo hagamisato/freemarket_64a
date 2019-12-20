@@ -25,6 +25,7 @@ class PurchasesController < ApplicationController
     customer: card.customer_id,  
     currency: 'jpy', 
   )
+  @item.update(buyer_id: current_user.id)  #buyer_idを追加する
   redirect_to action: 'done' #完了画面に移動
   end
 

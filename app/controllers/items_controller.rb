@@ -9,7 +9,7 @@ before_action :set_item, only:[:edit, :update]
   def new
     @item = Item.new
     @item.images.build
-    @item.categories.build
+    # @item.categories.build
   end
 
   def create 
@@ -20,7 +20,7 @@ before_action :set_item, only:[:edit, :update]
   def show
     @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
-    @category = Category.find_by(item_id: @item.id)
+    # @category = Category.find_by(item_id: @item.id)
   end
 
   def edit

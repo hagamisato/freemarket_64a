@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :explain, null: false
       t.string :state, null: false 
-
+      t.references :buyer
       t.timestamps
     end
   end
