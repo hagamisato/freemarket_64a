@@ -1,2 +1,19 @@
-%h1 Purchases#done
-%p Find me in app/views/purchases/done.html.haml
+=render "signups/mercari_top"
+.purchases
+  .purchases__box
+    .purchases__box__title
+      購入が完了しました！
+    .purchases__box__main
+      .purchases__box__main__name
+        .purchases__box__main__name__item
+          .purchases__box__main__name__item__title 商品名
+          .purchases__box__main__name__item__main
+            =@item.name
+        .purchases__box__main__name__price
+          = converting_to_jpy(@item.price)
+          (送料込み)
+      .link
+        =link_to "トップページへ戻る", root_path, class:"link__btn" 
+        =link_to "マイページへ戻る", mypage_path(current_user.id), class:"link__btn" 
+
+=render "signups/mercari_bottom"
