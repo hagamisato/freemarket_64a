@@ -68,12 +68,16 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
     t.string "name", null: false
     t.text "explain", null: false
     t.string "state", null: false
+    t.bigint "buyer_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image"
     t.bigint "image_id"
     t.bigint "category_id"
     t.bigint "user_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -118,6 +122,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
   add_foreign_key "addresses", "users"
   add_foreign_key "categories", "items"
   add_foreign_key "images", "items"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "user_items", "items"
   add_foreign_key "user_items", "users"

@@ -1,12 +1,28 @@
-.main__content__body__new__items__item
-  .main__content__body__new__items__item__image
-    - if item.images[0].present?
-      = image_tag item.images[0].image.url , width: 190, height: 170;
-    .main__content__body__new__items__item__image__price 
-      %span ¥
-      = converting_to_jpy(item.price)
-  .main__content__body__new__items__item__name 
-    =item.name
-  .main__content__body__new__items__item__link
-    =link_to "", item_path(item.id)
+-if item.buyer_id == nil
+  .main__content__body__new__items__item
+    .main__content__body__new__items__item__image
+      - if item.images[0].present?
+        = image_tag item.images[0].image.url , width: 190, height: 170;
+      .main__content__body__new__items__item__image__price 
+        %span ¥
+        = converting_to_jpy(item.price)
+    .main__content__body__new__items__item__name 
+      =item.name
+    .main__content__body__new__items__item__link
+      =link_to "", item_path(item.id)
+-else
+  .main__content__body__new__items__item
+    .main__content__body__new__items__item__image
+      - if item.images[0].present?
+        = image_tag item.images[0].image.url , width: 190, height: 170;
+
+      .main__content__body__new__items__item__image__price 
+        %span ¥
+        = converting_to_jpy(item.price)
+    .main__content__body__new__items__item__name 
+      =item.name
+    .main__content__body__new__items__item__link
+      =link_to "", item_path(item.id)  
+    .triangle
+    .sold SOLD
 

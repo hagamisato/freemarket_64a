@@ -60,7 +60,7 @@ class SignupsController < ApplicationController
         provider: session[:provider],
         user_id: @user.id
       )    
-      sign_in User.find(settion[:id]) unless user_signed_in?
+      sign_in User.find(@user.id) unless user_signed_in?
       redirect_to new_card_path
     else
       render '/signups/reg'
