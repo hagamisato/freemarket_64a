@@ -28,7 +28,7 @@
           %tr 
             %td.item__content__table__title カテゴリー
             %td.item__content__table__content 
-              =@category.category_name
+              -# =@category.category_name
           %tr 
             %td.item__content__table__titles ブランド
             %td.item__content__table__contents 
@@ -67,7 +67,7 @@
           =link_to "商品の編集", edit_item_path(@item.id), class:"item__buy__btn"
       - else
         .purchase
-          =link_to "購入画面に進む", "/", class:"item__buy__btn"
+          =link_to "購入画面に進む", purchase_path(@item.id), class:"item__buy__btn"
     
       -# 
       -#   or

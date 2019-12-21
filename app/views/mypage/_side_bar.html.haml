@@ -4,8 +4,6 @@
       .mainbody__left__boxes__menu
         .mainbody__left__boxes__menu__box 
           =link_to mypage_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do
-            -# =link_to mypage_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do
-            -# マイページに飛ぶにはmypage/id(*)のようになるのでID必要ーーー書き換え必要ーー仮のリンクーーーーーー
             %span マイページ
             %i.fas.fa-chevron-right#icon__arrow
           .icon__arrrows
@@ -23,7 +21,8 @@
           .icon__arrrows
             %i.fas.fa-chevron-right.icon__arrrow
         .mainbody__left__boxes__menu__box 
-          %span 出品する
+          =link_to new_item_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do
+            %span 出品する
           .icon__arrrows
             %i.fas.fa-chevron-right.icon__arrrow
         .mainbody__left__boxes__menu__box 
@@ -85,7 +84,7 @@
             .icon__arrrows
               %i.fas.fa-chevron-right.icon__arrrow
         .mainbody__left__boxes__setting__box 
-          =link_to new_card_path(params[:id]), class:"mainbody__left__boxes__menu__box__link" do
+          =link_to card_mypage_index_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do
             -# =link_to card_path(current_user.id), class:"mainbody__left__boxes__menu__box__link" do  マージしたら書換
             %span 支払い方法
             .icon__arrrows
