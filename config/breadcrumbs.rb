@@ -7,7 +7,7 @@ end
 # マイページ関連ーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 crumb :mypage do
-  link "マイページ"
+  link "マイページ", mypage_path(current_user.id)
     # ルートパスつけるーーーー
 end
 
@@ -16,9 +16,9 @@ crumb :profile do
   parent :mypage
 end
 
-crumb :logout do
-  link "ログアウト", logout_mypage_index_path
-   parent :mypage
+crumb :card do
+  link "支払い方法", profile_mypage_index_path
+  parent :mypage
 end
 
 crumb :identification do
@@ -26,7 +26,10 @@ crumb :identification do
    parent :mypage
 end
 
-
+crumb :logout do
+  link "ログアウト", logout_mypage_index_path
+   parent :mypage
+end
 
 # 新規登録関連ーーーー使わない?ーーーーーーーーーー
 crumb :choice do
