@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_045744) do
+ActiveRecord::Schema.define(version: 2019_12_21_025041) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "name"
     t.bigint "item_id"
-    t.text "image"
-    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_categories_on_item_id"
   end
 
@@ -62,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postage", null: false
-    t.string "shipping_area", default: "", null: false
+    t.string "shipping_area", null: false
     t.string "shipping_date"
     t.integer "price", null: false
     t.string "name", null: false
@@ -72,10 +70,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
-    t.bigint "image_id"
-    t.bigint "category_id"
-    t.bigint "user_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -120,8 +114,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_045744) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "categories", "items"
-  add_foreign_key "images", "items"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
