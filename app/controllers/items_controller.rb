@@ -9,7 +9,7 @@ before_action :set_item, only:[:edit, :update]
   def new
     @item = Item.new
     @item.images.build
-    # @item.categories.build
+    @item.categories.build
   end
 
   def create 
@@ -20,7 +20,7 @@ before_action :set_item, only:[:edit, :update]
   def show
     @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
-    # @category = Category.find_by(item_id: @item.id)
+    @category = Category.find_by(item_id: @item.id)
   end
 
   def edit
@@ -46,7 +46,7 @@ before_action :set_item, only:[:edit, :update]
   private
   
   def item_params 
-    params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes: [:id, :image, :item_id], categories_attributes: [:id, :name, :item_id, :category_name]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :explain, :state, :postage, :shipping_area, :shipping_date, :price, images_attributes: [:id, :image, :item_id], categories_attributes: [:id, :name, :item_id]).merge(user_id: current_user.id)
   end
   
   def set_item

@@ -104,21 +104,52 @@ body {
               height: 160px;
               text-align: center;
               vertical-align: middle;
-              display: table-cell;
               width: 620px;
               border: 1px dashed #ccc;
               cursor: pointer;
-              position: absolute;
+              position: relative;
               margin-top: 20px;
               p {
-                position: relative;
+                position: absolute;
                 top: 50px;
                 left: 15px;
                 pointer-events: none;
                 text-align: center;
-                z-index: 10;
                 font-size: 13px;
                 font-weight: nomal;
+              }
+              &-image {
+                #item_images_attributes_0_image{
+                  margin-top: 5px;
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_1_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_2_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_3_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_4_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_5_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_6_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_7_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_8_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_9_image{
+                  margin-bottom: 10px;
+                }
               }
             }
           }
