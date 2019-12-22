@@ -35,8 +35,6 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'item/try', to: 'item#try' 
-  # 何かを書いてみる為のページ用のルーティング
   resources :cards, only: [:new, :show, :create, :destroy] do
     collection do
       post 'show', to: 'cards#show'
