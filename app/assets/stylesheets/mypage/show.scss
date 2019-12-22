@@ -158,6 +158,44 @@
       }
     }
   }
+  &__card{
+    background-color: $white;
+    &__title{
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 0px;
+      border-bottom: solid 1px $backcolor;
+    }
+    &__main{
+      padding: 30px 100px;
+      &__box{
+        width: 350px;
+        margin: 0 auto;
+        margin-top: 30px;
+        &__add{
+          &__btn{
+            margin: 0 auto;
+            width: 350px;
+            height: 50px;
+            font-size: 14px;
+            font-weight: normal;
+            color: white;
+            background-color:$red;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            line-height: 50px;
+            border: none;
+            margin-top: 30px;
+          }
+          .icon__card{
+            margin-right: 10px;
+          }
+        }    
+      }
+    }
+  }
   &__logout{
     height: 220px;
     padding: 60px 60px;
