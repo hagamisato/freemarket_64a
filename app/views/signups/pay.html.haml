@@ -22,7 +22,8 @@
     .signup__wrapper__head 支払い方法
     .signup__wrapper__registration
       .signup__wrapper__registration__form
-      = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      -# = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      = form_with url: pay_cards_path,  method: :post, id: 'charge-form',  name: "inputForm" do |f|
         .signup__wrapper__registration__form__box
           カード番号
           %span.form-require 必須

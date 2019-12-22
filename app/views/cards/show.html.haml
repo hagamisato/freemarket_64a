@@ -20,9 +20,8 @@
                   - exp_month = @default_card_information.exp_month.to_s
                   - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
                   = exp_month + " / " + exp_year
-              = form_tag(new_card_path,controller: :cards, action: :destroy, method: :delete, id: 'charge-form',  name: "inputForm", class:"") do
-                %input{ type: "hidden", name: "card_id", value: "削除する" }
-                %button.card__box__btn 削除する
+              = form_with url: new_card_path, controller: :cards, action: :destroy, method: :delete, id: 'charge-form',  name: "inputForm" do |f|
+                =f.submit "削除する" , name: "card_id", class:"card__box__btn"
 
 = render "layouts/footer"
 = render "layouts/circle"
