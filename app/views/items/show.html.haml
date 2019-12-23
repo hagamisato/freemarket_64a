@@ -14,7 +14,7 @@
             %td.item__content__table__title 出品者
             %td.item__content__table__content 
               .item__content__table__content__name 
-              =@item.user_id
+                =@item.user.nickname
               .item__content__table__content__box
                 .item__content__table__content__box__smile
                   %i.fas.fa-laugh-beam
@@ -32,9 +32,11 @@
           %tr 
             %td.item__content__table__titles ブランド
             %td.item__content__table__contents 
+              =@item.brand
           %tr 
             %td.item__content__table__titles 商品のサイズ
             %td.item__content__table__contents
+              =@item.size
           %tr 
             %td.item__content__table__titles 商品の状態
             %td.item__content__table__contents 
@@ -46,6 +48,7 @@
           %tr 
             %td.item__content__table__titles 配送の方法
             %td.item__content__table__contents 
+              =@item.delivery_way
           %tr 
             %td.item__content__table__titles 配送元地域
             %td.item__content__table__contents
