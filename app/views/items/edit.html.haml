@@ -23,11 +23,57 @@
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
-            =f.fields_for :images do |i|
-              =i.file_field :image,{multipart: true} do
-                %p 
-                  ドラックアンドドロップ<br>
-                  またはクリックしてファイルをアップロード
+            .exhibit-wrapper__form__upload-box__upload-space-image
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -50,6 +96,19 @@
           .exhibit-wrapper__sell-content__select-wrap
             =f.fields_for :categories do |i|
               =i.select :name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
+          .exhibit-wrapper__sell-content__pulldown__name-category
+            %p 
+              ブランド
+              %span.form-require-gray  任意
+              -# 任意は灰色に
+          .exhibit-wrapper__sell-content__select-wrap
+            =f.text_field :brand, id: "brand", placeholder: "例) adidas"
+          .exhibit-wrapper__sell-content__pulldown__name-category
+            %p 
+              商品のサイズ
+              %span.form-require  必須
+          .exhibit-wrapper__sell-content__select-wrap
+            =f.select :size, ["---","XSS以下","XS(SS)","S","M","L","XL(LL)","2XL(3L)","3XL(4L)"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
@@ -65,6 +124,12 @@
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :postage, ["---","送料込み(出品者負担)","着払い(購入者負担)"]
+          .exhibit-wrapper__sell-content__pulldown__name-delivery
+            %p 
+              配送の方法 
+              %span.form-require 必須
+            .exhibit-wrapper__sell-content__select-wrap
+              =f.select :delivery_way, ["---","未定","らくらくメルカリ便","ゆうメール","ゆうパケット"]
           .exhibit-wrapper__sell-content__pulldown__name-delivery
             %p 
               発送元の地域 
