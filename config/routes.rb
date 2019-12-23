@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :reg
       get :tell
       get :add
+      get :pay
       get :finish
     end
   end

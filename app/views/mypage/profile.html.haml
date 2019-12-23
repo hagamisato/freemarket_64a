@@ -18,7 +18,7 @@
                 %input.text_field{placeholder:  current_user.nickname,class:"profile__box__form__image__container__name"}
                 -# =f.text_field :nickname, placeholder: '  '  登録名表示させる  インプットで仮置きフォームに書き換え後アイコンとの高さ調節
         .profile__box__form__introduction
-          %input.introduction{placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" }
+          %textarea.introduction{placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" }
           .submit__btn 変更する
           -# =f.submit "変更する", class:"submit__btn"
 = render "layouts/footer"

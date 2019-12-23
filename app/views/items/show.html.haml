@@ -61,14 +61,14 @@
           = converting_to_jpy(@item.price)
         .item__buy__box__tax （税込）
         .item__buy__box__shippingfee 送料込み
-      
-      - if user_signed_in? && current_user.id == @item.user_id
+      - if  @item.buyer_id.present?
+        .soldout__btn 売り切れました 
+      - elsif user_signed_in? && current_user.id == @item.user_id
         .edit
           =link_to "商品の編集", edit_item_path(@item.id), class:"item__buy__btn"
       - else
         .purchase
           =link_to "購入画面に進む", purchase_path , class:"item__buy__btn"
-  
     .item__discription 
       .item__discription__content 
         =@item.explain
