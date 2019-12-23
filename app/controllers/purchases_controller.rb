@@ -16,7 +16,6 @@ class PurchasesController < ApplicationController
     @address = Address.find_by(user_id: current_user.id)
   end
 
-
   def pay
     card = current_user.card
     Payjp.api_key = "sk_test_e2bdfe749051b2466f069f55"
