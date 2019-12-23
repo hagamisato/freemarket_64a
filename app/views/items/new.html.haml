@@ -6,11 +6,11 @@
     .exhibit_modal-wrapper__content 
       %h3.modal-head 出品が完了しました
       .modal-body
-        %p あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+        %p あなたが出品した商品は「トップページ」からいつでも見ることができます。
         .btn-red
           =link_to "続けて出品する",new_item_path, id: "continue"
         .show
-          =link_to "商品ページへ行ってシェアする", item_path(:id), id: "show"
+          =link_to "トップページに戻る", root_path, id: "show"
   .exhibit-wrapper
     .exhibit-wrapper__head
       %h2 商品の情報を入力
@@ -23,11 +23,57 @@
             %span.form-require 必須
           %p 最大10枚までアップロードできます。
           .exhibit-wrapper__form__upload-box__upload-space
-            =f.fields_for :images do |i|
-              =i.file_field :image,{multipart: true} do
-                %p 
-                  ドラックアンドドロップ<br>
-                  またはクリックしてファイルをアップロード
+            .exhibit-wrapper__form__upload-box__upload-space-image
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
+              =f.fields_for :images do |i|
+                =i.file_field :image,{multipart: true} do
+                  %p 
+                    ドラックアンドドロップ<br>
+                    またはクリックしてファイルをアップロード
       .exhibit-wrapper__sell-content
         .exhibit-wrapper__sell-content__name
           %h1 
@@ -49,7 +95,7 @@
               %span.form-require  必須
           .exhibit-wrapper__sell-content__select-wrap
             =f.fields_for :categories do |i|
-              =i.select :category_name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
+              =i.select :name, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"]
           .exhibit-wrapper__sell-content__pulldown__name-state
             %p 
               商品の状態 
@@ -73,7 +119,7 @@
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :shipping_area, ["---","北海道"]
               -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-              -# 後で、active_hashを用いるため残して起きました。
+              -# 後で、active_hashを用いるため残しておきました。
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 
@@ -104,22 +150,23 @@
               ¥ 
               %span#amount -      
       .exhibit-wrapper__sell-content.clearfix
-        %p 
-        %a{href:""}禁止されている出品
-        、
-        %a{href:""}行為
-        を必ずご確認ください。
-        %p 
-          またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{href:""}偽ブランドの転売
-          は犯罪であり処罰される可能性があります。
-        %p 
-          また、出品をもちまして
-          %a{href:""}加盟店規約
-          に同意したことになります。
+        .exhibit-wrapper__sell-content__explain
+          %p 
+          %a{href:""}禁止されている出品
+          、
+          %a{href:""}行為
+          を必ずご確認ください。
+          %p 
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %a{href:""}偽ブランドの転売
+            は犯罪であり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            %a{href:""}加盟店規約
+            に同意したことになります。
         .exhibit-wrapper__sell-content
           =f.submit(class: "btn-red", value: "出品する")
-          =link_to "もどる", root_path, class: "return" 
+          =link_to "もどる", root_path, class: "gray-btn" 
     
 %footer
   .footer__nav

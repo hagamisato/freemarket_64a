@@ -93,7 +93,30 @@
           line-height: 70px;
         }
       }
+      .soldout__btn{
+        height: 50px;
+        width: 350px;
+        font-size: 23px;
+        font-weight: bold;
+        line-height: 50px;
+        color: white;
+        background-color: gray;
+        margin: 0 auto;
+      }
       .edit {
+        margin-bottom:  40px; 
+       a{
+          height: 50px;
+          width: 300px;
+          font-size: 20px;
+          color: white;
+          background-color: gray;
+          text-decoration: none;
+          padding: 15px 160px;
+        }
+
+      }
+      .purchase {
         a{
           height: 50px;
           width: 300px;

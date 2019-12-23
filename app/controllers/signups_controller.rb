@@ -61,10 +61,14 @@ class SignupsController < ApplicationController
         user_id: @user.id
       )    
       sign_in User.find(@user.id) unless user_signed_in?
-      redirect_to new_card_path
+      redirect_to pay_signups_path
     else
       render '/signups/reg'
     end
+  end
+
+  def pay
+    sign_in User.find(@user.id) unless user_signed_in?
   end
     
 

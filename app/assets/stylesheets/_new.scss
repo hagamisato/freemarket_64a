@@ -104,21 +104,52 @@ body {
               height: 160px;
               text-align: center;
               vertical-align: middle;
-              display: table-cell;
               width: 620px;
               border: 1px dashed #ccc;
               cursor: pointer;
-              position: absolute;
+              position: relative;
               margin-top: 20px;
               p {
-                position: relative;
+                position: absolute;
                 top: 50px;
                 left: 15px;
                 pointer-events: none;
                 text-align: center;
-                z-index: 10;
                 font-size: 13px;
                 font-weight: nomal;
+              }
+              &-image {
+                #item_images_attributes_0_image{
+                  margin-top: 5px;
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_1_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_2_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_3_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_4_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_5_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_6_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_7_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_8_image{
+                  margin-bottom: 10px;
+                }
+                #item_images_attributes_9_image{
+                  margin-bottom: 10px;
+                }
               }
             }
           }
@@ -236,7 +267,8 @@ body {
         }
         .btn-red {
           margin-top: 20px;
-          width: 100%;
+          margin-left: 35px;
+          width: 470px;
           background-color: #ea352d;
           color: #fff;
           line-height: 48px;
@@ -252,15 +284,22 @@ body {
           width: 87%;
           margin: 20px auto 0;
           display: block;
-          background-color: #aaa;
+          background-color: #aaa; 
           color: #fff;
           text-align: center;
           line-height: 48px;
           text-decoration: none;
         }
+        &-change {
+          width: 87%;
+          margin-left: 40px;
+        }
         a {
           color: #0099e8;
           text-decoration: none;
+        }
+        &__explain {
+          margin-bottom: 35px;
         }
       }
   }
