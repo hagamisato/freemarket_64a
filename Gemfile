@@ -70,10 +70,13 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'devise'
+
+# 画像アップロードのGem
 gem 'carrierwave'
+gem 'fog-aws'
+
 gem 'mini_magick'
 gem 'active_hash'
-gem 'fog-aws'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'gretel'
