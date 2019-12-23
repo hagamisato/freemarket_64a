@@ -19,8 +19,11 @@ class CardsController < ApplicationController
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
+      @path = Rails.application.routes.recognize_path(request.referer)
+      if @card.save && @path[:controller] == "signups" 
         redirect_to  finish_signups_path 
+      elsif @card.save && @path[:controller] == "cards"
+        redirect_to card_path(current_user.id)
       else
         redirect_to action: "pay"
       end
@@ -36,7 +39,7 @@ class CardsController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+      redirect_to card_mypage_index_path(current_user.id)
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します

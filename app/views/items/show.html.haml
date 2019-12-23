@@ -67,7 +67,7 @@
           =link_to "商品の編集", edit_item_path(@item.id), class:"item__buy__btn"
       - else
         .purchase
-          =link_to "購入画面に進む", "/", class:"item__buy__btn"
+          =link_to "購入画面に進む", purchase_path(@item.id), class:"item__buy__btn"
     
       -# 
       -#   or

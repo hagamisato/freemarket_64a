@@ -14,6 +14,8 @@ class MypageController < ApplicationController
   end
 
   def card
+    card = Card.where(user_id: current_user.id)
+    redirect_to card_path(current_user.id) if card.exists?
   end
 
   def logout

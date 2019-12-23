@@ -15,7 +15,7 @@
           %i.fas.fa-list-ul.header__box__lower__left__category__icon  
           %span カテゴリーから探す
           =link_to root_path, class:"header2__box__lower__left__brand"  do
-            %i.fas.fa-list-ul.header__box__lower__left__brand__icon  
+            %i.fas.fa-tag.header__box__lower__left__brand__icon  
             %span ブランドから探す    
         .header__box__lower__menue  
           .header__box__lower__menue__like    
@@ -30,5 +30,5 @@
           .header__box__lower__menue__mypage
           = link_to method: :get do
             %i.fas.fa-user-circle.icon{"aria-hidden": "true"}
-            = link_to  'マイページ'
-            -# = link_to  'マイページ', "/mypage/#{current_user.id}"------マイページ作成したら
+            = link_to  'マイページ', mypage_path(current_user.id)
+
