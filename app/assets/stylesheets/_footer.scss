@@ -126,7 +126,28 @@
     &__copyright{
       color: white;
       text-align: center;
-      padding-bottom:30px;
+      display: flex;
+      margin-top: 30px;
+      &__logo{
+        width: 45%;
+        height: 60px;
+        text-align: start;
+        padding-left: 40px;
+        line-height: 50px;
+        display: flex;
+        &__mercari{
+          font-size: 25px;
+          font-weight: bold;
+          padding-left: 10px;
+        }
+        .copyright__logo{
+          height: 45px;
+        }
+      }
+      &__message{
+        width: 55%;
+        height: 60px;
+      }
     }
   }
 }
