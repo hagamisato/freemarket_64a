@@ -10,11 +10,14 @@
     height: 400px;
     background-color: #FFF8DC;
     text-align: center;
+    margin-bottom: 0px;
     .image{
       width: 800px;
       height: 400px;
       position: relative;
     }
+  }
+  .iconbox{
     .arrow__left{
       color: $white;
       font-size: 40px;
@@ -22,7 +25,7 @@
       top: 280px;
       left: 100px;
       filter: drop-shadow(5px 5px 5px rgba(0,0.3,0,0.3));
-    }
+    }    
     .arrow__right{
       color: $white;
       font-size: 40px;
@@ -40,7 +43,7 @@
       &__title{
         font-size: 30px;
         text-align: center;
-        margin-bottom: 12px;
+        margin:20px 0px 12px;
       }
       &__junle{
         display: flex;
@@ -137,3 +140,29 @@ position: absolute;
 top: 16px;
 z-index: 5;
 }
+
+.slick-dots{
+  height: 30px;
+  position: absolute;
+  top: 350px;
+}
+
+.image slick-slide{
+  height: 400px;
+  width: 800px;
+  background-color: #FFF8DC;
+}
+
+.image slick-slid slick-current slick-active{
+  height: 400px;
+  width: 800px;
+}
+
+// .slick-dotted.slick-slider {
+//   margin-bottom: 0px;
+// }
+
+// <div class="main__header slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;">Previous</button>
+// <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 4395px; transform: translate3d(-879px, 0px, 0px);"><img alt="image" class="image slick-slide slick-cloned" src="/assets/mercari_camp-a74f901d33a67c29a7e7e848ceb46c5705d1d6c974f3b79a3d5a173eef3e3dd5.png" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 879px;"><img alt="image" class="image slick-slide slick-current slick-active" src="/assets/kausika-79228918a61560b16b95ba1105faf1cb96803212a7caee34bf999f9e08eadb13.jpg" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00" style="width: 879px;"><img alt="image" class="image slick-slide" src="/assets/mercari_camp-a74f901d33a67c29a7e7e848ceb46c5705d1d6c974f3b79a3d5a173eef3e3dd5.png" data-slick-index="1" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01" style="width: 879px;"><img alt="image" class="image slick-slide slick-cloned" src="/assets/kausika-79228918a61560b16b95ba1105faf1cb96803212a7caee34bf999f9e08eadb13.jpg" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 879px;"><img alt="image" class="image slick-slide slick-cloned" src="/assets/mercari_camp-a74f901d33a67c29a7e7e848ceb46c5705d1d6c974f3b79a3d5a173eef3e3dd5.png" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 879px;"></div></div>
+
+// <button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;">Next</button><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button></li></ul></div>
