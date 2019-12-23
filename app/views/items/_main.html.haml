@@ -1,11 +1,14 @@
 
 .main
   .main__header
-    = image_tag src="kausika.jpg", alt:"image", class:"image"
-    = image_tag src="mercari_camp.png", alt:"image", class:"image"
-  .iconbox
-    %i.fas.fa-chevron-left.arrow__left
-    %i.fas.fa-chevron-right.arrow__right
+    .main__header__box
+      .kausika
+        = image_tag src="kausika.jpg", alt:"image", class:"image"
+      .kantan
+        = image_tag src="kantan.png", alt:"image", class:"image"
+    -# .iconbox
+    -#   %i.fas.fa-chevron-left.arrow__left   -------後ほどアイコン化するため残す
+    -#   %i.fas.fa-chevron-right.arrow__right
   .main__content
     .main__content__category 
       .main__content__category__title 人気のカテゴリー
@@ -57,3 +60,5 @@
             %i.fas.fa-chevron-right
         .main__content__body__new__items
           = render @items
+
+
