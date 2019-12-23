@@ -13,6 +13,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :state, null: false 
       t.references :buyer
       t.references :user, foreign_key: true
+      t.string :brand
+      t.string :size, null: false
+      t.string :delivery_way, null: false 
       t.timestamps
     end
   end
