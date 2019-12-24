@@ -100,7 +100,6 @@
             %p 
               ブランド
               %span.form-require-gray  任意
-              -# 任意は灰色に
           .exhibit-wrapper__sell-content__select-wrap
             =f.text_field :brand, id: "brand", placeholder: "例) adidas"
           .exhibit-wrapper__sell-content__pulldown__name-category
@@ -137,8 +136,8 @@
               %span.form-require 必須
             .exhibit-wrapper__sell-content__select-wrap
               =f.select :shipping_area, ["---","北海道"]
-              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-              -# 後で、active_hashを用いるため残しておきました。
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              後で、active_hashを用いるため残しておきました。
           .exhibit-wrapper__sell-content__pulldown__name-delivery    
             %p 
               発送までの日数 
