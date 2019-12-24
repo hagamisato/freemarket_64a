@@ -55,18 +55,22 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|categorys_id|references|null: false, foreign_key: true|
-|buyer|references||
-|name|string|null: false|
-|explain|text|null: false|
-|bland|string||
-|size|string|null: false|
 |postage|string|null: false|
 |delivery_way|string|null: false|
 |shipping_area|string|null: false|
 |shipping_date|string||
 |price|integer|null: false|
+|name|string|null: false|
+|explain|text|null: false|
+|state|string|null: false|
+|buyer_id|references|
+|user_id|references|null: false, foreign_key: true|
+|brand|string|
+|size|string|
+|delivery_way|string| 
+|categorys_id|references|null: false, foreign_key: true|
+|bland_id|references||
+
 ### Association
 - has_many :images
 - has_many :categories
