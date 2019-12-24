@@ -65,16 +65,24 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|categorys_id|references|null: false, foreign_key: true|
-|bland_id|references||
 |postage|string|null: false|
 |shipping_area|string|null: false|
 |shipping_date|string||
 |price|integer|null: false|
+|name|string|null: false|
+|explain|text|null: false|
+|state|string|null: false|
+|buyer_id|references|
+|user_id|references|null: false, foreign_key: true|
+|brand|string|
+|size|string|
+|delivery_way|string| 
+|categorys_id|references|null: false, foreign_key: true|
+|bland_id|references||
+
 ### Association
 - has_many :images
-- belongs_to :category
+- has_many :categories
 - has_many :comments
 - has_many :user, through: :user_items
 - has_many :user_items
