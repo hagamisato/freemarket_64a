@@ -165,11 +165,32 @@ z-index: 5;
 .slick-dots{
   height: 30px;
   position: absolute;
-  top: 350px;
+  top: 400px;
 }
 
 .slick-prev{
     z-index: 100;
+    background: none;
+}
+.slick-prev::before{
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  filter: drop-shadow(3px 3px 5px rgba(0,0.3,0,0.5));
+  padding: 10px;
+  left: 100px;
+  opacity: 1;
+  position: absolute;
+  top: -5px;
+  z-index: 100;
+  background: none;
+}
+
+.slick-prev.slick-arrow::before {
+  font-size: 40px;
+  content: "\f053";
+  font-family: FontAwesome;
+  background: none;
 }
 
 .slick-next.slick-arrow{
@@ -178,37 +199,70 @@ z-index: 5;
 }
 
 .slick-next.slick-arrow::before{
-  font-size: 30px;
-  position: absolute;
-  right: 0px;
-  filter: drop-shadow(7px 7px 7px  rgba(0,0.3,0,0.5));
+  font-size: 40px;
+  content: "\f054";
+  font-family: FontAwesome;
+  filter: drop-shadow(3px 3px 5px  rgba(0,0.3,0,0.5));
+  background: none;
 }
 .main__header__box.slick-initialized.slick-slider.slick-dotted{
   margin-bottom: 0px;
-  width: 100%;
+  // width: 100%;
   margin: 0 auto;
 }
 
-.slick-prev::before{
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  content: "\f054";
-  font-family: FontAwesome;
-  filter: drop-shadow(7px 7px 7px rgba(0,0.3,0,0.3));
-  padding: 10px;
-  opacity: 1;
-  position: absolute;
-  top: -5px;
-  left: 100px;
-  z-index: 100;
-  background: none;
-}
-
-.slick-prev.slick-arrow::before {
-  font-size: 30px;
-}
 
 #slick-slide00{
   width: 100%;
 }
+
+
+
+
+
+
+.slick-prev{
+left: 80px;
+}
+.slick-next{
+right: 80px;
+}
+
+.slick-prev:hover:before{
+  animation: arrow_prev .5s ease-out forwards;
+ }
+@keyframes arrow_prev {
+ 0% {
+   right: 0px;
+ }
+ 50% {
+   right: 5px;
+ }
+ 100% {
+       right: 0;
+ }
+}
+
+.slick-next:hover:before{
+ animation: arrow_next .5s ease-out forwards;
+     }
+ @keyframes arrow_next {
+ 0% {
+   left: 0px;
+ }
+ 50% {
+   left: 5px;
+ }
+ 100% {
+   left: 0;
+ }
+}
+@media screen and (max-width:480px) {
+ .slick-prev{
+     left: 30px;                 
+ }
+  .slick-next{
+    right: 30px;
+ }
+}
+
