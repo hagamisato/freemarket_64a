@@ -6,7 +6,7 @@
 |password|string|null: false|
 |f_name_kanji|string|null: false|
 |l_name_kanji|string|null: false|
-|j_name_kana|string|null: false|
+|f_name_kana|string|null: false|
 |l_name_kana|string|null: false|
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
@@ -17,7 +17,9 @@
 - has_many :items, through: :user_items
 - has_many :user_items
 - has_one :address
-- has_one :credit_card
+- has_one :card
+- accepts_nested_attributes_for :address
+- has_many :sns_credentials, dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Options|
@@ -30,28 +32,16 @@
 |building|string||
 |phone_number|string||
 ### Association
-- belongs_to :users
+- belongs_to :users, optional: true
 
-## credit_cardテーブル
+## cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|card_number|integer|null: false|
-|year|integer|null: false|
-|month|integer|null: false|
-|security_number|integer|null: false|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 ### Association
-- belongs_to :users
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-|body|text|null: false|
-### Association
-- belongs_to :users
-- belongs_to :item
+- belongs_to :user
 
 ## user_itemsテーブル
 |Column|Type|Options|
@@ -59,13 +49,14 @@
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 - belongs_to :item
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |postage|string|null: false|
+|delivery_way|string|null: false|
 |shipping_area|string|null: false|
 |shipping_date|string||
 |price|integer|null: false|
@@ -83,9 +74,11 @@
 ### Association
 - has_many :images
 - has_many :categories
-- has_many :comments
 - has_many :user, through: :user_items
 - has_many :user_items
+- belongs_to :user
+- accepts_nested_attributes_for :images
+- accepts_nested_attributes_for :categories
 
 
 ## imagesテーブル
@@ -96,26 +89,20 @@
 ### Association
 - belongs_to :item
 
-## purchasesテーブル
+## prefectureテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|categorys_id|references||
+|prefecture|references|null: false, foreign_key: true|
+|name|string||
 ### Association
 
 
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|type|string||
+|name|string||
+|item|references||
 ### Association
 - has_many :items
-- belongs_to :bland
 
-## blandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|type|string||
-### Association
-- has_many :categorys
 
