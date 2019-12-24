@@ -7,6 +7,9 @@ before_action :set_item, only:[:edit, :update]
   end
 
   def new
+    unless user_signed_in?
+      redirect_to  new_user_session_path
+    end
     @item = Item.new
     @item.images.build
     @item.categories.build
