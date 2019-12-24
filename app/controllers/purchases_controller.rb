@@ -16,7 +16,6 @@ class PurchasesController < ApplicationController
     @address = Address.find_by(user_id: current_user.id)
   end
 
-
   def pay
     card = current_user.card
     Payjp.api_key = "sk_test_e2bdfe749051b2466f069f55"
@@ -25,6 +24,7 @@ class PurchasesController < ApplicationController
     customer: card.customer_id,  
     currency: 'jpy', 
   )
+  @item.update(buyer_id: current_user.id)  #buyer_idを追加する
   redirect_to action: 'done' #完了画面に移動
   end
 

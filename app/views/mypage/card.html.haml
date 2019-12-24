@@ -1,1 +1,17 @@
-= render 'layouts/header'
+= render "layouts/mypage_header"
+- breadcrumb :card
+= render "layouts/breadcrumbs"
+.all
+  = render "side_bar"
+  .mypage
+    .mypage__card
+      .mypage__card__title 支払い方法
+      .mypage__card__main
+        .mypage__card__main__box
+          .mypage__card__main__box__add
+            =link_to new_card_path(current_user.id), class:"mypage__card__main__box__add__btn" do
+              %i.far.fa-credit-card.icon__card
+              %span クレジットカードを追加する
+= render "layouts/footer"
+= render "layouts/circle"
+

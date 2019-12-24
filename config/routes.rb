@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :reg
       get :tell
       get :add
+      get :pay
       get :finish
     end
   end
@@ -34,8 +35,6 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'item/try', to: 'item#try' 
-  # 何かを書いてみる為のページ用のルーティング
   resources :cards, only: [:new, :show, :create, :destroy] do
     collection do
       post 'show', to: 'cards#show'
@@ -46,7 +45,7 @@ Rails.application.routes.draw do
   
  
   resources :mypage, only: [:imdex, :show] do
-    member do
+    collection do
       get :profile
       get :identification
       get :card
@@ -56,9 +55,9 @@ Rails.application.routes.draw do
 
   resources :purchases, only: [:index, :show ] do
     member do
-    post 'pay', to: 'purchases#pay'
-    get :done
-    end
+      post 'pay', to: 'purchases#pay'
+      get :done
+      end
   end
   
 end

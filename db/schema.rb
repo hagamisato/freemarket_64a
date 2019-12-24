@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(version: 2019_12_21_025041) do
     t.string "state", null: false
     t.bigint "buyer_id"
     t.bigint "user_id"
+    t.string "brand"
+    t.string "size", null: false
+    t.string "delivery_way", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
@@ -80,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_12_21_025041) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_prefectures_on_prefecture_id"
+
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
