@@ -43,6 +43,7 @@
   }
   &__lower{
     background-color: #222222;
+    padding-left: 30px;
     &__detail{
       height: 350px;
       color: white;
@@ -126,7 +127,28 @@
     &__copyright{
       color: white;
       text-align: center;
-      padding-bottom:30px;
+      display: flex;
+      margin-top: 30px;
+      &__logo{
+        width: 40%;
+        height: 60px;
+        text-align: start;
+        padding-left: 60px;
+        line-height: 50px;
+        display: flex;
+        &__mercari{
+          font-size: 25px;
+          font-weight: bold;
+          padding-left: 10px;
+        }
+        .copyright__logo{
+          height: 45px;
+        }
+      }
+      &__message{
+        width: 60%;
+        height: 60px;
+      }
     }
   }
 }
