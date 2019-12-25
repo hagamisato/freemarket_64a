@@ -7,12 +7,18 @@
     .item__introduce
     .item__content
       .item__content__image
-        = image_tag @item.images[0].image.url;
-        = image_tag @item.images[1].image.url; 
-        = image_tag @item.images[2].image.url;
-        = image_tag @item.images[3].image.url;
-        = image_tag @item.images[4].image.url;
-        = image_tag @item.images[5].image.url;
+        - if @item.images[0].present?
+          = image_tag @item.images[0].image.url;
+        - if @item.images[1].present?
+          = image_tag @item.images[1].image.url;
+        - if @item.images[2].present? 
+          = image_tag @item.images[2].image.url;
+        - if @item.images[3].present?
+          = image_tag @item.images[3].image.url;
+        - if @item.images[4].present?
+          = image_tag @item.images[4].image.url;
+        - if @item.images[5].present?
+          = image_tag @item.images[5].image.url;
       .item__content__table
         %table
           %tr 
