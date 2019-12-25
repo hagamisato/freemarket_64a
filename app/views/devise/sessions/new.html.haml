@@ -19,9 +19,7 @@
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"  メールアドレス", class:"field"
         = f.password_field :password, autocomplete: "current-password", placeholder:"  パスワード", class:"field"
         .new__box__rogin__form__robot 
-          .new__box__rogin__form__robot__check
-          .new__box__rogin__form__robot__content reCHAPTCHA導入
-          .new__box__rogin__form__robot__mark
+          = recaptcha_tags
         -# = invisible_recaptcha_tags({ text: "登録する", class: "robot__btn" })
         .action
           = f.submit "ログイン", class:"rogin__btn"
