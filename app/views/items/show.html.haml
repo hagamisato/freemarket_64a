@@ -7,7 +7,12 @@
     .item__introduce
     .item__content
       .item__content__image
-        = image_tag @item.images[0].image.url , width: 280, height: 200; 
+        = image_tag @item.images[0].image.url;
+        = image_tag @item.images[1].image.url; 
+        = image_tag @item.images[2].image.url;
+        = image_tag @item.images[3].image.url;
+        = image_tag @item.images[4].image.url;
+        = image_tag @item.images[5].image.url;
       .item__content__table
         %table
           %tr 
