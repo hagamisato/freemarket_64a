@@ -64,7 +64,7 @@
             width: 350px;
             height: 50px;
             border-radius: 5px;
-            border: solid 0.5px #888888;
+            border: solid 0.5px $gray8;
           }
         }
         &__submit{
@@ -76,8 +76,8 @@
           .submit__btn{
             width: 350px;
             height: 50px;
-            background-color:#ea352d;
-            color: white;
+            background-color: $red;
+            color: $white;
             text-decoration: none;
             display: block;
             margin: 0 auto;
@@ -91,8 +91,8 @@
 
     .form-require{
       font-size: 12px;
-      color: white;
-      background-color: #ea352d;
+      color: $white;
+      background-color: $red;
       padding: 2px 4px;
     }
     &__finish{
@@ -102,8 +102,8 @@
     &__btn{
       width: 350px;
       height: 50px;
-      background-color:#ea352d;
-      color: white;
+      background-color: $red;
+      color: $white;
       text-decoration: none;
       display: block;
       margin: 0 auto;
@@ -124,4 +124,15 @@
   .input__day{
     margin-right: 15px;
   }
+  #user_address_attributes_prefectures{
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 0.5px $gray8;
+  }
+}
+#user_address_attributes_prefectures{
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
 }

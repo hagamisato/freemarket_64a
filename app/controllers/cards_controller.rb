@@ -25,7 +25,7 @@ class CardsController < ApplicationController
       elsif @card.save && @path[:controller] == "cards"
         redirect_to card_path(current_user.id)
       else
-        redirect_to action: "pay"
+        redirect_to root_path
       end
     end
   end

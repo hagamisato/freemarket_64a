@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 2019_12_24_031012) do
     t.index ["item_id"], name: "index_categories_on_item_id"
   end
 
-  create_table "categories_pulldowns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.bigint "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_categories_pulldowns_on_parent_id"
-  end
-
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "customer_id", null: false
@@ -135,7 +127,6 @@ ActiveRecord::Schema.define(version: 2019_12_24_031012) do
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
-  add_foreign_key "prefectures", "prefectures"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "user_items", "items"
   add_foreign_key "user_items", "users"

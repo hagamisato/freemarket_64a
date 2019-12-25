@@ -1,5 +1,5 @@
 = render "layouts/mypage_header"
-- breadcrumb :identification
+- breadcrumb :card
 = render "layouts/breadcrumbs"
 .all
   = render "mypage/side_bar"
@@ -13,7 +13,7 @@
               カード番号
               %span.form-require 必須
               .signup-content__input-location
-              = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class:"card__input"
+              = text_field_tag "number", "",  placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class:"card__input"
             .signup__wrapper__registration__form__box
               有効期限
               %span.form-require 必須
