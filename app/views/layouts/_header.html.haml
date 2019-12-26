@@ -5,10 +5,15 @@
         = link_to root_path do
           = image_tag src='fmarket_logo_red.svg', alt: 'mercari', class:"header__box__upper__rogo__image" 
       .header__box__upper__search      
-        = form_with(url: "/", local: true, method: :get) do |form|
-          = form.text_field :keyword, placeholder: "何かお探しですか？", class: "header__box__upper__search__input"
+        = form_tag(searches_path,method: :get) do
+          = text_field_tag :search, "",placeholder:"何かお探しですか？", class: "header__box__upper__search__input"
+          -# = submit_tag '', :name => nil, class:"button" do
           %button.button{type:"submit", "aria-hidden": "true"}
             %i.fas.fa-search.icon
+        -# = form_with(url: "/", local: true, method: :get) do |form|
+        -#   = form.text_field :keyword, placeholder: "何かお探しですか？", class: "header__box__upper__search__input"
+        -#   %button.button{type:"submit", "aria-hidden": "true"}
+
     .header__box__lower
       .header__box__lower__left
         .header__box__lower__left__category

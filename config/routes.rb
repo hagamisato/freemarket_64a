@@ -59,5 +59,7 @@ Rails.application.routes.draw do
       get :done
       end
   end
+
+  resources :searches,only:[:index]
   
 end
