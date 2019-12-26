@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   # extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to_active_hash :prefecture
   # active_hashが上手く行かなかったのでコメントアウト
-  def self.search(search)
+  def self.search(search,limit)
     return Item.all unless search
     Item.where(['name LIKE ?', "%#{search}%"])
   end
